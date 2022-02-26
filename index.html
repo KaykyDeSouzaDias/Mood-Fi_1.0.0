@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link href="styles.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e9631009a5.js" crossorigin="anonymous"></script>
+    <title>Mood-Fi</title>
+  </head>
+
+  <body id="allPage">
+
+    <div>
+
+      <!-- ** MAIN SCREEN ** -->
+      
+      <img src="imgs/logo/MoodFi_Logo.png" id="logo">
+
+
+      <div id="videoContainer">
+        <div id="videoYT"></div>
+
+        <!-- PERSONAL MEDIAS_FLOAT ACTION BUTTON -->
+        <div id="myPersonalBtn" class="personalBtn">
+
+          <input type="checkbox" id="btn">
+            <label for="btn" id="floatBtnID" class="floatBtn">
+              <span>+</span>
+            </label>
+
+          <div id="floatCardID" class="floatCard">
+
+            <div class="mylogo"> <img class="mylogoImg" src="imgs/PersonalChannel/myChannelLogo.jpg" alt=""> </div>
+      
+            <div class="mybackground"> <img class="mybackgroundImg" src="imgs/PersonalChannel/myChannel_Banner.jpg"> </div>
+      
+            <div class="floatCardContent">
+      
+              <button id="myYT" class="myLeft_Btn"><i onclick="myYT_func()" class="fab fa-youtube fa-sm"></i></button>
+              <button id="myGithub" class="myMiddle_Btn"><i onclick="myGithub_func()" class="fab fa-github fa-sm"></i></button>
+              <button id="myLinkedin" class="myRight_Btn"><i onclick="myLinkedin_func()" class="fab fa-linkedin fa-sm"></i></button>
+      
+            </div>
+      
+          </div>
+        
+        </div>
+
+      </div>
+
+      <div id="audioContainer">
+        <i id="volumeDown" class="fas fa-volume-down fa-lg"></i>
+        <input id="volumeSlider" class="styled-slider slider-progress" type="range" step="5" value="100" onchange="onPlayerReady(this.value)">
+        <i id="volumeUp" class="fas fa-volume-up fa-lg"></i>
+      </div>
+
+
+      <!-- ** SIDE NAV ** -->
+
+      <!--Bars to open side nav-->
+      <a style="font-size:30px;cursor:pointer" id="sideNavBar">
+        <i class="fas fa-bars fa-2x"></i>
+      </a>
+
+      
+      <div id="mySidenav" class="sidenav">
+
+        <!--buttons to size the window / to close the side nav and the app-->
+        <div class="basicBtns">
+          <a href="javascript:void(0)" id="closeNav" class="closebtn"><i id="closeSideNav" class="fas fa-times fa-lg"></i></a>
+          <a href="#" id="minimize" class="minimizeBtn"><i onclick="minimize()" class="fas fa-window-minimize fa-lg"></i></a>
+          <a href="#" id="maximizeID" class="maximizeBtn"><i onclick="maximize()" id="maximize" class="far fa-window-maximize fa-lg"></i></a>
+          <a href="#" id="exit" class="exitBtn"><i onclick="closebtn()" class="fas fa-sign-out-alt fa-lg"></i></a>
+        </div>
+
+
+        <!--buttons to direct the user for what he can do-->
+        <div class="titleBtn">
+          <button id="Discover" class="sideNavOptions selected">Discover</button>
+          <button id="References" class="sideNavOptions">References</button>
+          <button id="Settings" class="sideNavOptions">Settings</button>
+        </div>
+
+
+        <!-- ** SIDENAV_DISCOVER **-->
+
+        <div style="height: 100%; width: 100%;" class="option" data-filter="Discover">
+
+          <!--Categories of each type of lo-fi live stream-->
+          <div class="scrollCategories">
+            <button id="All" class="filterBtn active">All</button>
+            <button id="Chill" class="filterBtn">Chill</button>
+            <button id="Coffee" class="filterBtn">Coffee</button>
+            <button id="Hip Hop" class="filterBtn">Hip Hop</button>
+            <button id="Anime" class="filterBtn">Anime</button>
+            <button id="Japanese" class="filterBtn">Japanese</button>
+            <button id="Programming" class="filterBtn">Programming</button>
+            <button id="Space" class="filterBtn">Space</button>
+            <button id="VHS" class="filterBtn">VHS</button>
+          </div>
+
+          <!--Images/Buttons of each type of lo-fi live stream-->
+          <div class="lofiMusics">
+
+            <div id="VHS01" onclick="livestreams(this.id)" class="liveLofi" data-filter="VHS"><img src="imgs/lofiLives/VHS/InYourChill(Vhs01).JPG" alt=""></div>
+
+            <div id="Chill01" onclick="livestreams(this.id)" class="liveLofi" data-filter="Chill"><img src="imgs/lofiLives/Chill/ChilledEmpire(Chill01).JPG" alt=""></div>
+
+            <div id="Programming01" onclick="livestreams(this.id)" class="liveLofi" data-filter="Programming"><img src="imgs/lofiLives/Programming/CodePioneers(Programming01).JPG" alt=""></div>
+            <div id="Programming02" onclick="livestreams(this.id)" class="liveLofi" data-filter="Programming"><img src="imgs/lofiLives/Programming/CodePioneers(Programming02).JPG" alt=""></div>
+
+            <div id="Coffee01" onclick="livestreams(this.id)" class="liveLofi" data-filter="Coffee"><img src="imgs/lofiLives/Coffee/CoffeeShopVibes(Coffee01).JPG" alt=""></div>
+
+            <div id="Chill02" onclick="livestreams(this.id)" class="liveLofi" data-filter="Chill"><img src="imgs/lofiLives/Chill/ChilledEmpire(Chill02).JPG" alt=""></div>
+
+            <div id="Space01" onclick="livestreams(this.id)" class="liveLofi" data-filter="Space"><img src="imgs/lofiLives/Space/LofiGeek(Space01).JPG" alt=""></div>
+            <div id="Space02" onclick="livestreams(this.id)" class="liveLofi" data-filter="Space"><img src="imgs/lofiLives/Space/LofiGeek(Space02).JPG" alt=""></div>
+
+            <div id="HipHop01" onclick="livestreams(this.id)" class="liveLofi" data-filter="Hip Hop"><img src="imgs/lofiLives/HipHop/ChillHop(HipHop01).JPG" alt=""></div>
+
+            <div id="Chill03" onclick="livestreams(this.id)" class="liveLofi" data-filter="Chill"><img src="imgs/lofiLives/Chill/ChilledEmpire(Chill03).JPG" alt=""></div>
+            <div id="Chill04" onclick="livestreams(this.id)" class="liveLofi" data-filter="Chill"><img src="imgs/lofiLives/Chill/ChillHop(Chill04).JPG" alt=""></div>
+
+            <div id="HipHop02" onclick="livestreams(this.id)" class="liveLofi" data-filter="Hip Hop"><img src="imgs/lofiLives/HipHop/College(HipHop02).JPG" alt=""></div>
+
+            <div id="Space03" onclick="livestreams(this.id)" class="liveLofi" data-filter="Space"><img src="imgs/lofiLives/Space/LofiGeek(Space03).JPG" alt=""></div>
+
+            <div id="Coffee02" onclick="livestreams(this.id)" class="liveLofi" data-filter="Coffee"><img src="imgs/lofiLives/Coffee/LofiGeek(Coffee02).JPG" alt=""></div>
+            <div id="Coffee03" onclick="livestreams(this.id)" class="liveLofi" data-filter="Coffee"><img src="imgs/lofiLives/Coffee/Steezyasfuck(Coffee03).JPG" alt=""></div>
+
+            <div id="Anime01" onclick="livestreams(this.id)" class="liveLofi" data-filter="Anime"><img src="imgs/lofiLives/Anime/Nostalgic(Anime01).JPG" alt=""></div>
+            <div id="Anime02" onclick="livestreams(this.id)" class="liveLofi" data-filter="Anime"><img src="imgs/lofiLives/Anime/Nostalgic(Anime02).JPG" alt=""></div>
+            <div id="Anime03" onclick="livestreams(this.id)" class="liveLofi" data-filter="Anime"><img src="imgs/lofiLives/Anime/Nostalgic(Anime03).JPG" alt=""></div>
+
+            <div id="Chill05" onclick="livestreams(this.id)" class="liveLofi" data-filter="Chill"><img src="imgs/lofiLives/Chill/College(Chill05).JPG" alt=""></div>
+            <div id="Chill06" onclick="livestreams(this.id)" class="liveLofi" data-filter="Chill"><img src="imgs/lofiLives/Chill/College(Chill06).JPG" alt=""></div>
+
+            <div id="Japanese01" onclick="livestreams(this.id)" class="liveLofi" data-filter="Japanese"><img src="imgs/lofiLives/Japanese/LofiGeek(Japanese01).JPG" alt=""></div>
+            <div id="Japanese02" onclick="livestreams(this.id)" class="liveLofi" data-filter="Japanese"><img src="imgs/lofiLives/Japanese/LofiGeek(Japanese02).JPG" alt=""></div>
+
+            <div id="Chill07" onclick="livestreams(this.id)" class="liveLofi" data-filter="Chill"><img src="imgs/lofiLives/Chill/College(Chill07).JPG" alt=""></div>
+
+            <div id="Chill08" onclick="livestreams(this.id)" class="liveLofi" data-filter="Chill"><img src="imgs/lofiLives/Chill/DreamHop(Chill08).JPG" alt=""></div>
+
+            <div id="Japanese03" onclick="livestreams(this.id)" class="liveLofi" data-filter="Japanese"><img src="imgs/lofiLives/Japanese/LofiGeek(Japanese03).JPG" alt=""></div>
+
+            <div id="HipHop03" onclick="livestreams(this.id)" class="liveLofi" data-filter="Hip Hop"><img src="imgs/lofiLives/HipHop/Nourish(HipHop03).JPG" alt=""></div>
+            <div id="HipHop04" onclick="livestreams(this.id)" class="liveLofi" data-filter="Hip Hop"><img src="imgs/lofiLives/HipHop/Steezyasfuck(HipHop04).JPG" alt=""></div>
+
+            <div id="Japanese04" onclick="livestreams(this.id)" class="liveLofi" data-filter="Japanese"><img src="imgs/lofiLives/Japanese/MrMomo(Japanese04).JPG" alt=""></div>
+            <div id="Japanese05" onclick="livestreams(this.id)" class="liveLofi" data-filter="Japanese"><img src="imgs/lofiLives/Japanese/MrMomo(Japanese05).JPG" alt=""></div>
+
+            <div id="Chill09" onclick="livestreams(this.id)" class="liveLofi" data-filter="Chill"><img src="imgs/lofiLives/Chill/InYourChill(Chill09).JPG" alt=""></div>
+
+            <div id="Space04" onclick="livestreams(this.id)" class="liveLofi" data-filter="Space"><img src="imgs/lofiLives/Space/TpyxaArt(Space04).JPG" alt=""></div>
+
+            <div id="Japanese06" onclick="livestreams(this.id)" class="liveLofi" data-filter="Japanese"><img src="imgs/lofiLives/Japanese/MrMomo(Japanese06).JPG" alt=""></div>
+
+            <div id="Chill10" onclick="livestreams(this.id)" class="liveLofi" data-filter="Chill"><img src="imgs/lofiLives/Chill/LofiGeek(Chill10).JPG" alt=""></div>
+            <div id="Chill11" onclick="livestreams(this.id)" class="liveLofi" data-filter="Chill"><img src="imgs/lofiLives/Chill/LofiGeek(Chill11).JPG" alt=""></div>
+            <div id="Chill12" onclick="livestreams(this.id)" class="liveLofi" data-filter="Chill"><img src="imgs/lofiLives/Chill/LofiGirl(Chill12).JPG" alt=""></div>
+
+            <div id="Chill13" onclick="livestreams(this.id)" class="liveLofi" data-filter="Chill"><img src="imgs/lofiLives/Chill/LofiGirl(Chill13).JPG" alt=""></div>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- ** SIDENAV_REFERENCES **-->
+
+        <div id="referenceMenu" class="option" data-filter="References">
+
+          <div class="references">
+
+            <div id="lofiCardID" class="lofiCard">
+
+              <div class="logoLofi"> <img class="logoLofiImg" src="imgs/lofiLogos/logoLofiGirl.jpg" alt=""> </div>
+
+              <div class="backgroundLofi"> <img class="backgroundLofiImg" src="imgs/lofiBanners/lofiGirl_Banner.jpg"> </div>
+
+              <div class="lofiCardContent">
+
+                <a href="#" id="lofiYT" class="lofiLeft_Btn"><i onclick="lofiGirlYT_func()" class="fab fa-youtube fa-sm"></i></a>
+                <a href="#" id="lofiDesktopStore" class="lofiMiddle_Btn"><i onclick="lofiGirlWebSite_func()" class="fas fa-desktop fa-sm"></i></a>
+                <a href="#" id="lofiPlaylist" class="lofiRight_Btn"><i onclick="lofiGirlPlaylist_func()" class="fas fa-music fa-sm"></i></a>
+
+              </div>
+
+            </div>
+
+            
+            <div id="lofiCardID2" class="lofiCard">
+
+              <div class="logoLofi"> <img class="logoLofiImg" src="imgs/lofiLogos/logoChilledEmpire.jpg" alt=""> </div>
+
+              <div class="backgroundLofi"> <img class="backgroundLofiImg" src="imgs/lofiBanners/chilledEmpire_Banner.jpg"> </div>
+
+              <div class="lofiCardContent">
+
+                <a href="#" id="lofiYT2" class="lofiLeft_Btn"><i onclick="chilledEmpireYT_func()" class="fab fa-youtube fa-sm"></i></a>
+                <a href="#" id="lofiDiscord" class="lofiMiddle_Btn"><i onclick="chilledEmpireDiscord_func()" class="fab fa-discord fa-sm"></i></a>
+                <a href="#" id="lofiSpotify" class="lofiRight_Btn"><i onclick="chilledEmpireSpotify_func()" class="fab fa-spotify fa-sm"></i></a>
+
+              </div>
+
+            </div>
+
+            
+            <div id="lofiCardID3" class="lofiCard">
+
+              <div class="logoLofi"> <img class="logoLofiImg" src="imgs/lofiLogos/logoChillHop.jpg" alt=""> </div>
+
+              <div class="backgroundLofi"> <img class="backgroundLofiImg" src="imgs/lofiBanners/chillHop_Banner.jpg"> </div>
+
+              <div class="lofiCardContent">
+
+                <a href="#" id="lofiYT3" class="lofiLeft_Btn"><i onclick="chillHopYT_func()" class="fab fa-youtube fa-sm"></i></a>
+                <a href="#" id="lofiDesktopStore2" class="lofiMiddle_Btn"><i onclick="chillHopWebSite_func()" class="fas fa-desktop fa-sm"></i></a>
+                <a href="#" id="lofiPlaylist2" class="lofiRight_Btn"><i onclick="chillHopPlaylist_func()" class="fas fa-music fa-sm"></i></a>
+
+              </div>
+
+            </div>
+
+            
+            <div id="lofiCardID4" class="lofiCard">
+
+              <div class="logoLofi"> <img class="logoLofiImg" src="imgs/lofiLogos/logoCodePioneers.jpg" alt=""> </div>
+
+              <div class="backgroundLofi"> <img class="backgroundLofiImg" src="imgs/lofiBanners/codePioneers_Banner.jpg"> </div>
+
+              <div class="lofiCardContent">
+
+                <a href="#" id="lofiYT4" class="lofiLeft_Btn"><i onclick="codePioneersYT_func()" class="fab fa-youtube fa-sm"></i></a>
+                <a href="#" id="lofiDesktopStore3" class="lofiMiddle_Btn"><i onclick="codePioneersWebSite_func()" class="fas fa-desktop fa-sm"></i></a>
+                <a href="#" id="lofiSpotify2" class="lofiRight_Btn"><i onclick="codePioneersSpotify_func()" class="fab fa-spotify fa-sm"></i></a>
+
+              </div>
+
+            </div>
+
+            
+            <div id="lofiCardID5" class="lofiCard">
+
+              <div class="logoLofi"> <img class="logoLofiImg" src="imgs/lofiLogos/logoCoffeeShopVibes.jpg" alt=""> </div>
+
+              <div class="backgroundLofi"> <img class="backgroundLofiImg" src="imgs/lofiBanners/coffeeShopVibes_Banner.jpg"> </div>
+
+              <div class="lofiCardContent">
+
+                <a href="#" id="lofiYT5" class="lofiLeft_Btn"><i onclick="coffeeShopYT_func()" class="fab fa-youtube fa-sm"></i></a>
+                <a href="#" id="lofiSpotify3" class="lofiMiddle_Btn"><i onclick="coffeeShopSpotify_func()" class="fab fa-spotify fa-sm"></i></a>
+
+              </div>
+
+            </div>
+
+            
+            <div id="lofiCardID6" class="lofiCard">
+
+              <div class="logoLofi"> <img class="logoLofiImg" src="imgs/lofiLogos/logoCollegeMusic.jpg" alt=""> </div>
+
+              <div class="backgroundLofi"> <img class="backgroundLofiImg" src="imgs/lofiBanners/collegeMusic_Banner.jpg"> </div>
+
+              <div class="lofiCardContent">
+
+                <a href="#" id="lofiYT6" class="lofiLeft_Btn"><i onclick="collegeMusicYT_func()" class="fab fa-youtube fa-sm"></i></a>
+                <a href="#" id="lofiInstagram" class="lofiMiddle_Btn"><i style="font-size: 19px;" onclick="collegeMusicInstagram_func()" class="fab fa-instagram fa-sm"></i></a>
+                <a href="#" id="lofiPlaylist3" class="lofiRight_Btn"><i onclick="collegeMusicPlaylist_func()" class="fas fa-music fa-sm"></i></a>
+
+              </div>
+
+            </div>
+
+            
+            <div id="lofiCardID7" class="lofiCard">
+
+              <div class="logoLofi"> <img class="logoLofiImg" src="imgs/lofiLogos/logoDreamHop.jpg" alt=""> </div>
+
+              <div class="backgroundLofi"> <img class="backgroundLofiImg" src="imgs/lofiBanners/dreamHop_Banner.jpg"> </div>
+
+              <div class="lofiCardContent">
+
+                <a href="#" id="lofiYT7" class="lofiLeft_Btn"><i onclick="dreamHopYT_func()" class="fab fa-youtube fa-sm"></i></a>
+                <a href="#" id="lofiDesktopStore4" class="lofiMiddle_Btn"><i onclick="dreamHopWebSite_func()" class="fas fa-desktop fa-sm"></i></a>
+                <a href="#" id="lofiPlaylist4" class="lofiRight_Btn"><i onclick="dreamHopPlaylist_func()" class="fas fa-music fa-sm"></i></a>
+
+              </div>
+
+            </div>
+
+            
+            <div id="lofiCardID8" class="lofiCard">
+
+              <div class="logoLofi"> <img class="logoLofiImg" src="imgs/lofiLogos/logoNourish.jpg" alt=""> </div>
+
+              <div class="backgroundLofi"> <img class="backgroundLofiImg" src="imgs/lofiBanners/nourish_Banner.jpg"> </div>
+
+              <div class="lofiCardContent">
+
+                <a href="#" id="lofiYT8" class="lofiLeft_Btn"><i onclick="nourishYT_func()" class="fab fa-youtube fa-sm"></i></a>
+                <a href="#" id="lofiDesktopStore5" class="lofiMiddle_Btn"><i onclick="nourishWebSite_func()" class="fas fa-desktop fa-sm"></i></a>
+                <a href="#" id="lofiPlaylist5" class="lofiRight_Btn"><i onclick="nourishSpotify_func()" class="fab fa-spotify fa-sm"></i></a>
+
+              </div>
+
+            </div>
+
+            
+            <div id="lofiCardID9" class="lofiCard">
+
+              <div class="logoLofi"> <img class="logoLofiImg" src="imgs/lofiLogos/logoInYourChill.jpg" alt=""> </div>
+
+              <div class="backgroundLofi"> <img class="backgroundLofiImg" src="imgs/lofiBanners/inYourChill_Banner.jpg"> </div>
+
+              <div class="lofiCardContent">
+
+                <a href="#" id="lofiYT9" class="lofiLeft_Btn"><i onclick="inYourChillYT_func()" class="fab fa-youtube fa-sm"></i></a>
+                <a href="#" id="lofiDesktopStore6" class="lofiMiddle_Btn"><i onclick="inYourChillWebSite_func()" class="fas fa-desktop fa-sm"></i></a>
+                <a href="#" id="lofiSpotify4" class="lofiRight_Btn"><i onclick="inYourChillSpotify_func()" class="fab fa-spotify fa-sm"></i></a>
+
+              </div>
+
+            </div>
+
+            
+            <div id="lofiCardID10" class="lofiCard">
+
+              <div class="logoLofi"> <img class="logoLofiImg" src="imgs/lofiLogos/logoLofiGeek.jpg" alt=""> </div>
+
+              <div class="backgroundLofi"> <img class="backgroundLofiImg" src="imgs/lofiBanners/lofiGeek_Banner.jpg"> </div>
+
+              <div class="lofiCardContent">
+
+                <a href="#" id="lofiYT10" class="lofiLeft_Btn"><i onclick="lofiGeekYT_func()" class="fab fa-youtube fa-sm"></i></a>
+                <a href="#" id="lofiInstagram2" class="lofiMiddle_Btn"><i style="font-size: 19px;" onclick="lofiGeekInstagram_func()" class="fab fa-instagram fa-sm"></i></a>
+                <a href="#" id="lofiSpotify5" class="lofiRight_Btn"><i onclick="lofiGeekSpotify_func()" class="fab fa-spotify fa-sm"></i></a>
+
+              </div>
+
+            </div>
+
+            
+            <div id="lofiCardID11" class="lofiCard">
+
+              <div class="logoLofi"> <img class="logoLofiImg" src="imgs/lofiLogos/logoMrMomo.jpg" alt=""> </div>
+
+              <div class="backgroundLofi"> <img class="backgroundLofiImg" src="imgs/lofiBanners/mrMomo_Banner.jpg"> </div>
+
+              <div class="lofiCardContent">
+
+                <a href="#" id="lofiYT11" class="lofiLeft_Btn"><i onclick="mrMomoYT_func()" class="fab fa-youtube fa-sm"></i></a>
+                <a href="#" id="lofiDiscord2" class="lofiMiddle_Btn"><i onclick="mrMomoDiscord_func()" class="fab fa-discord fa-sm"></i></a>
+                <a href="#" id="lofiSpotify6" class="lofiRight_Btn"><i onclick="mrMomoSpotify_func()" class="fab fa-spotify fa-sm"></i></a>
+
+              </div>
+
+            </div>
+            
+            
+            <div id="lofiCardID12" class="lofiCard">
+
+              <div class="logoLofi"> <img class="logoLofiImg" src="imgs/lofiLogos/logoNostalgic.jpg" alt=""> </div>
+
+              <div class="backgroundLofi"> <img class="backgroundLofiImg" src="imgs/lofiBanners/nostalgic_Banner.jpg"> </div>
+
+              <div class="lofiCardContent">
+
+                <a href="#" id="lofiYT12" class="lofiLeft_Btn"><i onclick="nostalgicYT_func()" class="fab fa-youtube fa-sm"></i></a>
+                <a href="#" id="lofiDesktopStore7" class="lofiMiddle_Btn"><i onclick="nostalgicStore_func()" class="fas fa-store fa-sm"></i></a>
+                <a href="#" id="lofiPlaylist6" class="lofiRight_Btn"><i onclick="nostalgicPlaylist_func()" class="fas fa-music fa-sm"></i></a>
+
+              </div>
+
+            </div>
+
+            
+            <div id="lofiCardID13" class="lofiCard">
+
+              <div class="logoLofi"> <img class="logoLofiImg" src="imgs/lofiLogos/logoSteezYasFuck.jpg" alt=""> </div>
+
+              <div class="backgroundLofi"> <img class="backgroundLofiImg" src="imgs/lofiBanners/steezYasFuck_Banner.jpg"> </div>
+
+              <div class="lofiCardContent">
+
+                <a href="#" id="lofiYT13" class="lofiLeft_Btn"><i onclick="steezYasFuckYT_func()" class="fab fa-youtube fa-sm"></i></a>
+                <a href="#" id="lofiDesktopStore8" class="lofiMiddle_Btn"><i onclick="steezYasFuckWebSite_func()" class="fas fa-desktop fa-sm"></i></a>
+                <a href="#" id="lofiSpotify7" class="lofiRight_Btn"><i onclick="steezYasFuckSpotify_func()" class="fab fa-spotify fa-sm"></i></a>
+
+              </div>
+
+            </div>
+
+            
+            <div id="lofiCardID14" class="lofiCard">
+
+              <div class="logoLofi"> <img class="logoLofiImg" src="imgs/lofiLogos/logoTpyxaArt.jpg" alt=""> </div>
+
+              <div class="backgroundLofi"> <img class="backgroundLofiImg" src="imgs/lofiBanners/tpyxaArt_Banner.jpg"> </div>
+
+              <div class="lofiCardContent">
+
+                <a href="#" id="lofiYT14" class="lofiLeft_Btn"><i onclick="tpyxaArtYT_func()" class="fab fa-youtube fa-sm"></i></a>
+                <a href="#" id="lofiDesktopStore9" class="lofiMiddle_Btn"><i onclick="tpyxaArtWebSite_func()" class="fas fa-desktop fa-sm"></i></a>
+                <a href="#" id="lofiInstagram3" class="lofiRight_Btn"><i style="font-size: 19px;" onclick="tpyxaArtInstagram_func()" class="fab fa-instagram fa-sm"></i></a>
+
+              </div>
+
+            </div>
+
+          </div>
+          
+        </div>
+
+
+
+        <!-- ** SIDENAV_OPTIONS **-->
+
+        <div class="option" data-filter="Settings">
+          
+          <!-- Language Settings (en/pt-br) -->
+          <div class="languageSettings">
+
+            <label id="languageTitle" class="langTitle">Language:  </label>
+            <select id="langSelection" class="languageSelect" onchange="Language(this.value)">
+              <option id="enLang" value="en">English</option>
+              <option id="pt-brLang" value="pt-br">Portuguese</option>
+            </select>
+
+          </div> <br>
+          
+          <!-- Theme Settings (dark/light mode) -->
+          <div class="darkLightSettings">
+
+            <label id="darkLight" class="darkLightTitle">Dark/Light Mode:  </label>
+            <label class="switch">
+              <input id="themeCheckbox" type="checkbox" checked onclick="ThemeMode()">
+              <span class="slider round"></span>
+            </label>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <script src="renderer.js"></script>
+
+  </body>
+</html>
