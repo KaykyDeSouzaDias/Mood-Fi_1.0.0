@@ -4,7 +4,7 @@
   "description": "An app to watch lo-fi livestreams",
   "main": "main.js",
   "author": "Kayky Dias <kaykydiasw@outlook.com.br>",
-  "license": "ISC",
+  "license": "GPLv3",
   "scripts": {
     "start": "electron .",
     "dist": "electron-builder"
@@ -18,6 +18,16 @@
   },
   "build": {
     "appId": "moodfi.app",
-    "productName": "Mood-Fi"
+    "productName": "Mood-Fi",
+    "icon": "/imgs/icons/LofiApp_LogoIcon.ico",
+
+    "win": {
+      "target": ["nsis"]
+    },
+    "nsis": {
+      "allowToChangeInstallationDirectory": true,
+      "oneClick": false,
+      "license": "LICENSE.rtf"
+    }
   }
 }
