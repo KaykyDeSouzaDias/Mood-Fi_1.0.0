@@ -225,7 +225,6 @@ function createWindow () {
   /* Save language option */
   ipcMain.on("saveLang", (event, data) => {
     storage.set("lang", data);
-    console.log("salvooouuuu!");
   });
   
   /* Check if there's a language option data, if not use default value */
@@ -234,7 +233,6 @@ function createWindow () {
   
     const lang = storage.get("lang");
     if (lang) {
-      console.log(lang);
       event.sender.send("applyLang", lang);
       return lang;
     }
@@ -248,23 +246,20 @@ function createWindow () {
   /* Save theme option */
   ipcMain.on("saveTheme", (event, data) => {
     storage.set("theme", data);
-    console.log("salvooouuuu!");
   });
   
   /* Check if there's a theme option data, if not use default value */
   ipcMain.on("themeSaved", (event, data) => {
-    const defaultTheme = ["false"];
+    const defaultTheme = ["true"];
   
     const theme = storage.get("theme");
     if (theme) {
-      console.log(theme);
       event.sender.send("applyTheme", theme);
       return theme;
     }
     else{
       storage.set("theme", defaultTheme);
       event.sender.send("applyTheme", theme);
-      console.log(theme + " meu cu");
       return defaultTheme;
     }
   });

@@ -346,13 +346,6 @@ Array.from(btns).forEach(item => {
         document.getElementById("volumeDown").style.color = "#005BAA",
         audioSlider(false)
         break;
-      /*case "HipHop03":
-        player.loadVideoById("bM0Iw7PPoU4")
-        document.getElementById("allPage").style.backgroundImage = "url('imgs/lofiWallpapers/HipHop/College(HipHop03)Exported.jpg')",
-        document.getElementById("logo").src = "imgs/logo/MoodFi_Logo.png",
-        document.getElementById("sideNavBar").style.color = "#FFD201",
-        document.getElementById("floatBtnID").style.backgroundColor = "#FFD201"
-        break;*/
       case "HipHop03":
         player.loadVideoById("IjMESxJdWkg")
         document.getElementById("allPage").style.backgroundImage = "url('imgs/lofiWallpapers/HipHop/Nourish(HipHop03)Exported.jpg')",
@@ -373,10 +366,6 @@ Array.from(btns).forEach(item => {
         document.getElementById("volumeDown").style.color = "#FFD201",
         audioSlider(true)
         break;
-      /*case "HipHop06":
-        player.loadVideoById("5yx6BWlEVcY")
-        document.getElementById("allPage").style.backgroundImage = "url('imgs/lofiWallpapers/HipHop/TokyoTones(HipHop06)Exported.jpg')";
-        break;*/
 
       case "Japanese01":
         player.loadVideoById("-9gEgshJUuY")
@@ -399,7 +388,7 @@ Array.from(btns).forEach(item => {
         audioSlider(true)
         break;
       case "Japanese03":
-        player.loadVideoById("OY3kgC9WRkY")
+        player.loadVideoById("SPKYn-UV27o")
         document.getElementById("allPage").style.backgroundImage = "url('imgs/lofiWallpapers/Japanese/LofiGeek(Japanese03)Exported.jpg')",
         document.getElementById("logo").src = "imgs/logo/MoodFi_LogoDark.png",
         document.getElementById("sideNavBar").style.color = "#005BAA",
@@ -461,7 +450,7 @@ Array.from(btns).forEach(item => {
         break;
 
       case "Space01":
-        player.loadVideoById("pDv6y6txivM")
+        player.loadVideoById("G4BFBy_9xOg")
         document.getElementById("allPage").style.backgroundImage = "url('imgs/lofiWallpapers/Space/LofiGeek(Space01)Exported.jpg')",
         document.getElementById("logo").src = "imgs/logo/MoodFi_Logo.png",
         document.getElementById("sideNavBar").style.color = "#FFD201",
@@ -471,7 +460,7 @@ Array.from(btns).forEach(item => {
         audioSlider(true)
         break;
       case "Space02":
-        player.loadVideoById("C-5NQ-gb408")
+        player.loadVideoById("ZSxeoa6YjbI")
         document.getElementById("allPage").style.backgroundImage = "url('imgs/lofiWallpapers/Space/LofiGeek(Space02)Exported.jpg')",
         document.getElementById("logo").src = "imgs/logo/MoodFi_Logo.png",
         document.getElementById("sideNavBar").style.color = "#FFD201",

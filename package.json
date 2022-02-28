@@ -1,12 +1,13 @@
 {
-  "name": "moodfi",
+  "name": "mood-fi",
   "version": "1.0.0",
   "description": "An app to watch lo-fi livestreams",
   "main": "main.js",
-  "author": "Kayky Dias",
+  "author": "Kayky Dias <kaykydiasw@outlook.com.br>",
   "license": "ISC",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "dist": "electron-builder"
   },
   "devDependencies": {
     "electron": "^17.1.0",
@@ -14,5 +15,9 @@
   },
   "dependencies": {
     "electron-store": "^8.0.1"
+  },
+  "build": {
+    "appId": "moodfi.app",
+    "productName": "Mood-Fi"
   }
 }
