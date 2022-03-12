@@ -43,10 +43,10 @@ function createWindow () {
   });
   /* Maximize button visual change */
   mainWindow.on('maximize', () => {
-    mainWindow.webContents.executeJavaScript(`document.getElementById("maximize").className = "fas fa-window-maximize fa-lg";`)
+    mainWindow.webContents.executeJavaScript(`document.getElementById("maximize").className = "fa-solid fa-window-maximize fa-1x";`)
   });
   mainWindow.on('unmaximize', () => {
-    mainWindow.webContents.executeJavaScript(`document.getElementById("maximize").className = "far fa-window-maximize fa-lg";`)
+    mainWindow.webContents.executeJavaScript(`document.getElementById("maximize").className = "fa-regular fa-window-maximize fa-1x";`)
   });
 
   ipcMain.on("close", (event, data) => {

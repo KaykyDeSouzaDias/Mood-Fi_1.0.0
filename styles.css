@@ -64,6 +64,7 @@
   bottom: 20px;
 }
 #volumeDown{
+  font-size: 1.5em;
   -webkit-app-region: no-drag;
   color: #FFD201;
   border: none;
@@ -75,6 +76,7 @@
   margin-right: 250px;
 }
 #volumeUp{
+  font-size: 1.5em;
   -webkit-app-region: no-drag;
   color: #FFD201;
   border: none;
@@ -271,7 +273,7 @@ background: var(--background);
 }
 
 .myLeft_Btn{
-  font-size: 24px;
+  font-size: 1.5em;
   color: white;
 
   margin-top: 25px;
@@ -280,7 +282,7 @@ background: var(--background);
   border: none;
 }
 .myMiddle_Btn{
-  font-size: 24px;
+  font-size: 1.5em;
   color: white;
 
   padding-left: 8px;
@@ -291,7 +293,7 @@ background: var(--background);
   border: none;
 }
 .myRight_Btn{
-  font-size: 24px;
+  font-size: 1.5em;
   color: white;
 
   margin-top: 25px;
@@ -364,6 +366,7 @@ background: var(--background);
 
 /* Close side nav */
 .sidenav .closebtn {
+  font-size: 1.5em;
   color: "#dee2e6";
   position: absolute;
   top: 15px;
@@ -378,6 +381,7 @@ background: var(--background);
 
 /* Minimize window */
 .sidenav .minimizeBtn {
+  font-size: 1.5em;
   -webkit-app-region: no-drag;
   color: "#dee2e6";
   position: absolute;
@@ -392,6 +396,7 @@ background: var(--background);
 
 /* Maximize window */
 .sidenav .maximizeBtn {
+  font-size: 1.5em;
   -webkit-app-region: no-drag;
   color: "#dee2e6";
   position: absolute;
@@ -407,6 +412,7 @@ background: var(--background);
 
 /* Close App */
 .sidenav .exitBtn {
+  font-size: 1.5em;
   -webkit-app-region: no-drag;
   color: "#dee2e6";
   position: absolute;
@@ -652,15 +658,18 @@ div .scrollCategories{
 }
 
 .lofiLeft_Btn{
+  font-size: 1.5em;
   color: "#00D856";
   margin-top: 25px;
 }
 .lofiMiddle_Btn{
+  font-size: 1.5em;
   padding-left: 8px;
   padding-right: 8px;
   margin-top: 25px;
 }
 .lofiRight_Btn{
+  font-size: 1.5em;
   margin-top: 25px;
 }
 

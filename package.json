@@ -28,6 +28,11 @@
       "allowToChangeInstallationDirectory": true,
       "oneClick": false,
       "license": "LICENSE.rtf"
+    },
+
+    "linux": {
+      "target": ["deb", "rpm", "snap"],
+      "category": "Network"
     }
   }
 }
