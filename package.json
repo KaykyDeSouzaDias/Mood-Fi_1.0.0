@@ -32,7 +32,6 @@
 
     "linux": {
       "target": ["appImage"],
-      "license": "LICENSE.rtf",
       "category": "Network"
     }
   }
