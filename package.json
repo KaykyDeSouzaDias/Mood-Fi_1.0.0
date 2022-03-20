@@ -31,7 +31,8 @@
     },
 
     "linux": {
-      "target": ["deb", "rpm", "snap"],
+      "target": ["appImage"],
+      "license": "LICENSE.rtf",
       "category": "Network"
     }
   }
