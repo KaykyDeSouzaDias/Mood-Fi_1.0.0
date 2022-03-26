@@ -185,7 +185,7 @@ Array.from(btns).forEach(item => {
         audioSlider(true)
         break;
       case "Chill03":
-        player.loadVideoById("W6q5vdQMML0")
+        player.loadVideoById("o5mRPi5BO-M")
         document.getElementById("allPage").style.backgroundImage = "url('imgs/lofiWallpapers/Chill/ChilledEmpire(Chill03)Exported.jpg')",
         document.getElementById("logo").src = "imgs/logo/MoodFi_Logo.png",
         document.getElementById("sideNavBar").style.color = "#FFD201",
@@ -265,7 +265,7 @@ Array.from(btns).forEach(item => {
         audioSlider(true)
         break;
       case "Chill11":
-        player.loadVideoById("0n0leLcHI7E")
+        player.loadVideoById("zamNv893kHI")
         document.getElementById("allPage").style.backgroundImage = "url('imgs/lofiWallpapers/Chill/LofiGeek(Chill11)Exported.jpg')",
         document.getElementById("logo").src = "imgs/logo/MoodFi_Logo.png",
         document.getElementById("sideNavBar").style.color = "#FFD201",
@@ -378,7 +378,7 @@ Array.from(btns).forEach(item => {
         audioSlider(true)
         break;
       case "Japanese02":
-        player.loadVideoById("ia3gNBIbmII")
+        player.loadVideoById("LfKXLfmIq4k")
         document.getElementById("allPage").style.backgroundImage = "url('imgs/lofiWallpapers/Japanese/LofiGeek(Japanese02)Exported.jpg')",
         document.getElementById("logo").src = "imgs/logo/MoodFi_Logo.png",
         document.getElementById("sideNavBar").style.color = "#FFD201",
@@ -388,7 +388,7 @@ Array.from(btns).forEach(item => {
         audioSlider(true)
         break;
       case "Japanese03":
-        player.loadVideoById("SPKYn-UV27o")
+        player.loadVideoById("jWIqKujW0NY")
         document.getElementById("allPage").style.backgroundImage = "url('imgs/lofiWallpapers/Japanese/LofiGeek(Japanese03)Exported.jpg')",
         document.getElementById("logo").src = "imgs/logo/MoodFi_LogoDark.png",
         document.getElementById("sideNavBar").style.color = "#005BAA",
@@ -439,7 +439,7 @@ Array.from(btns).forEach(item => {
         audioSlider(true)
         break;
       case "Programming02":
-        player.loadVideoById("9AdPU89AuC0")
+        player.loadVideoById("VIK2moz9eTQ")
         document.getElementById("allPage").style.backgroundImage = "url('imgs/lofiWallpapers/Programming/CodePioneers(Programming02)Exported.jpg')",
         document.getElementById("logo").src = "imgs/logo/MoodFi_Logo.png",
         document.getElementById("sideNavBar").style.color = "#FFD201",
@@ -482,7 +482,7 @@ Array.from(btns).forEach(item => {
       case "Space04":
         player.loadVideoById("N-xNGZda6FY")
         document.getElementById("allPage").style.backgroundImage = "url('imgs/lofiWallpapers/Space/TpyxaArt(Space04)Exported.jpg')",
-        document.getElementById("logo").src = "imgs/logo/MoodFi_Logo .png",
+        document.getElementById("logo").src = "imgs/logo/MoodFi_Logo.png",
         document.getElementById("sideNavBar").style.color = "#FFD201",
         document.getElementById("floatBtnID").style.backgroundColor = "#FFD201",
         document.getElementById("volumeUp").style.color = "#FFD201",
@@ -499,26 +499,6 @@ Array.from(btns).forEach(item => {
         document.getElementById("volumeUp").style.color = "#FFD201",
         document.getElementById("volumeDown").style.color = "#FFD201",
         audioSlider(true)
-        break;
-      case "Anime02":
-        player.loadVideoById("ZkXOCbrL6hg")
-        document.getElementById("allPage").style.backgroundImage = "url('imgs/lofiWallpapers/Anime/Nostalgic(Anime02)Exported.jpg')",
-        document.getElementById("logo").src = "imgs/logo/MoodFi_LogoDark.png",
-        document.getElementById("sideNavBar").style.color = "#005BAA",
-        document.getElementById("floatBtnID").style.backgroundColor = "#005BAA",
-        document.getElementById("volumeUp").style.color = "#005BAA",
-        document.getElementById("volumeDown").style.color = "#005BAA",
-        audioSlider(false)
-        break;
-      case "Anime03":
-        player.loadVideoById("tefouKbmjGg"),
-        document.getElementById("allPage").style.backgroundImage = "url('imgs/lofiWallpapers/Anime/Nostalgic(Anime03)Exported.jpg')",
-        document.getElementById("logo").src = "imgs/logo/MoodFi_LogoDark.png",
-        document.getElementById("sideNavBar").style.color = "#005BAA",
-        document.getElementById("floatBtnID").style.backgroundColor = "#005BAA",
-        document.getElementById("volumeUp").style.color = "#005BAA",
-        document.getElementById("volumeDown").style.color = "#005BAA",
-        audioSlider(false)
         break;
 
     }
