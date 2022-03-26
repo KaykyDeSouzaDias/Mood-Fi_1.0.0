@@ -13,7 +13,7 @@ function createWindow () {
     width: 800,
     height: 600,
     minHeight:600,
-    minWidth:800,
+    minWidth:800,  
     resizable:true,
     transparent:false,
     frame:false,
