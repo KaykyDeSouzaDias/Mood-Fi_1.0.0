@@ -15,7 +15,7 @@
   <a href="https://github.com/KaykyDeSouzaDias/Mood-Fi/blob/master/LICENSE.rtf"><img src="https://img.shields.io/github/license/KaykyDeSouzaDias/Mood-Fi?color=%23FFD201&label=License"></a>
   <a href="https://github.com/KaykyDeSouzaDias/Mood-Fi/releases"><img src="https://img.shields.io/github/v/release/KaykyDeSouzaDias/Mood-Fi?color=%23FFD201"></a>
   <br>
-  <a href=""><img src="https://img.shields.io/badge/Product Hunt-Give a Feedback!-%23DA552E"></a>
+  <a href="https://www.producthunt.com/posts/mood-fi"><img src="https://img.shields.io/badge/Product Hunt-Give a Feedback!-%23DA552E"></a>
   <img src="https://img.shields.io/github/stars/KaykyDeSouzaDias/Mood-Fi?color=green&logo=GitHub">
   <br><br>
   <a href="https://moodfi-download.netlify.app/"><img src="https://img.shields.io/badge/Mood Fi-Download now!-%23FFD201"></a>
