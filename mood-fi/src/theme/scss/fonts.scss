@@ -1,0 +1,104 @@
+@mixin display_small {
+	font-size: 36px;
+	font-weight: 400;
+	letter-spacing: 0%;
+	line-height: 44px;
+}
+
+@mixin display_medium {
+	font-size: 45px;
+	font-weight: 500;
+	letter-spacing: 0%;
+	line-height: 52px;
+}
+
+@mixin display_large {
+	font-size: 57px;
+	font-weight: 600;
+	letter-spacing: -0.25px;
+	line-height: 64px;
+}
+
+@mixin headline_small {
+	font-size: 24px;
+	font-weight: 400;
+	letter-spacing: 0%;
+	line-height: 32px;
+}
+
+@mixin headline_medium {
+	font-size: 28px;
+	font-weight: 500;
+	letter-spacing: 0%;
+	line-height: 36px;
+}
+
+@mixin headline_large {
+	font-size: 32px;
+	font-weight: 600;
+	letter-spacing: 0%;
+	line-height: 40px;
+}
+
+@mixin title_small {
+	font-size: 14px;
+	font-weight: 500;
+	letter-spacing: 0.1px;
+	line-height: 17px;
+}
+
+@mixin title_medium {
+	font-size: 16px;
+	font-weight: 500;
+	letter-spacing: 0.1px;
+	line-height: 21px;
+}
+
+@mixin title_large {
+	font-size: 22px;
+	font-weight: 700;
+	letter-spacing: 0%;
+	line-height: 28px;
+}
+
+@mixin label_small {
+	font-size: 11px;
+	font-weight: 500;
+	letter-spacing: 0.5px;
+	line-height: 16px;
+}
+
+@mixin label_medium {
+	font-size: 12px;
+	font-weight: 500;
+	letter-spacing: 0.5px;
+	line-height: 16px;
+}
+
+@mixin label_large {
+	font-size: 14px;
+	font-weight: 500;
+	letter-spacing: 0.1px;
+	line-height: 20px;
+}
+
+@mixin body_small {
+	font-size: 12px;
+	font-weight: 400;
+	letter-spacing: 0.4px;
+	line-height: 16px;
+}
+
+@mixin body_medium {
+	font-size: 14px;
+	font-weight: 400;
+	letter-spacing: 0.25px;
+	line-height: 20px;
+}
+
+@mixin body_large {
+	font-size: 16px;
+	font-weight: 500;
+	letter-spacing: 0.5px;
+	line-height: 24px;
+}
