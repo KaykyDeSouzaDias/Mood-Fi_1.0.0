@@ -15,21 +15,9 @@ import { LateralMenu, TopHeader } from "../../src/components";
 export function WatchLivePage() {
   return (
     <>
-      <Group position="center" spacing={0} grow>
-        <LateralMenu />
-
-        <Stack
-          sx={(theme) => ({
-            backgroundColor:
-              theme.colorScheme === "dark"
-                ? theme.colors.dark[8]
-                : theme.colors.gray[0],
-            height: 300,
-          })}
-        >
-          <TopHeader />
-        </Stack>
-      </Group>
+      <div>
+        <h1>homezin</h1>
+      </div>
     </>
   );
 }

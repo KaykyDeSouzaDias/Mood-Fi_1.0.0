@@ -9,10 +9,9 @@ import {
   MantineProvider,
   MantineThemeOverride,
 } from "@mantine/core";
-import { LateralMenu, TopHeader } from "./components";
+import { LateralMenu, MainMenuLayout, TopHeader } from "./components";
 import { useLocalStorage } from "@mantine/hooks";
 import { darkTheme, lightTheme } from "./theme";
-import { MainPage } from "./components/main-page";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import {
   DiscoverPage,
@@ -53,12 +52,14 @@ function App() {
     >
       <MantineProvider theme={theme} withGlobalStyles withNormalizeCSS>
         <Router>
-          <Routes>
-            <Route path="/" element={WatchLivePage()} />
-            <Route path="/discover" element={DiscoverPage()} />
-            <Route path="/references" element={ReferenceLivePage()} />
-            <Route path="/settings" element={SettingsLivePage()} />
-          </Routes>
+          <MainMenuLayout>
+            <Routes>
+              <Route path="/" element={WatchLivePage()} />
+              <Route path="/discover" element={DiscoverPage()} />
+              <Route path="/references" element={ReferenceLivePage()} />
+              <Route path="/settings" element={SettingsLivePage()} />
+            </Routes>
+          </MainMenuLayout>
         </Router>
       </MantineProvider>
     </ColorSchemeProvider>
