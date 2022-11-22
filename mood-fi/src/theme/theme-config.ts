@@ -2,7 +2,7 @@ import { CSSProperties, Key } from "react";
 
 import { CSSObject, MantineTheme, MantineThemeOverride } from "@mantine/core";
 
-type WSColors =
+type MoodFiColors =
   | "deepYellow"
   | "shallowOrange"
   | "brightYellow"
@@ -37,7 +37,7 @@ type MaterialYouPattern =
   | "inverseSurface"
   | "inverseOnSurface";
 
-type WSThemePattern =
+type MoodFiThemePattern =
   | "background"
   | "container"
   | "primary"
@@ -88,13 +88,13 @@ export type ThemeStyles = Record<
 
 declare module "@mantine/core" {
   export interface MantineThemeOther {
-    colors: Record<WSColors, ColorPalette>;
+    colors: Record<MoodFiColors, ColorPalette>;
     theme: Record<MaterialYouPattern, string>;
-    wsTheme: Record<WSThemePattern, string>;
+    moodFiTheme: Record<MoodFiThemePattern, string>;
   }
 }
 
-const AllColors: Record<WSColors, ColorPalette> = {
+const AllColors: Record<MoodFiColors, ColorPalette> = {
   deepYellow: {
     p0: "#000",
     p10: "#231b00",
@@ -255,7 +255,7 @@ const MatDarkThemeProps = {
   inverseOnSurface: AllColors.neutral.p10,
 };
 
-const WsLightThemeProps: Record<WSThemePattern, string> = {
+const MoodFiLightThemeProps: Record<MoodFiThemePattern, string> = {
   background: AllColors.neutral.p95,
   container: AllColors.neutral.p100,
   primary: AllColors.deepYellow.p40,
@@ -288,7 +288,7 @@ const WsLightThemeProps: Record<WSThemePattern, string> = {
   action: AllColors.shallowOrange.p30,
 };
 
-const WsDarkThemeProps: Record<WSThemePattern, string> = {
+const MoodFiDarkThemeProps: Record<MoodFiThemePattern, string> = {
   background: AllColors.deepYellow.p20,
   container: AllColors.neutralVariant.p10,
   primary: AllColors.deepYellow.p100,
@@ -357,7 +357,7 @@ export const lightTheme: MantineThemeOverride = {
   other: {
     colors: AllColors,
     theme: MatLightThemeProps,
-    wsTheme: WsLightThemeProps,
+    moodFiTheme: MoodFiLightThemeProps,
   },
   ...defaultTheme,
 };
@@ -367,7 +367,7 @@ export const darkTheme: MantineThemeOverride = {
   other: {
     colors: AllColors,
     theme: MatDarkThemeProps,
-    wsTheme: WsDarkThemeProps,
+    moodFiTheme: MoodFiDarkThemeProps,
   },
   ...defaultTheme,
 };
@@ -490,9 +490,9 @@ export function useWsStyle<Key extends string = string>(
 }
 
 export interface CustomTheme {
-  colors: Record<WSColors, ColorPalette>;
+  colors: Record<MoodFiColors, ColorPalette>;
   matTheme: Record<MaterialYouPattern, string>;
-  wsTheme: Record<WSThemePattern, string>;
+  moodFiTheme: Record<MoodFiThemePattern, string>;
 }
 
 export const defineCustomTheme: (theme: MantineTheme) => CustomTheme = (
@@ -501,7 +501,7 @@ export const defineCustomTheme: (theme: MantineTheme) => CustomTheme = (
   return {
     colors: theme.other.colors,
     matTheme: theme.other.theme,
-    wsTheme: theme.other.wsTheme,
+    moodFiTheme: theme.other.moodFiTheme,
   };
 };
 
