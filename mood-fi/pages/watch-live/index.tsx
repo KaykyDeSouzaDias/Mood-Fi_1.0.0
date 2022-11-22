@@ -10,9 +10,9 @@ import {
   Stack,
 } from "@mantine/core";
 import { useLocalStorage } from "@mantine/hooks";
-import { LateralMenu, TopHeader } from "..";
+import { LateralMenu, TopHeader } from "../../src/components";
 
-export function MainPage() {
+export function WatchLivePage() {
   return (
     <>
       <Group position="center" spacing={0} grow>

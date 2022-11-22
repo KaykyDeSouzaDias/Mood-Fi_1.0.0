@@ -13,6 +13,13 @@ import { LateralMenu, TopHeader } from "./components";
 import { useLocalStorage } from "@mantine/hooks";
 import { darkTheme, lightTheme } from "./theme";
 import { MainPage } from "./components/main-page";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import {
+  DiscoverPage,
+  ReferenceLivePage,
+  SettingsLivePage,
+  WatchLivePage,
+} from "../pages";
 
 function App() {
   const [colorSchemeStorage, setColorSchemeStorage] =
@@ -45,7 +52,14 @@ function App() {
       toggleColorScheme={toggleColorScheme}
     >
       <MantineProvider theme={theme} withGlobalStyles withNormalizeCSS>
-        <MainPage />
+        <Router>
+          <Routes>
+            <Route path="/" element={WatchLivePage()} />
+            <Route path="/discover" element={DiscoverPage()} />
+            <Route path="/references" element={ReferenceLivePage()} />
+            <Route path="/settings" element={SettingsLivePage()} />
+          </Routes>
+        </Router>
       </MantineProvider>
     </ColorSchemeProvider>
   );

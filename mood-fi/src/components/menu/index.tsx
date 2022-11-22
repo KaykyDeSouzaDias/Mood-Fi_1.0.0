@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { createStyles, Navbar, Group, Code } from "@mantine/core";
+import { Link } from "react-router-dom";
 // import {
 //   IconBellRinging,
 //   IconFingerprint,
@@ -92,13 +93,10 @@ const useStyles = createStyles((theme, _params, getRef) => {
 });
 
 const data = [
-  { link: "", label: "Notifications" },
-  { link: "", label: "Billing" },
-  { link: "", label: "Security" },
-  { link: "", label: "SSH Keys" },
-  { link: "", label: "Databases" },
-  { link: "", label: "Authentication" },
-  { link: "", label: "Other Settings" },
+  { link: "/", label: "Watch Live" },
+  { link: "/discover", label: "Discover" },
+  { link: "/references", label: "References" },
+  { link: "/settings", label: "Settings" },
 ];
 
 export function LateralMenu() {
@@ -106,20 +104,19 @@ export function LateralMenu() {
   const [active, setActive] = useState("Billing");
 
   const links = data.map((item) => (
-    <a
+    <Link
       className={cx(classes.link, {
         [classes.linkActive]: item.label === active,
       })}
-      href={item.link}
+      to={item.link}
       key={item.label}
       onClick={(event) => {
-        event.preventDefault();
         setActive(item.label);
       }}
     >
       {/* <item.icon className={classes.linkIcon} stroke={1.5} /> */}
       <span>{item.label}</span>
-    </a>
+    </Link>
   ));
 
   return (
@@ -127,7 +124,7 @@ export function LateralMenu() {
       <Navbar.Section grow>
         <Group className={classes.header} position="apart">
           {/* <MantineLogo size={28} /> */}
-          <Code sx={{ fontWeight: 700 }}>v3.1.2</Code>
+          <Code sx={{ fontWeight: 700 }}>v2.0.0</Code>
         </Group>
         {links}
       </Navbar.Section>
