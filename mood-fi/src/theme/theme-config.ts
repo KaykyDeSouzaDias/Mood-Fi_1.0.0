@@ -480,7 +480,7 @@ export const fontStyles: FontStyles = {
   },
 };
 
-export function useWsStyle<Key extends string = string>(
+export function useMoodFiStyle<Key extends string = string>(
   getCssObj: () => Record<Key, CSSObject>
 ) {
   return {
