@@ -10,14 +10,13 @@ import {
   Stack,
 } from "@mantine/core";
 import { useLocalStorage } from "@mantine/hooks";
-import { LateralMenu, TopHeader } from "../../src/components";
 
 export function WatchLivePage() {
   return (
     <>
-      <div>
+      <Group style={{ height: "100%", backgroundColor: "red" }} grow>
         <h1>homezin</h1>
-      </div>
+      </Group>
     </>
   );
 }

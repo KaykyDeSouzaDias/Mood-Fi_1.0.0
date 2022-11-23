@@ -23,10 +23,7 @@ export function MainMenuLayout(props: MainMenuPageProps) {
       <Group spacing={0}>
         <Menu
           children={
-            <Box sx={{ width: "100%", zIndex: 1 }}>
-              {props.children}
-              <Box sx={{ height: 20 }}></Box>
-            </Box>
+            <Box sx={{ width: "100%", height: "100%" }}>{props.children}</Box>
           }
         />
       </Group>
