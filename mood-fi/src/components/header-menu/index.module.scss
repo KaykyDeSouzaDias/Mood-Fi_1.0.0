@@ -1,0 +1,52 @@
+@import "/src/theme/scss/fonts.scss";
+@import "/src/theme/scss/colors.scss";
+
+.root {
+  color: $neutral-p90;
+  background-color: $neutral-p10;
+
+  .navBarHeader {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 20px;
+  }
+
+  .version {
+    font-family: "Inter";
+    font-weight: 700;
+    font-size: 12px;
+  }
+
+  .soundControl {
+    .iconSoundControl {
+      color: $neutral-p90;
+    }
+    .sliderSoundControl {
+      width: 120px;
+    }
+  }
+
+  .windowControlBtn {
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: $neutral-p90;
+
+    &:hover {
+      color: $deepYellow-p80;
+      background: none;
+    }
+  }
+
+  .windowControlCloseBtn {
+    color: $neutral-p90;
+
+    &:hover {
+      background-color: $error-p50;
+    }
+  }
+}

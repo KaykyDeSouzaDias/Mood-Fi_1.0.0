@@ -28,7 +28,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
         rel="stylesheet"
       />
     </head>
-    <body>
+    <body className="appBody">
       <App />
     </body>
   </>

@@ -9,7 +9,7 @@ import {
   MantineProvider,
   MantineThemeOverride,
 } from "@mantine/core";
-import { LateralMenu, MainMenuLayout, TopHeader } from "./components";
+import { MainMenuLayout } from "./components";
 import { useLocalStorage } from "@mantine/hooks";
 import { darkTheme, lightTheme } from "./theme";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
