@@ -4,6 +4,26 @@
 .root {
   background-color: $neutral-p10;
 
+  .activeMenuLinks {
+    width: 100%;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+
+    font-family: "Inter";
+    font-weight: 700;
+    font-size: 12px;
+    text-decoration: none;
+
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+
+    color: $neutral-p90;
+    background-color: $neutralVariant-p30;
+  }
+
   .menuLinks {
     width: 100%;
     height: 50px;
@@ -17,13 +37,10 @@
     text-decoration: none;
 
     padding: 10px;
+    margin-bottom: 5px;
     border-radius: 4px;
 
     color: $neutral-p90;
-
-    &:active {
-      background-color: $neutralVariant-p30;
-    }
 
     &:hover {
       background-color: $neutralVariant-p30;

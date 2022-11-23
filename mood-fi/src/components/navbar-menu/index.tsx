@@ -1,5 +1,6 @@
 import { Group, Navbar, useMantineTheme } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { MaterialIcon } from "..";
 
@@ -31,11 +32,18 @@ export function NavBarMenu() {
   const theme = useMantineTheme();
   const minResolution = useMediaQuery("(max-width: 1000px)");
 
+  const [activeMenuLink, setActiveMenuLink] = useState("Watch Live");
+
   const links = data.map((item) => (
     <Link
       to={item.link}
       key={item.label}
-      className={classes.menuLinks}
+      onClick={() => setActiveMenuLink(item.label)}
+      className={
+        activeMenuLink === item.label
+          ? classes.activeMenuLinks
+          : classes.menuLinks
+      }
       style={{
         justifyContent: minResolution ? "center" : "left",
       }}
