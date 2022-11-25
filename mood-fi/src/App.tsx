@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import reactLogo from "./assets/react.svg";
 import { invoke } from "@tauri-apps/api/tauri";
 import "./App.scss";
@@ -19,6 +19,8 @@ import {
   SettingsLivePage,
   WatchLivePage,
 } from "../pages";
+import { LiveProvider, LivestreamContext, useLivestream } from "./hooks";
+import ReactPlayer from "react-player";
 
 function App() {
   const [colorSchemeStorage, setColorSchemeStorage] =
@@ -36,6 +38,12 @@ function App() {
 
   const [theme, setTheme] = useState<MantineThemeOverride>(currentTheme);
 
+  const { playLive } = useLivestream();
+
+  const [liveResult, setLiveResult] = useState(false);
+
+  console.log(playLive);
+
   function toggleColorScheme(value?: ColorScheme) {
     const nextColorScheme =
       value || (colorScheme === "dark" ? "light" : "dark");
@@ -46,23 +54,52 @@ function App() {
   }
 
   return (
-    <ColorSchemeProvider
-      colorScheme={colorScheme}
-      toggleColorScheme={toggleColorScheme}
-    >
-      <MantineProvider theme={theme} withGlobalStyles withNormalizeCSS>
-        <Router>
-          <MainMenuLayout>
-            <Routes>
-              <Route path="/" element={WatchLivePage()} />
-              <Route path="/discover" element={DiscoverPage()} />
-              <Route path="/references" element={ReferenceLivePage()} />
-              <Route path="/settings" element={SettingsLivePage()} />
-            </Routes>
-          </MainMenuLayout>
-        </Router>
-      </MantineProvider>
-    </ColorSchemeProvider>
+    <>
+      <ColorSchemeProvider
+        colorScheme={colorScheme}
+        toggleColorScheme={toggleColorScheme}
+      >
+        <MantineProvider theme={theme} withGlobalStyles withNormalizeCSS>
+          <LiveProvider>
+            <Router>
+              <MainMenuLayout>
+                <Routes>
+                  <Route
+                    path="/"
+                    element={
+                      <WatchLivePage
+                        setLive={(value) => setLiveResult(value)}
+                      />
+                    }
+                  />
+                  <Route path="/discover" element={<DiscoverPage />} />
+                  <Route path="/references" element={<ReferenceLivePage />} />
+                  <Route path="/settings" element={<SettingsLivePage />} />
+                </Routes>
+              </MainMenuLayout>
+            </Router>
+          </LiveProvider>
+        </MantineProvider>
+      </ColorSchemeProvider>
+
+      <ReactPlayer
+        // style={{ display: "none", visibility: "collapse" }}
+        className="react-player"
+        url="https://www.youtube.com/embed/jfKfPfyJRdk"
+        width="85%"
+        height="75%"
+        playing={playLive}
+      />
+      {/* <iframe
+        // style={{ display: "none", visibility: "collapse" }}
+        frameBorder={0}
+        width="85%"
+        height="75%"
+        src="https://www.youtube.com/embed/jfKfPfyJRdk?controls=0"
+        title="YouTube video player"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      ></iframe> */}
+    </>
   );
 }
 

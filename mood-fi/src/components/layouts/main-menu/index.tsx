@@ -20,13 +20,7 @@ type MainMenuPageProps = {
 export function MainMenuLayout(props: MainMenuPageProps) {
   return (
     <>
-      <Group spacing={0}>
-        <Menu
-          children={
-            <Box sx={{ width: "100%", height: "100%" }}>{props.children}</Box>
-          }
-        />
-      </Group>
+      <Menu children={props.children} />
     </>
   );
 }

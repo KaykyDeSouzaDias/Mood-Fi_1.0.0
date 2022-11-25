@@ -18,6 +18,7 @@ export function Menu({ children }: MenuProps) {
       className={[classes.root, classes[theme.colorScheme]].join(" ")}
       navbar={<NavBarMenu />}
       header={<HeaderMenu />}
+      padding={0}
     >
       {children}
     </AppShell>

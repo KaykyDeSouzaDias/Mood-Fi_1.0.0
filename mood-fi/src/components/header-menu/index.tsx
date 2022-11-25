@@ -26,13 +26,6 @@ export function HeaderMenu() {
       height={{ base: 70 }}
       p="md"
       withBorder={false}
-      //   style={{
-      //     backgroundImage: theme.fn.linearGradient(
-      //       180,
-      //       theme.fn.rgba("#DE6658", theme.colorScheme === "light" ? 0.2 : 0.85),
-      //       theme.fn.rgba("#DE6658", 0)
-      //     ),
-      //   }}
       className={[classes.root, classes[theme.colorScheme]].join(" ")}
     >
       <Box>

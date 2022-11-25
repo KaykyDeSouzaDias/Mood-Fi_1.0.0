@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import reactLogo from "./assets/react.svg";
 import { invoke } from "@tauri-apps/api/tauri";
 import {
@@ -10,8 +10,9 @@ import {
   Stack,
 } from "@mantine/core";
 import { useLocalStorage } from "@mantine/hooks";
+import { useLivestream } from "../../src/hooks";
 
-export function DiscoverPage() {
+export const DiscoverPage = () => {
   return (
     <>
       <div>
@@ -19,4 +20,4 @@ export function DiscoverPage() {
       </div>
     </>
   );
-}
+};
