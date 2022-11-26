@@ -1,5 +1,5 @@
 import ReactPlayer from "react-player";
-import { useLivestream } from "../../hooks";
+import { useLivestream } from "../../../hooks";
 
 export const LivestreamExternalPlayer = () => {
   const { playLivestream } = useLivestream();

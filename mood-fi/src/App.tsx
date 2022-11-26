@@ -6,7 +6,7 @@ import {
   MantineProvider,
   MantineThemeOverride,
 } from "@mantine/core";
-import { MainMenuLayout } from "./components";
+import { LivestreamExternalPlayer, MainMenuLayout } from "./components";
 import { useLocalStorage } from "@mantine/hooks";
 import { darkTheme, lightTheme } from "./theme";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
@@ -16,8 +16,7 @@ import {
   SettingsLivePage,
   WatchLivePage,
 } from "../pages";
-import { LiveProvider } from "./hooks";
-import { LivestreamExternalPlayer } from "./components/livestream-external-player";
+import { LivestreamProvider } from "./hooks";
 
 function App() {
   const [colorSchemeStorage, setColorSchemeStorage] =
@@ -50,7 +49,7 @@ function App() {
         toggleColorScheme={toggleColorScheme}
       >
         <MantineProvider theme={theme} withGlobalStyles withNormalizeCSS>
-          <LiveProvider>
+          <LivestreamProvider>
             <Router>
               <MainMenuLayout>
                 <Routes>
@@ -62,7 +61,7 @@ function App() {
               </MainMenuLayout>
             </Router>
             <LivestreamExternalPlayer />
-          </LiveProvider>
+          </LivestreamProvider>
         </MantineProvider>
       </ColorSchemeProvider>
     </>

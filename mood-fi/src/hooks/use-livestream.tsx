@@ -17,7 +17,7 @@ interface props {
   children: ReactNode;
 }
 
-export const LiveProvider = ({ children }: props) => {
+export const LivestreamProvider = ({ children }: props) => {
   const [playLivestream, setPlayLivestream] = useState(true);
 
   function togglePlayLivestream(value: boolean) {

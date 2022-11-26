@@ -3,7 +3,7 @@ import { useMantineTheme, AppShell, Box } from "@mantine/core";
 
 import classes from "./index.module.scss";
 import { useMediaQuery } from "@mantine/hooks";
-import { HeaderMenu, MaterialIcon, NavBarMenu } from "..";
+import { HeaderMenu, NavBarMenu } from "../..";
 
 interface MenuProps {
   children: ReactNode;

@@ -11,8 +11,8 @@ import {
   useMantineTheme,
 } from "@mantine/core";
 import { useHover, useMediaQuery } from "@mantine/hooks";
-import { MaterialIcon } from "..";
-import { defineCustomTheme } from "../../theme";
+import { MaterialIcon } from "../..";
+import { defineCustomTheme } from "../../../theme";
 
 import classes from "./index.module.scss";
 

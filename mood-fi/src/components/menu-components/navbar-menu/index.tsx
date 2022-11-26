@@ -2,7 +2,7 @@ import { Group, Navbar, useMantineTheme } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { MaterialIcon } from "..";
+import { MaterialIcon } from "../..";
 
 import classes from "./index.module.scss";
 
