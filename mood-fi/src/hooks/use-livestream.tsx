@@ -6,35 +6,33 @@ import {
   useState,
 } from "react";
 
-interface LivestreamContextProps {
-  playLive: boolean;
-}
-
-export type LivestreamContextType = {
-  live: LivestreamContextProps;
-  setL(value: LivestreamContextProps): void;
+export type LivestreamContextData = {
+  playLivestream: boolean;
+  togglePlayLivestream(value: boolean): void;
 };
 
-export const LivestreamContext = createContext<LivestreamContextType>(
-  {} as LivestreamContextType
-);
+export const LivestreamContext = createContext({} as LivestreamContextData);
 
 interface props {
   children: ReactNode;
 }
 
 export const LiveProvider = ({ children }: props) => {
-  const [live, setL] = useState<LivestreamContextProps>({
-    playLive: false,
-  });
+  const [playLivestream, setPlayLivestream] = useState(true);
+
+  function togglePlayLivestream(value: boolean) {
+    setPlayLivestream(value);
+  }
 
   return (
-    <LivestreamContext.Provider value={{ live, setL }}>
+    <LivestreamContext.Provider
+      value={{ playLivestream, togglePlayLivestream }}
+    >
       {children}
     </LivestreamContext.Provider>
   );
 };
 
 export function useLivestream() {
-  return useContext(LivestreamContext) as LivestreamContextType;
+  return useContext(LivestreamContext);
 }

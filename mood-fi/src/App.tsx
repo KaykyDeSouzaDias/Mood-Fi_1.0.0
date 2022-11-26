@@ -1,11 +1,8 @@
-import { useEffect, useState } from "react";
-import reactLogo from "./assets/react.svg";
-import { invoke } from "@tauri-apps/api/tauri";
+import { useState } from "react";
 import "./App.scss";
 import {
   ColorScheme,
   ColorSchemeProvider,
-  Group,
   MantineProvider,
   MantineThemeOverride,
 } from "@mantine/core";
@@ -19,8 +16,8 @@ import {
   SettingsLivePage,
   WatchLivePage,
 } from "../pages";
-import { LiveProvider, LivestreamContext, useLivestream } from "./hooks";
-import ReactPlayer from "react-player";
+import { LiveProvider } from "./hooks";
+import { LivestreamExternalPlayer } from "./components/livestream-external-player";
 
 function App() {
   const [colorSchemeStorage, setColorSchemeStorage] =
@@ -34,15 +31,8 @@ function App() {
     useState<ColorScheme>(colorSchemeStorage);
 
   const currentTheme = colorScheme == "light" ? lightTheme : darkTheme;
-  // currentTheme.fontFamily = "Silka";
 
   const [theme, setTheme] = useState<MantineThemeOverride>(currentTheme);
-
-  const { playLive } = useLivestream();
-
-  const [liveResult, setLiveResult] = useState(false);
-
-  console.log(playLive);
 
   function toggleColorScheme(value?: ColorScheme) {
     const nextColorScheme =
@@ -64,41 +54,17 @@ function App() {
             <Router>
               <MainMenuLayout>
                 <Routes>
-                  <Route
-                    path="/"
-                    element={
-                      <WatchLivePage
-                        setLive={(value) => setLiveResult(value)}
-                      />
-                    }
-                  />
+                  <Route path="/" element={<WatchLivePage />} />
                   <Route path="/discover" element={<DiscoverPage />} />
                   <Route path="/references" element={<ReferenceLivePage />} />
                   <Route path="/settings" element={<SettingsLivePage />} />
                 </Routes>
               </MainMenuLayout>
             </Router>
+            <LivestreamExternalPlayer />
           </LiveProvider>
         </MantineProvider>
       </ColorSchemeProvider>
-
-      <ReactPlayer
-        // style={{ display: "none", visibility: "collapse" }}
-        className="react-player"
-        url="https://www.youtube.com/embed/jfKfPfyJRdk"
-        width="85%"
-        height="75%"
-        playing={playLive}
-      />
-      {/* <iframe
-        // style={{ display: "none", visibility: "collapse" }}
-        frameBorder={0}
-        width="85%"
-        height="75%"
-        src="https://www.youtube.com/embed/jfKfPfyJRdk?controls=0"
-        title="YouTube video player"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      ></iframe> */}
     </>
   );
 }
