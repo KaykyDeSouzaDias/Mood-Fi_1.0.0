@@ -11,13 +11,38 @@ import {
 } from "@mantine/core";
 import { useLocalStorage } from "@mantine/hooks";
 import { useLivestream } from "../../src/hooks";
+import { getLivestreams } from "../../src/services";
+import { ILivestreams, ILivestreamsItems } from "../../src/models";
+import { LivestreamsCards } from "../../src/components";
 
 export const DiscoverPage = () => {
+  const [livestreams, setLivestreams] = useState<ILivestreamsItems[]>([]);
+
+  useEffect(() => {
+    load();
+  }, []);
+
+  async function load() {
+    const livestreamsArray = await getLivestreams();
+    setLivestreams(
+      livestreamsArray.items.filter(
+        (i) => i.snippet.liveBroadcastContent === "live" && i.id.videoId
+      )
+    );
+  }
+
+  console.log(livestreams.map((i) => i.snippet.liveBroadcastContent));
+
   return (
     <>
       <div>
         <h1>descobrium</h1>
       </div>
+      <Group>
+        {livestreams.map((l) => {
+          return <LivestreamsCards key={l.id.videoId} videoId={l.id.videoId} />;
+        })}
+      </Group>
     </>
   );
 };

@@ -1,4 +1,4 @@
 export * from "./layouts";
 export * from "./menu-components";
-export * from "./livestream-components";
+export * from "./livestreams";
 export * from "./material-icon";

@@ -6,6 +6,9 @@ export type LivestreamContextData = {
 
   livestreamVolume: number;
   changeLivestreamVolume(value: number): void;
+
+  livestreamVideoId: string;
+  changeLivestreamVideo(value: string): void;
 };
 
 export const LivestreamContext = createContext({} as LivestreamContextData);
@@ -17,6 +20,7 @@ interface props {
 export const LivestreamProvider = ({ children }: props) => {
   const [playLivestream, setPlayLivestream] = useState(true);
   const [livestreamVolume, setLivestreamVolume] = useState(0.5);
+  const [livestreamVideoId, setLivestreamVideoId] = useState("jfKfPfyJRdk");
 
   function togglePlayLivestream(value: boolean) {
     setPlayLivestream(value);
@@ -26,6 +30,10 @@ export const LivestreamProvider = ({ children }: props) => {
     setLivestreamVolume(value);
   }
 
+  function changeLivestreamVideo(value: string) {
+    setLivestreamVideoId(value);
+  }
+
   return (
     <LivestreamContext.Provider
       value={{
@@ -33,6 +41,8 @@ export const LivestreamProvider = ({ children }: props) => {
         togglePlayLivestream,
         livestreamVolume,
         changeLivestreamVolume,
+        livestreamVideoId,
+        changeLivestreamVideo,
       }}
     >
       {children}

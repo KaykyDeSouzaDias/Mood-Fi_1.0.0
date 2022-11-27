@@ -1,0 +1,27 @@
+@import "/src/theme/scss/fonts.scss";
+@import "/src/theme/scss/colors.scss";
+
+.card {
+  height: 440;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-size: cover;
+  background-position: center;
+}
+
+.title {
+  font-weight: 900;
+  color: white;
+  line-height: 1.2;
+  font-size: 32;
+  margin-top: 15px;
+}
+
+.category {
+  color: white;
+  opacity: 0.7;
+  font-weight: 700;
+  text-transform: uppercase;
+}
