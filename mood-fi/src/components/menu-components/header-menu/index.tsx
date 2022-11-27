@@ -13,6 +13,7 @@ import {
 import { useHover, useMediaQuery } from "@mantine/hooks";
 import { MaterialIcon } from "../..";
 import { defineCustomTheme } from "../../../theme";
+import { LivestreamVolumeSlider } from "../../user-controls";
 
 import classes from "./index.module.scss";
 
@@ -46,37 +47,7 @@ export function HeaderMenu() {
             )}
           </Group>
 
-          <Group className={classes.soundControl}>
-            <MaterialIcon
-              className={classes.iconSoundControl}
-              iconName={"volume_up"}
-              size={20}
-            />
-            <Slider
-              className={classes.sliderSoundControl}
-              size="sm"
-              radius="md"
-              defaultValue={50}
-              min={0}
-              max={100}
-              styles={(theme) => ({
-                thumb: {
-                  transition: "opacity 150ms ease",
-                  backgroundColor: t.colors.deepYellow.p80,
-                  borderColor: t.colors.deepYellow.p80,
-                },
-
-                bar: {
-                  backgroundColor: t.colors.deepYellow.p80,
-                },
-
-                dragging: {
-                  backgroundColor: t.colors.deepYellow.p80,
-                  opacity: 1,
-                },
-              })}
-            />
-          </Group>
+          <LivestreamVolumeSlider />
         </Group>
       </Box>
     </Header>
