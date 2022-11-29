@@ -60,7 +60,15 @@
         "minWidth": 800,
         "minHeight": 600,
         "resizable": true,
-        "title": "Mood-fi"
+        "title": "Mood-fi",
+        "visible": false
+      },
+      {
+        "width": 800,
+        "height": 600,
+        "decorations": false,
+        "url": "../pages/splash/index.html",
+        "label": "splashscreen"
       }
     ]
   }
