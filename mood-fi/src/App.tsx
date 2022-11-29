@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.scss";
 import {
   ColorScheme,
@@ -17,6 +17,8 @@ import {
   WatchLivePage,
 } from "../pages";
 import { LivestreamProvider } from "./hooks";
+import { ILivestreams, ILivestreamsItems } from "./models";
+import { livestreamDatabase } from "./database";
 
 function App() {
   const [colorSchemeStorage, setColorSchemeStorage] =
@@ -25,13 +27,15 @@ function App() {
       defaultValue: "light",
       getInitialValueInEffect: true,
     });
-
   const [colorScheme, setColorScheme] =
     useState<ColorScheme>(colorSchemeStorage);
 
   const currentTheme = colorScheme == "light" ? lightTheme : darkTheme;
-
   const [theme, setTheme] = useState<MantineThemeOverride>(currentTheme);
+
+  useEffect(() => {
+    localStorage.setItem("Livestreams", JSON.stringify(livestreamDatabase));
+  }, []);
 
   function toggleColorScheme(value?: ColorScheme) {
     const nextColorScheme =
