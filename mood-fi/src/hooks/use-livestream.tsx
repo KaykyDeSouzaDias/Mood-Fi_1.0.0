@@ -19,7 +19,7 @@ interface props {
 
 export const LivestreamProvider = ({ children }: props) => {
   const [playLivestream, setPlayLivestream] = useState(true);
-  const [livestreamVolume, setLivestreamVolume] = useState(0.5);
+  const [livestreamVolume, setLivestreamVolume] = useState(0.2);
   const [livestreamVideoId, setLivestreamVideoId] = useState("jfKfPfyJRdk");
 
   function togglePlayLivestream(value: boolean) {

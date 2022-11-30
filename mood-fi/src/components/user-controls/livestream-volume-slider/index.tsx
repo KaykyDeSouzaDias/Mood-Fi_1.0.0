@@ -22,7 +22,7 @@ export const LivestreamVolumeSlider = () => {
         className={classes.sliderSoundControl}
         size="sm"
         radius="md"
-        defaultValue={50}
+        defaultValue={20}
         min={0}
         max={100}
         onChange={(value) => changeLivestreamVolume(value / 100)}
