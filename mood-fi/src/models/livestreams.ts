@@ -11,14 +11,14 @@ interface ILivestreamsThumbnails {
 }
 
 interface ILivestreamsSnippet {
-  publishedAt: Date;
+  publishedAt: string;
   channelId: string;
   title: string;
   description: string;
   thumbnails: ILivestreamsThumbnails;
   channelTitle: string;
   liveBroadcastContent: string;
-  publishTime: Date;
+  publishTime: string;
 }
 
 interface ILivestreamsID {

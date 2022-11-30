@@ -1,3 +1,4 @@
+import { emit, listen } from "@tauri-apps/api/event";
 import { useEffect, useState } from "react";
 import "./App.scss";
 import {
@@ -17,8 +18,10 @@ import {
   WatchLivePage,
 } from "../pages";
 import { LivestreamProvider } from "./hooks";
-import { ILivestreams, ILivestreamsItems } from "./models";
 import { livestreamDatabase } from "./database";
+import { ILivestreams, ILivestreamsItems } from "./models";
+import { getLivestreams } from "./services";
+import { invoke } from "@tauri-apps/api/tauri";
 
 function App() {
   const [colorSchemeStorage, setColorSchemeStorage] =
@@ -30,12 +33,31 @@ function App() {
   const [colorScheme, setColorScheme] =
     useState<ColorScheme>(colorSchemeStorage);
 
+  const [livestreamsItems, setLivestreamsItems] = useLocalStorage<
+    ILivestreamsItems[]
+  >({
+    key: "Livestreams",
+    defaultValue: livestreamDatabase,
+  });
+
   const currentTheme = colorScheme == "light" ? lightTheme : darkTheme;
   const [theme, setTheme] = useState<MantineThemeOverride>(currentTheme);
 
   useEffect(() => {
-    localStorage.setItem("Livestreams", JSON.stringify(livestreamDatabase));
+    load();
   }, []);
+
+  async function load() {
+    const livestreams = await getLivestreams();
+
+    if (livestreams.length) {
+      setLivestreamsItems(livestreams);
+    }
+
+    emit("loadFinished");
+
+    setTimeout(() => invoke("close_splashscreen"), 1000);
+  }
 
   function toggleColorScheme(value?: ColorScheme) {
     const nextColorScheme =

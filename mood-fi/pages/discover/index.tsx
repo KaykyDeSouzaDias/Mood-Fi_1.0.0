@@ -14,19 +14,13 @@ import { useLivestream } from "../../src/hooks";
 import { getLivestreams } from "../../src/services";
 import { ILivestreams, ILivestreamsItems } from "../../src/models";
 import { LivestreamsCards } from "../../src/components";
+import { livestreamDatabase } from "../../src/database";
 
 export const DiscoverPage = () => {
-  const [livestreams, setLivestreams] = useState<ILivestreamsItems[]>([]);
-
-  useEffect(() => {
-    load();
-  }, []);
-
-  async function load() {
-    if (localStorage.getItem("Livestreams")) {
-      setLivestreams(JSON.parse(localStorage.getItem("Livestreams")!));
-    }
-  }
+  const [livestreams, setLivestreams] = useLocalStorage<ILivestreamsItems[]>({
+    key: "Livestreams",
+    defaultValue: livestreamDatabase,
+  });
 
   return (
     <>

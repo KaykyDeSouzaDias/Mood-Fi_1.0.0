@@ -1,0 +1,48 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body style="background-color: #2a47b1">
+    <div class="container">
+      <canvas id="canvas" width="150" height="150"></canvas>
+
+      <div class="content">
+        <div class="progress">
+          <p id="loadingProgress"></p>
+        </div>
+        <div class="disclaimer">
+          <p>Please wait while we check if there’s an update coming.</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/@rive-app/canvas@1.0.79"></script>
+    <script type="module">
+      import { emit, listen } from "@tauri-apps/api/event";
+
+      const animation = new rive.Rive({
+        src: "./mood-fi_loading.riv",
+        canvas: document.getElementById("canvas"),
+        autoplay: true,
+        stateMachines: "State Machine 1",
+        fit: rive.Fit.cover,
+      });
+
+      listen("getLivestreamsProgress", (value) => {
+        document.getElementById("loadingProgress").innerText =
+          value.payload + "%";
+      });
+
+      listen("loadFinished", () => {
+        const inputs = animation.stateMachineInputs("State Machine 1");
+        const hasLoadedScreen = inputs.find((i) => i.name === "isLoaded");
+        hasLoadedScreen.value = true;
+      });
+    </script>
+  </body>
+</html>

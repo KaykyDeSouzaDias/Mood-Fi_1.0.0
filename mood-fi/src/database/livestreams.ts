@@ -1,3 +1,5 @@
+import { ILivestreamsItems } from "../models";
+
 export const livestreamDatabase = [
   {
     id: {
@@ -2837,35 +2839,6 @@ export const livestreamDatabase = [
   },
   {
     kind: "youtube#searchResult",
-    etag: "VFcCdJzpf6o_ijzH6XkNP0D_rn0",
-    id: {
-      kind: "youtube#channel",
-      channelId: "UCwkTfp14Sj7o6q9_8ADJpnA",
-    },
-    snippet: {
-      publishedAt: "2015-05-28T20:49:34Z",
-      channelId: "UCwkTfp14Sj7o6q9_8ADJpnA",
-      title: "the bootleg boy 2",
-      description:
-        "Chill lofi hip hop & vaporwave beats with nostalgic visuals.",
-      thumbnails: {
-        default: {
-          url: "https://yt3.ggpht.com/ydWojiT_jcThAefj6phplaLQeG4LzsKNTWPSwPFIapekAjV0nV0uY_iosijSIUXry0HdNrexwA=s88-c-k-c0xffffffff-no-rj-mo",
-        },
-        medium: {
-          url: "https://yt3.ggpht.com/ydWojiT_jcThAefj6phplaLQeG4LzsKNTWPSwPFIapekAjV0nV0uY_iosijSIUXry0HdNrexwA=s240-c-k-c0xffffffff-no-rj-mo",
-        },
-        high: {
-          url: "https://yt3.ggpht.com/ydWojiT_jcThAefj6phplaLQeG4LzsKNTWPSwPFIapekAjV0nV0uY_iosijSIUXry0HdNrexwA=s800-c-k-c0xffffffff-no-rj-mo",
-        },
-      },
-      channelTitle: "the bootleg boy 2",
-      liveBroadcastContent: "live",
-      publishTime: "2015-05-28T20:49:34Z",
-    },
-  },
-  {
-    kind: "youtube#searchResult",
     etag: "UmljLdzLL1VgV4-kIRqZ4w25qFc",
     id: {
       kind: "youtube#video",
@@ -2900,4 +2873,4 @@ export const livestreamDatabase = [
       publishTime: "2022-11-14T13:55:32Z",
     },
   },
-];
+] as ILivestreamsItems[];
