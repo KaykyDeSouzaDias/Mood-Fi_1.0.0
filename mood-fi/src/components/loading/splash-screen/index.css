@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
 .container {
   width: 100%;
   height: 100%;
@@ -16,6 +18,8 @@
   position: absolute;
   bottom: 50px;
 
+  font-family: "Inter";
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,4 +27,15 @@
 }
 .progress {
   margin-bottom: 60px;
+
+  font-weight: 600;
+  font-size: 15px;
+
+  color: white;
+}
+.disclaimer {
+  font-weight: 500;
+  font-size: 15px;
+
+  color: #b4c4ff;
 }
