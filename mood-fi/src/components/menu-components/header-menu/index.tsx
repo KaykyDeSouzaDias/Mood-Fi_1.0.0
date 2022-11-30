@@ -43,7 +43,7 @@ export function HeaderMenu() {
             {minResolution ? (
               <></>
             ) : (
-              <Text className={classes.version}>v3.1.2</Text>
+              <Text className={classes.version}>v2.0.0</Text>
             )}
           </Group>
 

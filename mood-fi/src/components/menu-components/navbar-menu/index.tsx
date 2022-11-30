@@ -62,6 +62,7 @@ export function NavBarMenu() {
       width={{ base: minResolution ? 100 : 300 }}
       className={[classes.root, classes[theme.colorScheme]].join(" ")}
     >
+      <div className={classes.headerMenuDivider}></div>
       <Navbar.Section grow mt="md">
         {links}
       </Navbar.Section>
