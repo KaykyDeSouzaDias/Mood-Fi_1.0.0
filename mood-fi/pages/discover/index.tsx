@@ -29,7 +29,7 @@ export const DiscoverPage = () => {
       </div>
       <Group>
         {livestreams.map((l) => {
-          return <LivestreamsCards key={l.id.videoId} videoId={l.id.videoId} />;
+          return <LivestreamsCards key={l.id.videoId} livestream={l} />;
         })}
       </Group>
     </>

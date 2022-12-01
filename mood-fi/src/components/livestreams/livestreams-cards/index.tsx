@@ -1,5 +1,6 @@
 import { Button, Paper, Title } from "@mantine/core";
 import { useLivestream } from "../../../hooks";
+import { ILivestreamsItems } from "../../../models";
 import classes from "./index.module.scss";
 
 const oi = {
@@ -10,30 +11,33 @@ const oi = {
 };
 
 interface LivestreamsCardsProps {
-  videoId: string;
+  livestream: ILivestreamsItems;
 }
 
-export const LivestreamsCards = ({ videoId }: LivestreamsCardsProps) => {
-  const { changeLivestreamVideo } = useLivestream();
+export const LivestreamsCards = ({ livestream }: LivestreamsCardsProps) => {
+  const { changeLivestreamVideo, changeSelectedLivestream } = useLivestream();
 
   return (
     <Paper
       shadow="md"
       p="xl"
       radius="md"
-      sx={{ backgroundImage: `url(${oi.image})` }}
+      sx={{ backgroundImage: `url(${livestream.snippet.thumbnails.high.url})` }}
       className={classes.card}
     >
       <div>
         <Title className={classes.category} size="xs">
-          {oi.category}
+          {livestream.snippet.liveBroadcastContent}
         </Title>
         <Title order={3} className={classes.title}>
-          {oi.title}
+          {livestream.snippet.title}
         </Title>
       </div>
       <Button
-        onClick={() => changeLivestreamVideo(videoId)}
+        onClick={() => {
+          changeLivestreamVideo(livestream.id.videoId);
+          changeSelectedLivestream(livestream);
+        }}
         variant="white"
         color="dark"
       >

@@ -2,7 +2,7 @@ import { Group, Navbar, useMantineTheme } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { MaterialIcon } from "../..";
+import { MaterialIcon, NavBarFooter } from "../..";
 
 import classes from "./index.module.scss";
 
@@ -57,16 +57,17 @@ export function NavBarMenu() {
 
   return (
     <Navbar
-      p="xs"
       withBorder={false}
       width={{ base: minResolution ? 100 : 300 }}
       className={[classes.root, classes[theme.colorScheme]].join(" ")}
     >
       <div className={classes.headerMenuDivider}></div>
-      <Navbar.Section grow mt="md">
+      <Navbar.Section grow p="xs" mt="md">
         {links}
       </Navbar.Section>
-      <Navbar.Section>{/* Footer with user */}</Navbar.Section>
+      <Navbar.Section style={{ position: "relative" }}>
+        <NavBarFooter />
+      </Navbar.Section>
     </Navbar>
   );
 }
