@@ -1,5 +1,5 @@
-import { ReactNode, useState } from "react";
-import { useMantineTheme, AppShell, Box } from "@mantine/core";
+import { ReactNode } from "react";
+import { useMantineTheme, AppShell } from "@mantine/core";
 
 import classes from "./index.module.scss";
 import { useMediaQuery } from "@mantine/hooks";
@@ -17,9 +17,9 @@ export function Menu({ children }: MenuProps) {
     <AppShell
       className={[classes.root, classes[theme.colorScheme]].join(" ")}
       navbar={<NavBarMenu />}
-      header={<HeaderMenu />}
       padding={0}
     >
+      <HeaderMenu />
       {children}
     </AppShell>
   );

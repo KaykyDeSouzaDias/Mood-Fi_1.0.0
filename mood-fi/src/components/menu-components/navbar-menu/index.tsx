@@ -46,9 +46,20 @@ export function NavBarMenu() {
       }
       style={{
         justifyContent: minResolution ? "center" : "left",
+        paddingLeft: minResolution ? "0px" : "20px",
       }}
     >
-      <Group position={minResolution ? "center" : "left"}>
+      <Group
+        style={{
+          width: "100%",
+          height: "100%",
+
+          display: "flex",
+          alignItems: "center",
+          justifyContent: minResolution ? "center" : "left",
+        }}
+        position={minResolution ? "center" : "left"}
+      >
         <MaterialIcon iconName={item.icon} size={20} filled={item.isFilled} />
         {minResolution ? <></> : <span>{item.label}</span>}
       </Group>
@@ -61,7 +72,25 @@ export function NavBarMenu() {
       width={{ base: minResolution ? 100 : 300 }}
       className={[classes.root, classes[theme.colorScheme]].join(" ")}
     >
-      <div className={classes.headerMenuDivider}></div>
+      <Group
+        className={classes.navBarHeader}
+        style={{
+          justifyContent: minResolution ? "center" : "space-between",
+        }}
+        position={"apart"}
+      >
+        <img
+          src={
+            minResolution
+              ? "../../../../public/Mood-Fi mini logo.svg"
+              : "../../../../public/Mood-Fi logo.svg"
+          }
+          width={minResolution ? 70 : 80}
+          height={minResolution ? 60 : 70}
+          alt=""
+        />
+        {minResolution ? <></> : <p className={classes.version}>v2.0.0</p>}
+      </Group>
       <Navbar.Section grow p="xs" mt="md">
         {links}
       </Navbar.Section>

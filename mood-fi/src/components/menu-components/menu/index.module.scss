@@ -1,2 +1,7 @@
 @import "/src/theme/scss/fonts.scss";
 @import "/src/theme/scss/colors.scss";
+
+.root main {
+  display: flex;
+  flex-direction: column;
+}

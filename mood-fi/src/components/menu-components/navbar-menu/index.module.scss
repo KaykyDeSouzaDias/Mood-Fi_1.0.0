@@ -4,12 +4,17 @@
 .root {
   background-color: $neutral-p10;
 
-  .headerMenuDivider {
-    border-top: 1px solid $neutral-p90;
+  .navBarHeader {
+    display: flex;
+    padding: 15px;
 
-    margin-bottom: 20px;
-    margin-right: 10px;
-    margin-left: 10px;
+    color: $neutral-p90;
+
+    .version {
+      font-family: "Inter";
+      font-weight: 700;
+      font-size: 12px;
+    }
   }
 
   .activeMenuLinks {
@@ -24,7 +29,6 @@
     font-size: 12px;
     text-decoration: none;
 
-    padding-left: 20px;
     margin-bottom: 5px;
     border-radius: 4px;
 
@@ -44,7 +48,6 @@
     font-size: 12px;
     text-decoration: none;
 
-    padding-left: 20px;
     margin-bottom: 5px;
     border-radius: 4px;
 
