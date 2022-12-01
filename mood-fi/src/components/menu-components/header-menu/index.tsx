@@ -23,33 +23,18 @@ export function HeaderMenu() {
   const minResolution = useMediaQuery("(max-width: 1000px)");
 
   return (
-    <Header
-      height={{ base: 70 }}
-      p="md"
-      withBorder={false}
-      className={[classes.root, classes[theme.colorScheme]].join(" ")}
-    >
-      <Box>
-        <Group className={classes.navBarHeader} position="apart" noWrap>
-          <Group
-            style={{
-              width: minResolution ? "45px" : "250px",
-              display: "flex",
-              justifyContent: minResolution ? "center" : "space-between",
-            }}
-            position={"apart"}
-          >
-            <MaterialIcon iconName={"sunny"} size={40} />
-            {minResolution ? (
-              <></>
-            ) : (
-              <Text className={classes.version}>v2.0.0</Text>
-            )}
+    <>
+      <div style={{ width: "100%" }}>
+        <Box
+          p="md"
+          className={[classes.root, classes[theme.colorScheme]].join(" ")}
+        >
+          <Group className={classes.navBarHeader} position="right" noWrap>
+            <LivestreamVolumeSlider />
           </Group>
-
-          <LivestreamVolumeSlider />
-        </Group>
-      </Box>
-    </Header>
+        </Box>
+        <div className={classes.gradient}></div>
+      </div>
+    </>
   );
 }

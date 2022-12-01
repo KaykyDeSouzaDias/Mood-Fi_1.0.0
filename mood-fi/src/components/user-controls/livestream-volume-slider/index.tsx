@@ -20,7 +20,8 @@ export const LivestreamVolumeSlider = () => {
       />
       <Slider
         className={classes.sliderSoundControl}
-        size="sm"
+        thumbSize={10}
+        size="xs"
         radius="md"
         defaultValue={20}
         min={0}
