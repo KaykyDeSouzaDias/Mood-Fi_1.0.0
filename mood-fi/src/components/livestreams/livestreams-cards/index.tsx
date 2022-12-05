@@ -1,4 +1,4 @@
-import { Button, Paper, Title } from "@mantine/core";
+import { Button, Card, Center, Group, Paper, Title } from "@mantine/core";
 import { useLivestream } from "../../../hooks";
 import { ILivestreamsItems } from "../../../models";
 import classes from "./index.module.scss";
@@ -18,31 +18,33 @@ export const LivestreamsCards = ({ livestream }: LivestreamsCardsProps) => {
   const { changeLivestreamVideo, changeSelectedLivestream } = useLivestream();
 
   return (
-    <Paper
-      shadow="md"
-      p="xl"
-      radius="md"
-      sx={{ backgroundImage: `url(${livestream.snippet.thumbnails.high.url})` }}
+    <Card
+      p="lg"
+      shadow="lg"
       className={classes.card}
+      radius="md"
+      component="a"
+      onClick={() => {
+        changeLivestreamVideo(livestream.id.videoId);
+        changeSelectedLivestream(livestream);
+      }}
+      target="_blank"
     >
-      <div>
-        <Title className={classes.category} size="xs">
-          {livestream.snippet.liveBroadcastContent}
-        </Title>
-        <Title order={3} className={classes.title}>
-          {livestream.snippet.title}
-        </Title>
-      </div>
-      <Button
-        onClick={() => {
-          changeLivestreamVideo(livestream.id.videoId);
-          changeSelectedLivestream(livestream);
+      <div
+        className={classes.image}
+        style={{
+          backgroundImage: `url(${livestream.snippet.thumbnails.high.url})`,
         }}
-        variant="white"
-        color="dark"
-      >
-        Read article
-      </Button>
-    </Paper>
+      />
+      <div className={classes.overlay} />
+
+      <div className={classes.content}>
+        <div>
+          <h1 className={classes.title}>{livestream.snippet.title}</h1>
+
+          <h5 className={classes.author}>{livestream.snippet.channelTitle}</h5>
+        </div>
+      </div>
+    </Card>
   );
 };

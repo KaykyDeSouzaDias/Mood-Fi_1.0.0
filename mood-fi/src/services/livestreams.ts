@@ -31,7 +31,7 @@ export async function getLivestreams(): Promise<ILivestreamsItems[]> {
 
   for (const channel of CHANNEL_IDS) {
     try {
-      const url = `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&part=snippet,id&channelId=${channel}&maxResults=50&q=live`;
+      const url = `https://www.googleapis.com/youtube/v3/search?key=${API_KEY_LOCAL02}&part=snippet,id&channelId=${channel}&maxResults=50&q=live`;
 
       livestreams.push(
         ...(
@@ -50,6 +50,8 @@ export async function getLivestreams(): Promise<ILivestreamsItems[]> {
       );
     }
   }
+
+  console.log(livestreams);
 
   return livestreams;
 }

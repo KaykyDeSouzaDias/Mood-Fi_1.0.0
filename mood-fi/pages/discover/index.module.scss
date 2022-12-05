@@ -1,0 +1,63 @@
+@import "/src/theme/scss/fonts.scss";
+@import "/src/theme/scss/colors.scss";
+
+.root {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  position: relative;
+
+  background-color: $neutral-p20;
+
+  .gradient {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    z-index: 1;
+
+    background: linear-gradient(
+      180deg,
+      rgba(222, 102, 88, 0.2) 0%,
+      rgba(222, 102, 88, 0.1) 50%,
+      rgba(222, 102, 88, 0) 100%
+    );
+  }
+
+  .titleContainer {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    padding-left: 20px;
+    margin-top: 60px;
+    z-index: 2;
+
+    color: $neutral-p90;
+
+    .title {
+      font-family: "Inter";
+      font-weight: 800;
+      font-size: 100px;
+    }
+    .subTitle {
+      font-family: "Inter";
+      font-weight: 600;
+      font-size: 16px;
+    }
+  }
+
+  .cardsGrid {
+    margin: 10px;
+  }
+}
