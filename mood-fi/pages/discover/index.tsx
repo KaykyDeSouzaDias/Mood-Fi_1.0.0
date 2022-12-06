@@ -24,7 +24,10 @@ import { livestreamDatabase } from "../../src/database";
 
 import classes from "./index.module.scss";
 import { defineCustomTheme } from "../../src/theme";
-import { PageTitle } from "../../src/components/pages-components";
+import {
+  LivestreamGradient,
+  PageTitle,
+} from "../../src/components/pages-components";
 
 export const DiscoverPage = () => {
   const theme = useMantineTheme();
@@ -42,7 +45,7 @@ export const DiscoverPage = () => {
 
   return (
     <Stack className={[classes.root, classes[theme.colorScheme]].join(" ")}>
-      <Box className={classes.gradient} />
+      <LivestreamGradient />
 
       <ScrollArea
         onScrollPositionChange={(value) => setOnScroll(value.y)}
