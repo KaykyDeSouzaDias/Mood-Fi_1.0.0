@@ -41,6 +41,7 @@ export async function getLivestreams(): Promise<ILivestreamsItems[]> {
         )
       );
     } catch {
+      return [];
     } finally {
       emit(
         "getLivestreamsProgress",
@@ -50,8 +51,6 @@ export async function getLivestreams(): Promise<ILivestreamsItems[]> {
       );
     }
   }
-
-  console.log(livestreams);
 
   return livestreams;
 }
