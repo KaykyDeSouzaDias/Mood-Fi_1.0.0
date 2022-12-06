@@ -1,7 +1,7 @@
 import { Box, Group, Stack, Text, useMantineTheme } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 import { useEffect, useState } from "react";
-import { channelsProfilePictureDatabase } from "../../../database";
+import { channelsDatabase } from "../../../database";
 import { useLivestream } from "../../../hooks";
 import classes from "./index.module.scss";
 
@@ -16,11 +16,12 @@ export function NavBarFooter() {
 
   useEffect(() => {
     setChannelUrl(
-      channelsProfilePictureDatabase
+      channelsDatabase
         .filter(
-          (channel) => channel.id === selectedLivestream.snippet.channelId
+          (channel) =>
+            channel.channelId === selectedLivestream.snippet.channelId
         )
-        .map((ch) => ch.url)[0]
+        .map((ch) => ch.image.channelLogo)[0]
     );
   }, [selectedLivestream]);
 
