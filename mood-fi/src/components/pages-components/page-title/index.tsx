@@ -6,12 +6,16 @@ interface PageTitleProps {
   pageName: string;
   pageDescription: string;
   onScroll: number;
+  bigScrollSize: number;
+  smallScrollSize: number;
 }
 
 export function PageTitle({
   onScroll,
   pageName,
   pageDescription,
+  bigScrollSize,
+  smallScrollSize,
 }: PageTitleProps) {
   const theme = useMantineTheme();
 
@@ -19,7 +23,8 @@ export function PageTitle({
     <div className={[classes.root, classes[theme.colorScheme]].join(" ")}>
       <Title
         style={{
-          fontSize: onScroll >= 40 ? "90px" : "120px",
+          fontSize:
+            onScroll >= 40 ? `${smallScrollSize}px` : `${bigScrollSize}px`,
         }}
         className={classes.title}
       >
