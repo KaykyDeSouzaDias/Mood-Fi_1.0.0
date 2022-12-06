@@ -31,34 +31,6 @@
     );
   }
 
-  .titleContainer {
-    width: 100%;
-
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-
-    padding-left: 20px;
-    margin-top: 60px;
-    margin-bottom: 50px;
-    z-index: 2;
-
-    color: $neutral-p90;
-
-    .title {
-      font-family: "Inter";
-      font-weight: 800;
-
-      transition: ease-in-out 0.4s;
-    }
-    .subTitle {
-      font-family: "Inter";
-      font-weight: 600;
-      font-size: 16px;
-    }
-  }
-
   .cardsGrid {
     margin: 10px;
   }

@@ -24,6 +24,7 @@ import { livestreamDatabase } from "../../src/database";
 
 import classes from "./index.module.scss";
 import { defineCustomTheme } from "../../src/theme";
+import { PageTitle } from "../../src/components/pages-components";
 
 export const DiscoverPage = () => {
   const theme = useMantineTheme();
@@ -48,19 +49,11 @@ export const DiscoverPage = () => {
         type="scroll"
         offsetScrollbars
       >
-        <div className={classes.titleContainer}>
-          <Title
-            style={{
-              fontSize: onScroll >= 40 ? "90px" : "120px",
-            }}
-            className={classes.title}
-          >
-            DISCOVER
-          </Title>
-          <Title className={classes.subTitle}>
-            Choose the best Livestream that makes you get in the mood.
-          </Title>
-        </div>
+        <PageTitle
+          pageName="DISCOVER"
+          pageDescription="Choose the best Livestream that makes you get in the mood."
+          onScroll={onScroll}
+        />
 
         <Grid
           className={classes.cardsGrid}
