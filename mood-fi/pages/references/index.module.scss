@@ -1,0 +1,19 @@
+@import "/src/theme/scss/fonts.scss";
+@import "/src/theme/scss/colors.scss";
+
+.root {
+  width: 100%;
+  height: 85vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  position: relative;
+
+  background-color: $neutral-p20;
+
+  .cardsGrid {
+    margin: 10px;
+  }
+}

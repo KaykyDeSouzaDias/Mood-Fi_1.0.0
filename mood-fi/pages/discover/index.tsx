@@ -55,6 +55,8 @@ export const DiscoverPage = () => {
         <PageTitle
           pageName="DISCOVER"
           pageDescription="Choose the best Livestream that makes you get in the mood."
+          bigScrollSize={120}
+          smallScrollSize={90}
           onScroll={onScroll}
         />
 
