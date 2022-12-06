@@ -1,88 +1,173 @@
-import { IChannelsProfilePicture } from "../models";
+import { IChannel } from "../models";
 
-export const channelsProfilePictureDatabase = [
+export const channelsDatabase = [
   {
-    id: "UC2fVSthyWxWSjsiEAHPzriQ",
-    url: "../../public/channelsProfilePic/mr-momo.jpg",
+    channelId: "UC2fVSthyWxWSjsiEAHPzriQ",
+    channelName: "",
+    image: {
+      channelLogo: "../../public/channelsProfilePic/mr-momo.jpg",
+      channelBanner: "",
+    },
   },
   {
-    id: "UCSJ4gkVC6NrvII8umztf0Ow",
-    url: "../../public/channelsProfilePic/lofi-girl.jpg",
+    channelId: "UCSJ4gkVC6NrvII8umztf0Ow",
+    channelName: "",
+    image: {
+      channelLogo: "../../public/channelsProfilePic/lofi-girl.jpg",
+      channelBanner: "",
+    },
   },
   {
-    id: "UCxWNEhY-SNHRvF9Q2LWLK1g",
-    url: "../../public/channelsProfilePic/chilled-empire.jpg",
+    channelId: "UCxWNEhY-SNHRvF9Q2LWLK1g",
+    channelName: "",
+    image: {
+      channelLogo: "../../public/channelsProfilePic/chilled-empire.jpg",
+      channelBanner: "",
+    },
   },
   {
-    id: "UC7tdoGx0eQfRJm9Qj6GCs0A",
-    url: "../../public/channelsProfilePic/nourish.jpg",
+    channelId: "UC7tdoGx0eQfRJm9Qj6GCs0A",
+    channelName: "",
+    image: {
+      channelLogo: "../../public/channelsProfilePic/nourish.jpg",
+      channelBanner: "",
+    },
   },
   {
-    id: "UCKdURsjh1xT1vInYBy82n6g",
-    url: "../../public/channelsProfilePic/chill-with-taiki.jpg",
+    channelId: "UCKdURsjh1xT1vInYBy82n6g",
+    channelName: "",
+    image: {
+      channelLogo: "../../public/channelsProfilePic/chill-with-taiki.jpg",
+      channelBanner: "",
+    },
   },
   {
-    id: "UCz9_4daWw-uWuqeB6_IkhMg",
-    url: "../../public/channelsProfilePic/dreamhop.jpg",
+    channelId: "UCz9_4daWw-uWuqeB6_IkhMg",
+    channelName: "",
+    image: {
+      channelLogo: "../../public/channelsProfilePic/dreamhop.jpg",
+      channelBanner: "",
+    },
   },
   {
-    id: "UCOxqgCwgOqC2lMqC5PYz_Dg",
-    url: "../../public/channelsProfilePic/chillhop.jpg",
+    channelId: "UCOxqgCwgOqC2lMqC5PYz_Dg",
+    channelName: "",
+    image: {
+      channelLogo: "../../public/channelsProfilePic/chillhop.jpg",
+      channelBanner: "",
+    },
   },
   {
-    id: "UCWzZ5TIGoZ6o-KtbGCyhnhg",
-    url: "../../public/channelsProfilePic/college-music.jpg",
+    channelId: "UCWzZ5TIGoZ6o-KtbGCyhnhg",
+    channelName: "",
+    image: {
+      channelLogo: "../../public/channelsProfilePic/college-music.jpg",
+      channelBanner: "",
+    },
   },
   {
-    id: "UCyD59CI7beJDU493glZpxgA",
-    url: "../../public/channelsProfilePic/lofi-geek.jpg",
+    channelId: "UCyD59CI7beJDU493glZpxgA",
+    channelName: "",
+    image: {
+      channelLogo: "../../public/channelsProfilePic/lofi-geek.jpg",
+      channelBanner: "",
+    },
   },
   {
-    id: "UCsIg9WMfxjZZvwROleiVsQg",
-    url: "../../public/channelsProfilePic/steezyasfuck.jpg",
+    channelId: "UCsIg9WMfxjZZvwROleiVsQg",
+    channelName: "",
+    image: {
+      channelLogo: "../../public/channelsProfilePic/steezyasfuck.jpg",
+      channelBanner: "",
+    },
   },
   {
-    id: "UCJIOFQLGwB3GH9K9waxwynQ",
-    url: "../../public/channelsProfilePic/coffee-shop-vibes.jpg",
+    channelId: "UCJIOFQLGwB3GH9K9waxwynQ",
+    channelName: "",
+    image: {
+      channelLogo: "../../public/channelsProfilePic/coffee-shop-vibes.jpg",
+      channelBanner: "",
+    },
   },
   {
-    id: "UC9rvsIHgzuiwTQ-yi0Qj2Mw",
-    url: "../../public/channelsProfilePic/code-pioneers.jpg",
+    channelId: "UC9rvsIHgzuiwTQ-yi0Qj2Mw",
+    channelName: "",
+    image: {
+      channelLogo: "../../public/channelsProfilePic/code-pioneers.jpg",
+      channelBanner: "",
+    },
   },
   {
-    id: "UC9OIZ77MhlVoi4IxLFXl-nQ",
-    url: "../../public/channelsProfilePic/tokyo-tones.jpg",
+    channelId: "UC9OIZ77MhlVoi4IxLFXl-nQ",
+    channelName: "",
+    image: {
+      channelLogo: "../../public/channelsProfilePic/tokyo-tones.jpg",
+      channelBanner: "",
+    },
   },
   {
-    id: "UCkFeoNSqYTa7trn75WM9tsg",
-    url: "../../public/channelsProfilePic/relaxation-ambient-music.jpg",
+    channelId: "UCkFeoNSqYTa7trn75WM9tsg",
+    channelName: "",
+    image: {
+      channelLogo:
+        "../../public/channelsProfilePic/relaxation-ambient-music.jpg",
+      channelBanner: "",
+    },
   },
   {
-    id: "UCoQ_Hu6PvpK0jDKrYoSgQrw",
-    url: "../../public/channelsProfilePic/homework-radio.jpg",
+    channelId: "UCoQ_Hu6PvpK0jDKrYoSgQrw",
+    channelName: "",
+    image: {
+      channelLogo: "../../public/channelsProfilePic/homework-radio.jpg",
+      channelBanner: "",
+    },
   },
   {
-    id: "UCwVQIkAtyZzQSA-OY1rsGig",
-    url: "../../public/channelsProfilePic/chill-music-lab.jpg",
+    channelId: "UCwVQIkAtyZzQSA-OY1rsGig",
+    channelName: "",
+    image: {
+      channelLogo: "../../public/channelsProfilePic/chill-music-lab.jpg",
+      channelBanner: "",
+    },
   },
   {
-    id: "UCnV2UaGCuZzepjpQNVGXHAA",
-    url: "../../public/channelsProfilePic/lofi-fruits.jpg",
+    channelId: "UCnV2UaGCuZzepjpQNVGXHAA",
+    channelName: "",
+    image: {
+      channelLogo: "../../public/channelsProfilePic/lofi-fruits.jpg",
+      channelBanner: "",
+    },
   },
   {
-    id: "UCwkTfp14Sj7o6q9_8ADJpnA",
-    url: "../../public/channelsProfilePic/the-bootleg-boy-2.jpg",
+    channelId: "UCwkTfp14Sj7o6q9_8ADJpnA",
+    channelName: "",
+    image: {
+      channelLogo: "../../public/channelsProfilePic/the-bootleg-boy-2.jpg",
+      channelBanner: "",
+    },
   },
   {
-    id: "UC1aI76iuDafjZ15hZsQGI-Q",
-    url: "../../public/channelsProfilePic/sacra-beats.jpg",
+    channelId: "UC1aI76iuDafjZ15hZsQGI-Q",
+    channelName: "",
+    image: {
+      channelLogo: "../../public/channelsProfilePic/sacra-beats.jpg",
+      channelBanner: "",
+    },
   },
   {
-    id: "UCncxHd8o_VhhHAJ7QqB5azg",
-    url: "../../public/channelsProfilePic/in-your-chill.jpg",
+    channelId: "UCncxHd8o_VhhHAJ7QqB5azg",
+    channelName: "",
+    image: {
+      channelLogo: "../../public/channelsProfilePic/in-your-chill.jpg",
+      channelBanner: "",
+    },
   },
   {
-    id: "UCPPGd9KtOnMKRoIQOHWAbow",
-    url: "../../public/channelsProfilePic/nostalgic.jpg",
+    channelId: "UCPPGd9KtOnMKRoIQOHWAbow",
+    channelName: "",
+    image: {
+      channelLogo: "../../public/channelsProfilePic/nostalgic.jpg",
+      channelBanner: "",
+    },
   },
-] as IChannelsProfilePicture[];
+] as IChannel[];

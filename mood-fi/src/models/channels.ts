@@ -1,9 +1,10 @@
-export interface IChannelsProfilePicture {
-  id: string;
-  url: string;
+export interface IChannel {
+  channelId: string;
+  channelName: string;
+  image: IChannelImage;
 }
 
-export interface IChannelsBannerPicture {
-  id: string;
-  url: string;
+export interface IChannelImage {
+  channelLogo: string;
+  channelBanner: string;
 }
