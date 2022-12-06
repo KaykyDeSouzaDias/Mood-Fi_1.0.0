@@ -9,6 +9,7 @@ import {
   Group,
   MantineProvider,
   MantineThemeOverride,
+  ScrollArea,
   Stack,
   Text,
   Title,
@@ -31,6 +32,8 @@ export const DiscoverPage = () => {
   const CardsMediumGridResolution = useMediaQuery("(max-width: 2000px)");
   const CardsSmallGridResolution = useMediaQuery("(max-width: 1200px)");
 
+  const [onScroll, setOnScroll] = useState(0);
+
   const [livestreams, setLivestreams] = useLocalStorage<ILivestreamsItems[]>({
     key: "Livestreams",
     defaultValue: livestreamDatabase,
@@ -39,29 +42,42 @@ export const DiscoverPage = () => {
   return (
     <Stack className={[classes.root, classes[theme.colorScheme]].join(" ")}>
       <Box className={classes.gradient} />
-      <div className={classes.titleContainer}>
-        <Title className={classes.title}>DISCOVER</Title>
-        <Title className={classes.subTitle}>
-          Choose the best livestream that make you be mood.
-        </Title>
-      </div>
-      <Group></Group>
 
-      <Grid
-        className={classes.cardsGrid}
-        columns={
-          CardsSmallGridResolution ? 4 : CardsMediumGridResolution ? 8 : 12
-        }
-        gutter="lg"
+      <ScrollArea
+        onScrollPositionChange={(value) => setOnScroll(value.y)}
+        type="scroll"
+        offsetScrollbars
       >
-        {livestreams.map((l) => {
-          return (
-            <Grid.Col xs={4}>
-              <LivestreamsCards key={l.id.videoId} livestream={l} />
-            </Grid.Col>
-          );
-        })}
-      </Grid>
+        <div className={classes.titleContainer}>
+          <Title
+            style={{
+              fontSize: onScroll >= 40 ? "90px" : "120px",
+            }}
+            className={classes.title}
+          >
+            DISCOVER
+          </Title>
+          <Title className={classes.subTitle}>
+            Choose the best Livestream that makes you get in the mood.
+          </Title>
+        </div>
+
+        <Grid
+          className={classes.cardsGrid}
+          columns={
+            CardsSmallGridResolution ? 4 : CardsMediumGridResolution ? 8 : 12
+          }
+          gutter="lg"
+        >
+          {livestreams.map((l) => {
+            return (
+              <Grid.Col xs={4}>
+                <LivestreamsCards key={l.id.videoId} livestream={l} />
+              </Grid.Col>
+            );
+          })}
+        </Grid>
+      </ScrollArea>
     </Stack>
   );
 };

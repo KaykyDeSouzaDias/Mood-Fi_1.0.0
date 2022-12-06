@@ -1,23 +1,6 @@
 @import "/src/theme/scss/fonts.scss";
 @import "/src/theme/scss/colors.scss";
 
-/* Firefox */
-* {
-  scrollbar-width: auto;
-  scrollbar-color: #ffd201;
-}
-*::-webkit-scrollbar {
-  width: 5px;
-}
-*::-webkit-scrollbar-track {
-  background: none;
-}
-*::-webkit-scrollbar-thumb {
-  background-color: #ffd201;
-  border-radius: 10px;
-  border: none;
-}
-
 .root {
   width: 100%;
   height: 85vh;
@@ -25,8 +8,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  overflow-y: auto;
 
   position: relative;
 
@@ -60,6 +41,7 @@
 
     padding-left: 20px;
     margin-top: 60px;
+    margin-bottom: 50px;
     z-index: 2;
 
     color: $neutral-p90;
@@ -67,7 +49,8 @@
     .title {
       font-family: "Inter";
       font-weight: 800;
-      font-size: 100px;
+
+      transition: ease-in-out 0.4s;
     }
     .subTitle {
       font-family: "Inter";
