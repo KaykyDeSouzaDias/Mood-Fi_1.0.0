@@ -1,4 +1,13 @@
-import { createStyles, Card, Avatar, Text, Group, Button } from "@mantine/core";
+import {
+  createStyles,
+  Card,
+  Avatar,
+  Text,
+  Group,
+  Button,
+  ActionIcon,
+} from "@mantine/core";
+import { IconBrandYoutube } from "@tabler/icons";
 
 const stat = {
   image:
@@ -29,11 +38,11 @@ const useStyles = createStyles((theme) => ({
       theme.colorScheme === "dark" ? theme.colors.dark[7] : theme.white,
   },
 
-  avatar: {
-    border: `2px solid ${
-      theme.colorScheme === "dark" ? theme.colors.dark[7] : theme.white
-    }`,
-  },
+  // avatar: {
+  //   border: `2px solid ${
+  //     theme.colorScheme === "dark" ? theme.colors.dark[7] : theme.white
+  //   }`,
+  // },
 }));
 
 interface ReferenceCardProps {
@@ -63,7 +72,12 @@ export function ReferenceCard({
   return (
     <Card withBorder p="xl" radius="md" className={classes.card}>
       <Card.Section
-        sx={{ backgroundImage: `url(${channelBanner})`, height: 140 }}
+        sx={{
+          backgroundImage: `url(${channelBanner})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          height: 140,
+        }}
       />
       <Avatar
         src={channelLogo}
@@ -71,26 +85,25 @@ export function ReferenceCard({
         radius={80}
         mx="auto"
         mt={-30}
-        className={classes.avatar}
+        // className={classes.avatar}
       />
       <Text align="center" size="lg" weight={500} mt="sm">
         {channelName}
       </Text>
-      <Text align="center" size="sm" color="dimmed">
-        {stat.job}
-      </Text>
       <Group mt="md" position="center" spacing={30}>
-        {items}
+        <ActionIcon size="lg">
+          <IconBrandYoutube size={18} />
+        </ActionIcon>
+        <ActionIcon size="lg">
+          <IconBrandYoutube size={18} />
+        </ActionIcon>
+        <ActionIcon size="lg">
+          <IconBrandYoutube size={18} />
+        </ActionIcon>
+        <ActionIcon size="lg">
+          <IconBrandYoutube size={18} />
+        </ActionIcon>
       </Group>
-      <Button
-        fullWidth
-        radius="md"
-        mt="xl"
-        size="md"
-        color={theme.colorScheme === "dark" ? undefined : "dark"}
-      >
-        Follow
-      </Button>
     </Card>
   );
 }
