@@ -69,7 +69,6 @@
         "height": 600,
         "minWidth": 800,
         "minHeight": 600,
-        "decorations": false,
         "url": "../src/components/loading/splash-screen/index.html",
         "label": "splashscreen"
       }
