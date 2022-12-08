@@ -58,11 +58,7 @@ export function ReferenceLivePage() {
           {channelsDatabase.map((channel) => {
             return (
               <Grid.Col xs={4}>
-                <ReferenceCard
-                  channelName={channel.channelName}
-                  channelLogo={channel.image.channelLogo}
-                  channelBanner={channel.image.channelBanner}
-                />
+                <ReferenceCard actualChannel={channel} />
               </Grid.Col>
             );
           })}

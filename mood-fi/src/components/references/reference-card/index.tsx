@@ -8,6 +8,7 @@ import {
   ActionIcon,
 } from "@mantine/core";
 import { IconBrandYoutube } from "@tabler/icons";
+import { IChannel } from "../../../models";
 
 const stat = {
   image:
@@ -46,16 +47,10 @@ const useStyles = createStyles((theme) => ({
 }));
 
 interface ReferenceCardProps {
-  channelName: string;
-  channelLogo: string;
-  channelBanner: string;
+  actualChannel: IChannel;
 }
 
-export function ReferenceCard({
-  channelName,
-  channelLogo,
-  channelBanner,
-}: ReferenceCardProps) {
+export function ReferenceCard({ actualChannel }: ReferenceCardProps) {
   const { classes, theme } = useStyles();
 
   const items = stat.stats.map((stat) => (
@@ -73,14 +68,14 @@ export function ReferenceCard({
     <Card withBorder p="xl" radius="md" className={classes.card}>
       <Card.Section
         sx={{
-          backgroundImage: `url(${channelBanner})`,
+          backgroundImage: `url(${actualChannel.image.channelBanner})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           height: 140,
         }}
       />
       <Avatar
-        src={channelLogo}
+        src={actualChannel.image.channelLogo}
         size={80}
         radius={80}
         mx="auto"
@@ -88,21 +83,28 @@ export function ReferenceCard({
         // className={classes.avatar}
       />
       <Text align="center" size="lg" weight={500} mt="sm">
-        {channelName}
+        {actualChannel.channelName}
       </Text>
       <Group mt="md" position="center" spacing={30}>
-        <ActionIcon size="lg">
-          <IconBrandYoutube size={18} />
-        </ActionIcon>
-        <ActionIcon size="lg">
-          <IconBrandYoutube size={18} />
-        </ActionIcon>
-        <ActionIcon size="lg">
-          <IconBrandYoutube size={18} />
-        </ActionIcon>
-        <ActionIcon size="lg">
-          <IconBrandYoutube size={18} />
-        </ActionIcon>
+        {actualChannel.socialMedias.map((media) => {
+          switch (media.mediaName) {
+            case "youtube":
+              return (
+                <ActionIcon
+                  size="lg"
+                  component="a"
+                  href={media.mediaLink}
+                  target="_blank"
+                >
+                  <IconBrandYoutube size={18} />
+                </ActionIcon>
+              );
+              break;
+
+            default:
+              break;
+          }
+        })}
       </Group>
     </Card>
   );
