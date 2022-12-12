@@ -43,7 +43,7 @@ export function ReferenceLivePage() {
         <PageTitle
           pageName="REFERENCES"
           pageDescription="Choose the best Livestream that makes you get in the mood."
-          bigScrollSize={90}
+          bigScrollSize={80}
           smallScrollSize={60}
           onScroll={onScroll}
         />
