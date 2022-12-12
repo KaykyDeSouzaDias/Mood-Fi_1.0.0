@@ -1,22 +1,41 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import { invoke } from "@tauri-apps/api/tauri";
+import { Grid, ScrollArea, Stack, useMantineTheme } from "@mantine/core";
+
+import classes from "./index.module.scss";
 import {
-  ColorScheme,
-  ColorSchemeProvider,
-  Group,
-  MantineProvider,
-  MantineThemeOverride,
-  Stack,
-} from "@mantine/core";
-import { useLocalStorage } from "@mantine/hooks";
+  AccordionConfiguration,
+  LivestreamGradient,
+  PageTitle,
+} from "../../src/components";
 
 export function SettingsLivePage() {
+  const theme = useMantineTheme();
+
+  const [onScroll, setOnScroll] = useState(0);
+
   return (
-    <>
-      <div>
-        <h1>configzin</h1>
-      </div>
-    </>
+    <Stack className={[classes.root, classes[theme.colorScheme]].join(" ")}>
+      <LivestreamGradient />
+
+      <ScrollArea
+        onScrollPositionChange={(value) => setOnScroll(value.y)}
+        type="scroll"
+        offsetScrollbars
+      >
+        <PageTitle
+          pageName="SETTINGS"
+          pageDescription="Choose the best Livestream that makes you get in the mood."
+          bigScrollSize={100}
+          smallScrollSize={80}
+          onScroll={onScroll}
+        />
+
+        <Grid className={classes.cardsGrid}>
+          <Grid.Col span="auto">
+            <AccordionConfiguration />
+          </Grid.Col>
+        </Grid>
+      </ScrollArea>
+    </Stack>
   );
 }

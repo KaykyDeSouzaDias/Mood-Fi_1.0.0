@@ -48,6 +48,7 @@ export const DiscoverPage = () => {
       <LivestreamGradient />
 
       <ScrollArea
+        style={{ backgroundColor: "red" }}
         onScrollPositionChange={(value) => setOnScroll(value.y)}
         type="scroll"
         offsetScrollbars
