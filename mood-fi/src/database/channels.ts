@@ -10,19 +10,19 @@ export const channelsDatabase = [
     },
     socialMedias: [
       {
-        mediaName: "youtube",
+        mediaName: "Youtube",
         mediaLink: "https://www.youtube.com/@MrMoMoMusic",
       },
       {
-        mediaName: "discord",
+        mediaName: "Discord",
         mediaLink: "https://discord.com/invite/6SGnSpCkhy",
       },
       {
-        mediaName: "vk",
+        mediaName: "VK",
         mediaLink: "https://vk.com/lofi.trapanese",
       },
       {
-        mediaName: "twitter",
+        mediaName: "Twitter",
         mediaLink: "https://twitter.com/mrmomolofi",
       },
     ],
@@ -36,19 +36,19 @@ export const channelsDatabase = [
     },
     socialMedias: [
       {
-        mediaName: "youtube",
+        mediaName: "Youtube",
         mediaLink: "https://www.youtube.com/@LofiGirl",
       },
       {
-        mediaName: "store",
+        mediaName: "Official store",
         mediaLink: "https://lofigirlshop.com/",
       },
       {
-        mediaName: "spotify",
+        mediaName: "Spotify",
         mediaLink: "https://open.spotify.com/user/chilledcow",
       },
       {
-        mediaName: "instagram",
+        mediaName: "Instagram",
         mediaLink: "https://www.instagram.com/lofigirl/",
       },
     ],
@@ -62,19 +62,19 @@ export const channelsDatabase = [
     },
     socialMedias: [
       {
-        mediaName: "youtube",
+        mediaName: "Youtube",
         mediaLink: "https://www.youtube.com/@ChilledEmpire",
       },
       {
-        mediaName: "spotify",
+        mediaName: "Spotify",
         mediaLink: "https://open.spotify.com/user/1zrtlf4hnwbntox304gl42zvb",
       },
       {
-        mediaName: "discord",
+        mediaName: "Discord",
         mediaLink: "https://discord.com/invite/34SfKKWJsa",
       },
       {
-        mediaName: "instagram",
+        mediaName: "Instagram",
         mediaLink: "https://www.instagram.com/chilledempire/",
       },
     ],
@@ -88,19 +88,19 @@ export const channelsDatabase = [
     },
     socialMedias: [
       {
-        mediaName: "youtube",
+        mediaName: "Youtube",
         mediaLink: "https://www.youtube.com/@nourish",
       },
       {
-        mediaName: "website",
+        mediaName: "Official website",
         mediaLink: "https://www.nourish.live/",
       },
       {
-        mediaName: "instagram",
+        mediaName: "Instagram",
         mediaLink: "https://www.instagram.com/nourishmusic/",
       },
       {
-        mediaName: "spotify",
+        mediaName: "Spotify",
         mediaLink: "https://open.spotify.com/user/nourish.",
       },
     ],
@@ -114,19 +114,19 @@ export const channelsDatabase = [
     },
     socialMedias: [
       {
-        mediaName: "youtube",
+        mediaName: "Youtube",
         mediaLink: "https://www.youtube.com/@ChillwithTaiki",
       },
       {
-        mediaName: "store",
+        mediaName: "Official store",
         mediaLink: "https://taiki.shop/",
       },
       {
-        mediaName: "instagram",
+        mediaName: "Instagram",
         mediaLink: "https://www.instagram.com/chillwithtaiki/",
       },
       {
-        mediaName: "playlist",
+        mediaName: "Official playlist",
         mediaLink: "https://fanlink.to/dtNC",
       },
     ],
@@ -140,19 +140,19 @@ export const channelsDatabase = [
     },
     socialMedias: [
       {
-        mediaName: "youtube",
+        mediaName: "Youtube",
         mediaLink: "https://www.youtube.com/@DreamhopMusic",
       },
       {
-        mediaName: "bandcamp",
+        mediaName: "Bandcamp",
         mediaLink: "https://dreamhop.bandcamp.com/",
       },
       {
-        mediaName: "instagram",
+        mediaName: "Instagram",
         mediaLink: "https://www.instagram.com/dreamhopp/",
       },
       {
-        mediaName: "spotify",
+        mediaName: "Spotify",
         mediaLink: "https://open.spotify.com/user/91jfqzlv0htrqrvvc60138qma",
       },
     ],
@@ -166,19 +166,19 @@ export const channelsDatabase = [
     },
     socialMedias: [
       {
-        mediaName: "youtube",
+        mediaName: "Youtube",
         mediaLink: "https://www.youtube.com/@ChillhopMusic",
       },
       {
-        mediaName: "website",
+        mediaName: "Official website",
         mediaLink: "https://chillhop.com/",
       },
       {
-        mediaName: "appleMusic",
+        mediaName: "Apple music",
         mediaLink: "https://music.apple.com/us/label/chillhop-music/1548562904",
       },
       {
-        mediaName: "spotify",
+        mediaName: "Spotify",
         mediaLink: "https://open.spotify.com/artist/7tD7DSEvtLAc94x6oH7NLJ",
       },
     ],
@@ -192,19 +192,19 @@ export const channelsDatabase = [
     },
     socialMedias: [
       {
-        mediaName: "youtube",
+        mediaName: "Youtube",
         mediaLink: "https://www.youtube.com/@CollegeMusic",
       },
       {
-        mediaName: "website",
+        mediaName: "Official website",
         mediaLink: "https://collegemusic.co.uk/",
       },
       {
-        mediaName: "instagram",
+        mediaName: "Instagram",
         mediaLink: "https://www.instagram.com/collegemusic/",
       },
       {
-        mediaName: "spotify",
+        mediaName: "Spotify",
         mediaLink: "https://open.spotify.com/user/college.music",
       },
     ],
@@ -218,19 +218,19 @@ export const channelsDatabase = [
     },
     socialMedias: [
       {
-        mediaName: "youtube",
+        mediaName: "Youtube",
         mediaLink: "https://www.youtube.com/@lofigeek",
       },
       {
-        mediaName: "discord",
+        mediaName: "Discord",
         mediaLink: "https://discord.com/invite/fs7qxvVAnN",
       },
       {
-        mediaName: "instagram",
+        mediaName: "Instagram",
         mediaLink: "https://www.instagram.com/lofigeek/",
       },
       {
-        mediaName: "spotify",
+        mediaName: "Spotify",
         mediaLink: "https://open.spotify.com/artist/1hqeRW1EQZ1flf02acnGVU",
       },
     ],
@@ -244,19 +244,19 @@ export const channelsDatabase = [
     },
     socialMedias: [
       {
-        mediaName: "youtube",
+        mediaName: "Youtube",
         mediaLink: "https://www.youtube.com/@steezyasfvck",
       },
       {
-        mediaName: "website",
+        mediaName: "Official website",
         mediaLink: "https://www.stzzzy.com/",
       },
       {
-        mediaName: "instagram",
+        mediaName: "Instagram",
         mediaLink: "https://www.instagram.com/stzzyasfvck/",
       },
       {
-        mediaName: "spotify",
+        mediaName: "Spotify",
         mediaLink: "https://open.spotify.com/user/stzzzy",
       },
     ],
@@ -270,11 +270,11 @@ export const channelsDatabase = [
     },
     socialMedias: [
       {
-        mediaName: "youtube",
+        mediaName: "Youtube",
         mediaLink: "https://www.youtube.com/@CoffeeShopVibes",
       },
       {
-        mediaName: "spotify",
+        mediaName: "Spotify",
         mediaLink: "https://open.spotify.com/artist/0N1It883FKaZoTydOuWVyW",
       },
     ],
@@ -288,19 +288,19 @@ export const channelsDatabase = [
     },
     socialMedias: [
       {
-        mediaName: "youtube",
+        mediaName: "Youtube",
         mediaLink: "https://www.youtube.com/@CodePioneers",
       },
       {
-        mediaName: "store",
+        mediaName: "Official store",
         mediaLink: "https://codepioneers.myspreadshop.com/",
       },
       {
-        mediaName: "discord",
+        mediaName: "Discord",
         mediaLink: "https://discord.com/invite/8ZT4b4G75R",
       },
       {
-        mediaName: "spotify",
+        mediaName: "Spotify",
         mediaLink: "https://open.spotify.com/user/12140951657",
       },
     ],
@@ -314,19 +314,19 @@ export const channelsDatabase = [
     },
     socialMedias: [
       {
-        mediaName: "youtube",
+        mediaName: "Youtube",
         mediaLink: "https://www.youtube.com/@TokyoTones",
       },
       {
-        mediaName: "website",
+        mediaName: "Official website",
         mediaLink: "https://www.tokyotones.com/",
       },
       {
-        mediaName: "instagram",
+        mediaName: "Instagram",
         mediaLink: "https://www.instagram.com/benjamin_hung/",
       },
       {
-        mediaName: "patreon",
+        mediaName: "Patreon",
         mediaLink: "https://www.patreon.com/tokyotones",
       },
     ],
@@ -342,21 +342,21 @@ export const channelsDatabase = [
     },
     socialMedias: [
       {
-        mediaName: "youtube",
+        mediaName: "Youtube",
         mediaLink: "https://www.youtube.com/@RelaxationMeditationMusic",
       },
       {
-        mediaName: "amazon",
+        mediaName: "Amazon music",
         mediaLink:
           "https://music.amazon.com/artists/B08P2KM7H6/blue-wave-studio",
       },
       {
-        mediaName: "apple",
+        mediaName: "Apple music",
         mediaLink:
           "https://music.apple.com/ca/artist/blue-wave-studio/1541459413",
       },
       {
-        mediaName: "spotify",
+        mediaName: "Spotify",
         mediaLink: "https://open.spotify.com/artist/3D3Xe3oFYlF07jveNbcMtn",
       },
     ],
@@ -370,19 +370,19 @@ export const channelsDatabase = [
     },
     socialMedias: [
       {
-        mediaName: "youtube",
+        mediaName: "Youtube",
         mediaLink: "https://www.youtube.com/@HomeworkRadio",
       },
       {
-        mediaName: "coffee",
+        mediaName: "Coffee",
         mediaLink: "https://ko-fi.com/homeworkradio",
       },
       {
-        mediaName: "discord",
+        mediaName: "Discord",
         mediaLink: "https://discord.com/invite/s5sY6HT",
       },
       {
-        mediaName: "spotify",
+        mediaName: "Spotify",
         mediaLink: "https://open.spotify.com/user/qpjtj9amkbzwlmt6ora8qmoih",
       },
     ],
@@ -396,19 +396,19 @@ export const channelsDatabase = [
     },
     socialMedias: [
       {
-        mediaName: "youtube",
+        mediaName: "Youtube",
         mediaLink: "https://www.youtube.com/@MusicLabChill",
       },
       {
-        mediaName: "website",
+        mediaName: "Official website",
         mediaLink: "https://musiclab.cloud/",
       },
       {
-        mediaName: "patreon",
+        mediaName: "Patreon",
         mediaLink: "https://www.patreon.com/music_lab",
       },
       {
-        mediaName: "spotify",
+        mediaName: "Spotify",
         mediaLink: "https://open.spotify.com/user/9aqvyj9581kg3j582a4h3vfpa",
       },
     ],
@@ -422,19 +422,19 @@ export const channelsDatabase = [
     },
     socialMedias: [
       {
-        mediaName: "youtube",
+        mediaName: "Youtube",
         mediaLink: "https://www.youtube.com/@LofiFruits",
       },
       {
-        mediaName: "playlist",
+        mediaName: "Official playlist",
         mediaLink: "https://lnk.to/lofifruitsmusic",
       },
       {
-        mediaName: "instagram",
+        mediaName: "Instagram",
         mediaLink: "https://www.instagram.com/lofifruitsmusic/",
       },
       {
-        mediaName: " spotify",
+        mediaName: "Spotify",
         mediaLink: "https://open.spotify.com/user/a902190",
       },
     ],
@@ -448,19 +448,19 @@ export const channelsDatabase = [
     },
     socialMedias: [
       {
-        mediaName: "youtube",
+        mediaName: "Youtube",
         mediaLink: "https://www.youtube.com/@thebootlegboy2",
       },
       {
-        mediaName: "store",
-        mediaLink: "thebootlegboy.com",
+        mediaName: "Official store",
+        mediaLink: "https://www.thebootlegboy.com",
       },
       {
-        mediaName: "instagram",
+        mediaName: "Instagram",
         mediaLink: "https://www.instagram.com/thebootlegboy/",
       },
       {
-        mediaName: "spotify",
+        mediaName: "Spotify",
         mediaLink: "https://open.spotify.com/user/thebootlegboy",
       },
     ],
@@ -474,19 +474,19 @@ export const channelsDatabase = [
     },
     socialMedias: [
       {
-        mediaName: "youtube",
+        mediaName: "Youtube",
         mediaLink: "https://www.youtube.com/@SACRABEATS",
       },
       {
-        mediaName: "playlist",
+        mediaName: "Official playlist",
         mediaLink: "https://lnk.to/TokyoLosTTracks",
       },
       {
-        mediaName: "instagram",
+        mediaName: "Instagram",
         mediaLink: "https://www.instagram.com/sakurachillbeats/",
       },
       {
-        mediaName: "discord",
+        mediaName: "Discord",
         mediaLink: "https://discord.com/invite/fHkhEgc",
       },
     ],
@@ -500,19 +500,19 @@ export const channelsDatabase = [
     },
     socialMedias: [
       {
-        mediaName: "youtube",
+        mediaName: "Youtube",
         mediaLink: "https://www.youtube.com/@InYourChill",
       },
       {
-        mediaName: "website",
+        mediaName: "Official website",
         mediaLink: "https://inyourchill.com/",
       },
       {
-        mediaName: "instagram",
+        mediaName: "Instagram",
         mediaLink: "https://www.instagram.com/InYourChillMusic/",
       },
       {
-        mediaName: "spotify",
+        mediaName: "Spotify",
         mediaLink: "https://open.spotify.com/user/ersxxojg18hnzmir1jweb1oav",
       },
     ],
@@ -526,19 +526,19 @@ export const channelsDatabase = [
     },
     socialMedias: [
       {
-        mediaName: "youtube",
+        mediaName: "Youtube",
         mediaLink: "https://www.youtube.com/@nostalgicmusic",
       },
       {
-        mediaName: "store",
+        mediaName: "Official store",
         mediaLink: "https://nostalgic-14.creator-spring.com/",
       },
       {
-        mediaName: "discord",
+        mediaName: "Discord",
         mediaLink: "https://discord.com/invite/qCq8z7ufJP",
       },
       {
-        mediaName: "playlist",
+        mediaName: "Official playlist",
         mediaLink: "https://ffm.to/anifi",
       },
     ],

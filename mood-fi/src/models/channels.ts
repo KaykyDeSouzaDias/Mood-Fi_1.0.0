@@ -10,7 +10,7 @@ interface IChannelImage {
   channelBanner: string;
 }
 
-interface IChannelSocialMedias {
+export interface IChannelSocialMedias {
   mediaName: string;
   mediaLink: string;
 }
