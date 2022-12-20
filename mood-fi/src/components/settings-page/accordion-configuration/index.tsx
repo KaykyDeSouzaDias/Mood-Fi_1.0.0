@@ -1,30 +1,56 @@
-import { Accordion, useMantineTheme } from "@mantine/core";
+import {
+  Accordion,
+  Avatar,
+  Badge,
+  Group,
+  useMantineTheme,
+} from "@mantine/core";
 
 import classes from "./index.module.scss";
 import { IconPhoto, IconPrinter } from "@tabler/icons";
+import { ISettingOptions } from "../../../models";
+import { MaterialIcon } from "../..";
 
-export function AccordionConfiguration() {
+export interface AccordionConfigurationProps {
+  currentSetting: ISettingOptions;
+}
+
+export function AccordionConfiguration({
+  currentSetting,
+}: AccordionConfigurationProps) {
   const theme = useMantineTheme();
 
-  const getColor = (color: string) =>
-    theme.colors[color][theme.colorScheme === "dark" ? 5 : 7];
+  const getAccordionRightSide = () => {
+    return (
+      <Group noWrap className={classes.accordionStatusChevron}>
+        <Badge color="yellow" radius="sm" variant="filled">
+          {currentSetting.status}
+        </Badge>
+        <MaterialIcon iconName={"expand_more"} size={20} />
+      </Group>
+    );
+  };
 
   return (
-    <Accordion variant="separated">
+    <Accordion
+      variant="separated"
+      disableChevronRotation
+      chevron={getAccordionRightSide()}
+      styles={{
+        chevron: {
+          marginRight: "60px",
+        },
+      }}
+      className={[classes.root, classes[theme.colorScheme]].join(" ")}
+    >
       <Accordion.Item value="photos">
         <Accordion.Control
-          icon={<IconPhoto size={20} color={getColor("red")} />}
+          icon={<MaterialIcon iconName={currentSetting.icon} size={20} />}
         >
-          Recent photos
-        </Accordion.Control>
-        <Accordion.Panel>Content</Accordion.Panel>
-      </Accordion.Item>
-
-      <Accordion.Item value="print">
-        <Accordion.Control
-          icon={<IconPrinter size={20} color={getColor("blue")} />}
-        >
-          Print photos
+          <div>
+            <p>{currentSetting.name}</p>
+            <p color="dimmed">{currentSetting.description}</p>
+          </div>
         </Accordion.Control>
         <Accordion.Panel>Content</Accordion.Panel>
       </Accordion.Item>

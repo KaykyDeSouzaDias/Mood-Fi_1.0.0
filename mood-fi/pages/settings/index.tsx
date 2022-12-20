@@ -1,5 +1,11 @@
 import { useState } from "react";
-import { Grid, ScrollArea, Stack, useMantineTheme } from "@mantine/core";
+import {
+  Grid,
+  ScrollArea,
+  SimpleGrid,
+  Stack,
+  useMantineTheme,
+} from "@mantine/core";
 
 import classes from "./index.module.scss";
 import {
@@ -7,6 +13,7 @@ import {
   LivestreamGradient,
   PageTitle,
 } from "../../src/components";
+import { settingOptionsDatabase } from "../../src/database/setting-options";
 
 export function SettingsLivePage() {
   const theme = useMantineTheme();
@@ -29,12 +36,11 @@ export function SettingsLivePage() {
           smallScrollSize={80}
           onScroll={onScroll}
         />
-
-        <Grid className={classes.cardsGrid}>
-          <Grid.Col span="auto">
-            <AccordionConfiguration />
-          </Grid.Col>
-        </Grid>
+        <SimpleGrid className={classes.cardsGrid} cols={1}>
+          {settingOptionsDatabase.map((config) => {
+            return <AccordionConfiguration currentSetting={config} />;
+          })}
+        </SimpleGrid>
       </ScrollArea>
     </Stack>
   );
