@@ -3,15 +3,15 @@ import { ISettingOptions } from "../models";
 export const settingOptionsDatabase = [
   {
     name: "Change Language",
-    description: "kayky dias",
+    description: "Choose a language that makes you comfortable.",
     type: "select",
     icon: "translate",
-    status: "Português",
+    status: "English",
     value: "pt-Br",
   },
   {
     name: "Change Theme",
-    description: "kayky dias",
+    description: "Choose a theme that makes you comfortable.",
     type: "switch",
     icon: "contrast",
     status: "Dark Mode",
