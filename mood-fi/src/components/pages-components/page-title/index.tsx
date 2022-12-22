@@ -1,4 +1,5 @@
 import { Title, useMantineTheme } from "@mantine/core";
+import { defineCustomTheme } from "../../../theme";
 
 import classes from "./index.module.scss";
 
@@ -18,9 +19,15 @@ export function PageTitle({
   smallScrollSize,
 }: PageTitleProps) {
   const theme = useMantineTheme();
+  const t = defineCustomTheme(theme);
 
   return (
-    <div className={[classes.root, classes[theme.colorScheme]].join(" ")}>
+    <div
+      style={{
+        color: t.moodFiTheme.pageTitles,
+      }}
+      className={[classes.root, classes[theme.colorScheme]].join(" ")}
+    >
       <Title
         style={{
           fontSize:

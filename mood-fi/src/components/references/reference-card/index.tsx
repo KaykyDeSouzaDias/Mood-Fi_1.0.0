@@ -26,6 +26,7 @@ import {
   IconPlaylist,
 } from "@tabler/icons";
 import { IChannel, IChannelSocialMedias } from "../../../models";
+import { defineCustomTheme } from "../../../theme";
 
 import classes from "./index.module.scss";
 
@@ -35,6 +36,7 @@ interface ReferenceCardProps {
 
 export function ReferenceCard({ actualChannel }: ReferenceCardProps) {
   const theme = useMantineTheme();
+  const t = defineCustomTheme(theme);
 
   function getMediaIcon(media: IChannelSocialMedias, iconSize: number) {
     switch (media.mediaName) {
@@ -77,6 +79,10 @@ export function ReferenceCard({ actualChannel }: ReferenceCardProps) {
       withBorder={false}
       p="xl"
       radius="md"
+      style={{
+        color: t.moodFiTheme.onBackgroundText,
+        backgroundColor: t.moodFiTheme.onBackground,
+      }}
       className={[classes.root, classes[theme.colorScheme]].join(" ")}
     >
       <Card.Section

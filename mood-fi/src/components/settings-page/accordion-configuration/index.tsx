@@ -99,25 +99,18 @@ export function AccordionConfiguration({
     <Box
       className={[classes.root, classes[theme.colorScheme]].join(" ")}
       sx={(theme) => ({
-        backgroundColor:
-          theme.colorScheme === "dark"
-            ? theme.colors.dark[6]
-            : theme.colors.gray[0],
+        backgroundColor: t.moodFiTheme.onBackground,
         textAlign: "center",
         padding: theme.spacing.xl,
         borderRadius: theme.radius.md,
         cursor: "pointer",
-
-        "&:hover": {
-          backgroundColor:
-            theme.colorScheme === "dark"
-              ? theme.colors.dark[5]
-              : theme.colors.gray[1],
-        },
       })}
     >
       <div className={classes.iconTitleSettingContainer}>
-        <div className={classes.settingIcon}>
+        <div
+          className={classes.settingIcon}
+          style={{ backgroundColor: t.moodFiTheme.primary }}
+        >
           <MaterialIcon iconName={currentSetting.icon} size={35} />
         </div>
         <div className={classes.settingTitleAndSubTitle}>
@@ -128,62 +121,5 @@ export function AccordionConfiguration({
       </div>
       {getAccordionContent()}
     </Box>
-    // <Accordion
-    //   variant="separated"
-    //   disableChevronRotation
-    //   onChange={(value) => setIsAccordionExpanded(value)}
-    //   value={isAccordionExpanded}
-    //   chevron={getAccordionContent()}
-    //   m={-10}
-    //   styles={{
-    //     control: {
-    //       borderRadius: isAccordionExpanded ? "10px 10px 0px 0px" : "10px",
-    //       backgroundColor: t.colors.neutral.p10,
-    //     },
-    //     content: {
-    //       borderRadius: "0px 0px 10px 10px",
-    //       backgroundColor: t.colors.neutral.p10,
-    //     },
-    //     item: {
-    //       border: 0,
-    //       borderRadius: "12px",
-    //     },
-    //     icon: {
-    //       padding: "8px",
-    //       border: 0,
-    //       borderRadius: "10px",
-
-    //       color: t.colors.neutral.p10,
-    //       backgroundColor: t.colors.brightYellow.p80,
-    //     },
-    //     chevron: {
-    //       display: "flex",
-    //       justifyContent: "flex-end",
-    //       marginRight: "10px",
-    //       color: t.colors.neutral.p90,
-    //     },
-    //   }}
-    //   className={[classes.root, classes[theme.colorScheme]].join(" ")}
-    // >
-    //   <Accordion.Item value="photos">
-    //     <Accordion.Control
-    //       icon={<MaterialIcon iconName={currentSetting.icon} size={30} />}
-    //       p={0}
-    //       pt={5}
-    //       pb={5}
-    //       pr={10}
-    //       pl={20}
-    //       // disabled
-    //       unstyled
-    //     >
-    //       <div className={classes.settingTitleAndSubTitle}>
-    //         <p>
-    //           {currentSetting.name} <br /> {currentSetting.description}
-    //         </p>
-    //       </div>
-    //     </Accordion.Control>
-    //     <Accordion.Panel>{getAccordionContent()}</Accordion.Panel>
-    //   </Accordion.Item>
-    // </Accordion>
   );
 }

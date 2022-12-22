@@ -26,14 +26,25 @@ export function HeaderMenu() {
     <>
       <div style={{ width: "100%" }}>
         <Box
-          p="md"
+          // p="md"
+          style={{ backgroundColor: t.moodFiTheme.appHeader }}
           className={[classes.root, classes[theme.colorScheme]].join(" ")}
         >
-          <Group className={classes.navBarHeader} position="right" noWrap>
-            <LivestreamVolumeSlider />
-          </Group>
+          <div
+            style={{
+              background:
+                theme.colorScheme === "dark"
+                  ? "linear-gradient(180deg, rgba(222, 102, 88, 0.15) 0%, rgba(222, 102, 88, 0.1) 100%)"
+                  : "linear-gradient(180deg, rgba(222, 102, 88, 0.4) 0%, rgba(222, 102, 88, 0.3) 100%)",
+            }}
+            className={classes.container}
+          >
+            <Group className={classes.navBarHeader} position="right" noWrap>
+              <LivestreamVolumeSlider />
+            </Group>
+          </div>
         </Box>
-        <div className={classes.gradient}></div>
+        {/* <div className={classes.gradient}></div> */}
       </div>
     </>
   );

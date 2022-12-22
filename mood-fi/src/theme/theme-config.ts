@@ -39,8 +39,14 @@ type MaterialYouPattern =
 
 type MoodFiThemePattern =
   | "background"
+  | "onBackground"
+  | "onBackgroundText"
   | "container"
   | "primary"
+  | "pageTitles"
+  | "sliderFilled"
+  | "sliderTrack"
+  | "appHeader"
   | "inversePrimary"
   | "schemeToggle"
   | "transparentButtonHover"
@@ -104,7 +110,7 @@ const AllColors: Record<MoodFiColors, ColorPalette> = {
     p50: "#8f7500",
     p60: "#ad8e00",
     p70: "#cca800",
-    p80: "#ecc200",
+    p80: "#ffd201",
     p90: "#ffe07d",
     p95: "#fff0c8",
     p99: "#fffbff",
@@ -256,9 +262,20 @@ const MatDarkThemeProps = {
 };
 
 const MoodFiLightThemeProps: Record<MoodFiThemePattern, string> = {
-  background: AllColors.neutral.p95,
+  primary: AllColors.deepYellow.p90,
+
+  sliderFilled: AllColors.neutralVariant.p30,
+  sliderTrack: AllColors.neutral.p90,
+
+  appHeader: "rgba(246, 240, 231, 0.6)",
+
+  pageTitles: AllColors.shallowOrange.p60,
+
+  background: AllColors.neutralVariant.p90,
+  onBackground: AllColors.neutral.p95,
+  onBackgroundText: AllColors.neutralVariant.p30,
+
   container: AllColors.neutral.p100,
-  primary: AllColors.deepYellow.p40,
   inversePrimary: AllColors.deepYellow.p100,
   onError: AllColors.error.p50,
 
@@ -289,9 +306,20 @@ const MoodFiLightThemeProps: Record<MoodFiThemePattern, string> = {
 };
 
 const MoodFiDarkThemeProps: Record<MoodFiThemePattern, string> = {
-  background: AllColors.deepYellow.p20,
+  primary: AllColors.deepYellow.p80,
+
+  sliderFilled: AllColors.neutral.p90,
+  sliderTrack: AllColors.neutralVariant.p30,
+
+  pageTitles: AllColors.neutral.p90,
+
+  appHeader: "rgba(30, 27, 22, 0.6)",
+
+  background: AllColors.neutral.p20,
+  onBackground: AllColors.neutral.p10,
+  onBackgroundText: AllColors.neutral.p90,
+
   container: AllColors.neutralVariant.p10,
-  primary: AllColors.deepYellow.p100,
   inversePrimary: AllColors.deepYellow.p40,
   onError: AllColors.error.p60,
 
@@ -359,7 +387,7 @@ export const lightTheme: MantineThemeOverride = {
     theme: MatLightThemeProps,
     moodFiTheme: MoodFiLightThemeProps,
   },
-  ...defaultTheme,
+  // ...defaultTheme,
 };
 
 export const darkTheme: MantineThemeOverride = {
@@ -369,7 +397,7 @@ export const darkTheme: MantineThemeOverride = {
     theme: MatDarkThemeProps,
     moodFiTheme: MoodFiDarkThemeProps,
   },
-  ...defaultTheme,
+  // ...defaultTheme,
 };
 
 type TypographyTypes = "display" | "headline" | "title" | "label" | "body";

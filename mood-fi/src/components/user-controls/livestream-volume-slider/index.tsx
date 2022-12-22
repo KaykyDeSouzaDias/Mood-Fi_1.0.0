@@ -5,6 +5,12 @@ import { defineCustomTheme } from "../../../theme";
 
 import classes from "./index.module.scss";
 
+const marks = [
+  { value: 20, label: "20%" },
+  { value: 50, label: "50%" },
+  { value: 80, label: "80%" },
+];
+
 export const LivestreamVolumeSlider = () => {
   const theme = useMantineTheme();
   const t = defineCustomTheme(theme);
@@ -14,10 +20,12 @@ export const LivestreamVolumeSlider = () => {
   return (
     <Group className={[classes.root, classes[theme.colorScheme]].join(" ")}>
       <MaterialIcon
+        sx={{ color: t.moodFiTheme.sliderFilled }}
         className={classes.iconSoundControl}
         iconName={"volume_up"}
         size={20}
       />
+
       <Slider
         className={classes.sliderSoundControl}
         thumbSize={10}
@@ -26,20 +34,27 @@ export const LivestreamVolumeSlider = () => {
         defaultValue={20}
         min={0}
         max={100}
+        color={"orange"}
         onChange={(value) => changeLivestreamVolume(value / 100)}
         styles={(theme) => ({
+          track: {
+            "::before": {
+              backgroundColor: t.moodFiTheme.sliderTrack,
+            },
+          },
+
           thumb: {
             transition: "opacity 150ms ease",
-            backgroundColor: t.colors.deepYellow.p80,
-            borderColor: t.colors.deepYellow.p80,
+            backgroundColor: t.moodFiTheme.sliderFilled,
+            borderColor: t.moodFiTheme.sliderFilled,
           },
 
           bar: {
-            backgroundColor: t.colors.deepYellow.p80,
+            backgroundColor: t.moodFiTheme.sliderFilled,
           },
 
           dragging: {
-            backgroundColor: t.colors.deepYellow.p80,
+            backgroundColor: t.moodFiTheme.sliderFilled,
             opacity: 1,
           },
         })}
