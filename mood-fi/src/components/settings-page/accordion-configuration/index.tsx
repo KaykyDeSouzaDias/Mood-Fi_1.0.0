@@ -29,10 +29,6 @@ export function AccordionConfiguration({
 
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
 
-  const [isAccordionExpanded, setIsAccordionExpanded] = useState<string | null>(
-    null
-  );
-
   const getAccordionContent = () => {
     switch (currentSetting.type) {
       case "select":
@@ -113,7 +109,10 @@ export function AccordionConfiguration({
         >
           <MaterialIcon iconName={currentSetting.icon} size={35} />
         </div>
-        <div className={classes.settingTitleAndSubTitle}>
+        <div
+          className={classes.settingTitleAndSubTitle}
+          style={{ color: t.moodFiTheme.onBackgroundText }}
+        >
           <p>
             {currentSetting.name} <br /> {currentSetting.description}
           </p>

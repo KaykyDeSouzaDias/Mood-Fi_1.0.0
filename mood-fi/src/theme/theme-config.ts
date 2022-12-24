@@ -41,6 +41,8 @@ type MoodFiThemePattern =
   | "background"
   | "onBackground"
   | "onBackgroundText"
+  | "background02"
+  | "onBackground02"
   | "container"
   | "primary"
   | "pageTitles"
@@ -274,6 +276,8 @@ const MoodFiLightThemeProps: Record<MoodFiThemePattern, string> = {
   background: AllColors.neutralVariant.p90,
   onBackground: AllColors.neutral.p95,
   onBackgroundText: AllColors.neutralVariant.p30,
+  background02: AllColors.neutral.p95,
+  onBackground02: AllColors.neutral.p10,
 
   container: AllColors.neutral.p100,
   inversePrimary: AllColors.deepYellow.p100,
@@ -318,6 +322,8 @@ const MoodFiDarkThemeProps: Record<MoodFiThemePattern, string> = {
   background: AllColors.neutral.p20,
   onBackground: AllColors.neutral.p10,
   onBackgroundText: AllColors.neutral.p90,
+  background02: AllColors.neutral.p10,
+  onBackground02: AllColors.neutralVariant.p30,
 
   container: AllColors.neutralVariant.p10,
   inversePrimary: AllColors.deepYellow.p40,

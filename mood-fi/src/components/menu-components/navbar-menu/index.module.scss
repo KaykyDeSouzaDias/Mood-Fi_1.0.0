@@ -34,6 +34,11 @@
 
     color: $neutral-p90;
     background-color: $neutralVariant-p30;
+
+    @at-root .light#{&} {
+      color: $neutralVariant-p90;
+      background-color: $neutral-p10;
+    }
   }
 
   .menuLinks {
@@ -53,8 +58,17 @@
 
     color: $neutral-p90;
 
+    @at-root .light#{&} {
+      color: $neutralVariant-p30;
+    }
+
     &:hover {
       background-color: $neutralVariant-p30;
+
+      @at-root .light#{&} {
+        color: $neutralVariant-p90;
+        background-color: $neutral-p10;
+      }
     }
   }
 }

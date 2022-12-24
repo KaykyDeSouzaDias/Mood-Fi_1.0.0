@@ -28,6 +28,10 @@ export function SettingsLivePage() {
         onScrollPositionChange={(value) => setOnScroll(value.y)}
         type="scroll"
         offsetScrollbars
+        style={{
+          position: "sticky",
+          zIndex: 2,
+        }}
       >
         <PageTitle
           pageName="SETTINGS"

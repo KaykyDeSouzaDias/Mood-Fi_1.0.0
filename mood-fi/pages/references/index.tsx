@@ -1,6 +1,4 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import { invoke } from "@tauri-apps/api/tauri";
 import {
   Box,
   ColorScheme,
@@ -39,6 +37,10 @@ export function ReferenceLivePage() {
         onScrollPositionChange={(value) => setOnScroll(value.y)}
         type="scroll"
         offsetScrollbars
+        style={{
+          position: "sticky",
+          zIndex: 2,
+        }}
       >
         <PageTitle
           pageName="REFERENCES"
