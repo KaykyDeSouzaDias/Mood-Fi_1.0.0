@@ -1,6 +1,5 @@
-import { emit, listen } from "@tauri-apps/api/event";
+import { emit } from "@tauri-apps/api/event";
 import { useEffect, useState } from "react";
-import "./App.scss";
 import {
   ColorScheme,
   ColorSchemeProvider,
@@ -19,9 +18,11 @@ import {
 } from "../pages";
 import { LivestreamProvider } from "./hooks";
 import { livestreamDatabase } from "./database";
-import { ILivestreams, ILivestreamsItems } from "./models";
+import { ILivestreamsItems } from "./models";
 import { getLivestreams } from "./services";
 import { invoke } from "@tauri-apps/api/tauri";
+
+import "./App.scss";
 
 function App() {
   const [colorSchemeStorage, setColorSchemeStorage] =

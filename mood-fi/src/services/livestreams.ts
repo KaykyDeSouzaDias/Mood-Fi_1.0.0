@@ -1,5 +1,5 @@
 import { ILivestreams, ILivestreamsItems } from "../models/livestreams";
-import { emit, listen } from "@tauri-apps/api/event";
+import { emit } from "@tauri-apps/api/event";
 
 const API_KEY = "AIzaSyCUZwKhUSYfPvSRYXdh_G7ozHyDA1Nics4";
 const API_KEY_LOCAL02 = "AIzaSyDVnpTthAtf2wVJGI8Uz8MXt3BFQOq5EgQ";
@@ -41,7 +41,7 @@ export async function getLivestreams(): Promise<ILivestreamsItems[]> {
         )
       );
     } catch {
-      return [];
+      console.log("api error");
     } finally {
       emit(
         "getLivestreamsProgress",
