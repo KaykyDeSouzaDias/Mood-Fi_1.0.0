@@ -10,7 +10,6 @@ export function WatchLivePage() {
     <>
       <Stack className={[classes.root, classes[theme.colorScheme]].join(" ")}>
         <LivestreamGradient />
-        {/* <Box className={classes.gradient} /> */}
         <Box className={classes.video}>
           <LivestreamContainer />
         </Box>

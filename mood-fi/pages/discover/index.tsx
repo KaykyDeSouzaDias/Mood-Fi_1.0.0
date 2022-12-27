@@ -1,42 +1,19 @@
-import { useEffect, useState } from "react";
-import reactLogo from "./assets/react.svg";
-import { invoke } from "@tauri-apps/api/tauri";
-import {
-  Box,
-  ColorScheme,
-  ColorSchemeProvider,
-  Grid,
-  Group,
-  MantineProvider,
-  MantineThemeOverride,
-  ScrollArea,
-  Stack,
-  Text,
-  Title,
-  useMantineTheme,
-} from "@mantine/core";
+import { Grid, Stack, useMantineTheme } from "@mantine/core";
 import { useLocalStorage, useMediaQuery } from "@mantine/hooks";
-import { useLivestream } from "../../src/hooks";
-import { getLivestreams } from "../../src/services";
-import { ILivestreams, ILivestreamsItems } from "../../src/models";
-import { LivestreamsCards } from "../../src/components";
+import { ILivestreamsItems } from "../../src/models";
+import {
+  LivestreamsCards,
+  PageContentContainerLayout,
+} from "../../src/components";
 import { livestreamDatabase } from "../../src/database";
 
 import classes from "./index.module.scss";
-import { defineCustomTheme } from "../../src/theme";
-import {
-  LivestreamGradient,
-  PageTitle,
-} from "../../src/components/pages-components";
 
 export const DiscoverPage = () => {
   const theme = useMantineTheme();
-  const t = defineCustomTheme(theme);
 
   const CardsMediumGridResolution = useMediaQuery("(max-width: 2000px)");
   const CardsSmallGridResolution = useMediaQuery("(max-width: 1200px)");
-
-  const [onScroll, setOnScroll] = useState(0);
 
   const [livestreams, setLivestreams] = useLocalStorage<ILivestreamsItems[]>({
     key: "Livestreams",
@@ -45,25 +22,12 @@ export const DiscoverPage = () => {
 
   return (
     <Stack className={[classes.root, classes[theme.colorScheme]].join(" ")}>
-      <LivestreamGradient />
-
-      <ScrollArea
-        onScrollPositionChange={(value) => setOnScroll(value.y)}
-        type="scroll"
-        offsetScrollbars
-        style={{
-          position: "sticky",
-          zIndex: 2,
-        }}
+      <PageContentContainerLayout
+        pageTitle="DISCOVER"
+        pageDescription="Choose the best Livestream that makes you get in the mood."
+        bigScroll={100}
+        smallScroll={80}
       >
-        <PageTitle
-          pageName="DISCOVER"
-          pageDescription="Choose the best Livestream that makes you get in the mood."
-          bigScrollSize={100}
-          smallScrollSize={80}
-          onScroll={onScroll}
-        />
-
         <Grid
           className={classes.cardsGrid}
           columns={
@@ -79,7 +43,7 @@ export const DiscoverPage = () => {
             );
           })}
         </Grid>
-      </ScrollArea>
+      </PageContentContainerLayout>
     </Stack>
   );
 };
