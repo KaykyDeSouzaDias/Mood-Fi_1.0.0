@@ -49,6 +49,9 @@ export type LivestreamContextData = {
 
   selectedLivestream: ILivestreamsItems;
   changeSelectedLivestream(value: ILivestreamsItems): void;
+
+  selectedLivestreamColor: string;
+  changeSelectedLivestreamColor(value: string): void;
 };
 
 export const LivestreamContext = createContext({} as LivestreamContextData);
@@ -63,6 +66,8 @@ export const LivestreamProvider = ({ children }: props) => {
   const [livestreamVideoId, setLivestreamVideoId] = useState("jfKfPfyJRdk");
   const [selectedLivestream, setSelectedLivestream] =
     useState<ILivestreamsItems>(defaultSelectedLivestream);
+  const [selectedLivestreamColor, setSelectedLivestreamColor] =
+    useState("24,24,24");
 
   function togglePlayLivestream(value: boolean) {
     setPlayLivestream(value);
@@ -76,6 +81,9 @@ export const LivestreamProvider = ({ children }: props) => {
   function changeSelectedLivestream(value: ILivestreamsItems) {
     setSelectedLivestream(value);
   }
+  function changeSelectedLivestreamColor(value: string) {
+    setSelectedLivestreamColor(value);
+  }
 
   return (
     <LivestreamContext.Provider
@@ -88,6 +96,8 @@ export const LivestreamProvider = ({ children }: props) => {
         changeLivestreamVideo,
         selectedLivestream,
         changeSelectedLivestream,
+        selectedLivestreamColor,
+        changeSelectedLivestreamColor,
       }}
     >
       {children}

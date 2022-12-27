@@ -11,7 +11,9 @@ import {
   useMantineTheme,
 } from "@mantine/core";
 import { useHover, useMediaQuery } from "@mantine/hooks";
+import { useEffect, useState } from "react";
 import { MaterialIcon } from "../..";
+import { useLivestream } from "../../../hooks";
 import { defineCustomTheme } from "../../../theme";
 import { LivestreamVolumeSlider } from "../../user-controls";
 
@@ -21,6 +23,13 @@ export function HeaderMenu() {
   const theme = useMantineTheme();
   const t = defineCustomTheme(theme);
   const minResolution = useMediaQuery("(max-width: 1000px)");
+
+  const [avgColor, setAvgColor] = useState("");
+  const { selectedLivestreamColor } = useLivestream();
+
+  useEffect(() => {
+    setAvgColor(selectedLivestreamColor);
+  }, [selectedLivestreamColor]);
 
   return (
     <>
@@ -34,8 +43,8 @@ export function HeaderMenu() {
             style={{
               background:
                 theme.colorScheme === "dark"
-                  ? "linear-gradient(180deg, rgba(222, 102, 88, 0.15) 0%, rgba(222, 102, 88, 0.1) 100%)"
-                  : "linear-gradient(180deg, rgba(222, 102, 88, 0.4) 0%, rgba(222, 102, 88, 0.3) 100%)",
+                  ? `linear-gradient(180deg, rgba(${avgColor}, 0.15) 0%, rgba(${avgColor}, 0.1) 100%)`
+                  : `linear-gradient(180deg, rgba(${avgColor}, 0.4) 0%, rgba(${avgColor}, 0.3) 100%)`,
             }}
             className={classes.container}
           >
