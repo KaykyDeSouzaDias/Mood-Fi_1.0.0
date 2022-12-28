@@ -1,8 +1,9 @@
 import { ILivestreams, ILivestreamsItems } from "../models/livestreams";
 import { emit } from "@tauri-apps/api/event";
 
-const API_KEY = "AIzaSyCUZwKhUSYfPvSRYXdh_G7ozHyDA1Nics4";
-const API_KEY_LOCAL02 = "AIzaSyDVnpTthAtf2wVJGI8Uz8MXt3BFQOq5EgQ";
+import { API_KEY } from "../../env";
+
+// const API_KEY_LOCAL02 = "AIzaSyDVnpTthAtf2wVJGI8Uz8MXt3BFQOq5EgQ";
 
 const CHANNEL_IDS = [
   "UC2fVSthyWxWSjsiEAHPzriQ",
@@ -31,7 +32,7 @@ export async function getLivestreams(): Promise<ILivestreamsItems[]> {
 
   for (const channel of CHANNEL_IDS) {
     try {
-      const url = `https://www.googleapis.com/youtube/v3/search?key=${API_KEY_LOCAL02}&part=snippet,id&channelId=${channel}&maxResults=50&q=live`;
+      const url = `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&part=snippet,id&channelId=${channel}&maxResults=50&q=live`;
 
       livestreams.push(
         ...(
@@ -42,6 +43,9 @@ export async function getLivestreams(): Promise<ILivestreamsItems[]> {
       );
     } catch {
       console.log("api error");
+      if (CHANNEL_IDS.lastIndexOf(channel) === CHANNEL_IDS.indexOf(channel)) {
+        return [];
+      }
     } finally {
       emit(
         "getLivestreamsProgress",
