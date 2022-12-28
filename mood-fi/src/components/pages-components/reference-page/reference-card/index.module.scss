@@ -1,0 +1,11 @@
+@import "/src/theme/scss/fonts.scss";
+@import "/src/theme/scss/colors.scss";
+
+.root {
+  .cardHeader {
+    height: 140px;
+
+    background-size: cover;
+    background-position: center;
+  }
+}

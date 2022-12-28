@@ -1,26 +1,25 @@
 import { Box, useMantineTheme } from "@mantine/core";
 import { FastAverageColor } from "fast-average-color";
-import React, { createElement, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useRef } from "react";
-import ReactPlayer from "react-player";
-import { channelsDatabase } from "../../../database";
-import { useLivestream } from "../../../hooks";
+import { channelsDatabase } from "../../../../database";
+import { useLivestream } from "../../../../hooks";
 
 import classes from "./index.module.scss";
 
 export function LivestreamGradient() {
   const theme = useMantineTheme();
 
-  const [avgColor, setAvgColor] = useState("");
   const average = new FastAverageColor();
   const im = useRef<HTMLImageElement>(null);
 
   const { selectedLivestream, changeSelectedLivestreamColor } = useLivestream();
 
-  const [channelUrl, setChannelUrl] = useState("");
+  const [averageColor, setAverageColor] = useState("");
+  const [channelLogoImage, setChannelLogoImage] = useState("");
 
   useEffect(() => {
-    setChannelUrl(
+    setChannelLogoImage(
       channelsDatabase
         .filter(
           (channel) =>
@@ -36,34 +35,32 @@ export function LivestreamGradient() {
         algorithm: "dominant",
       })
       .then((color) => {
-        setAvgColor(color.rgb.substring(4, color.rgb.length - 1));
-        changeSelectedLivestreamColor(
-          color.rgb.substring(4, color.rgb.length - 1)
-        );
-      });
-  }, [channelUrl]);
+        const avgColor = color.rgb.substring(4, color.rgb.length - 1);
 
-  console.log(avgColor);
+        setAverageColor(avgColor);
+        changeSelectedLivestreamColor(avgColor);
+      });
+  }, [channelLogoImage]);
 
   return (
     <>
       <Box
+        className={[classes.root, classes[theme.colorScheme]].join(" ")}
         style={{
           background: `linear-gradient(
             180deg,
-            rgba(${avgColor}, 0.4) 0%,
-            rgba(${avgColor}, 0.2) 50%,
-            rgba(${avgColor}, 0) 100%
+            rgba(${averageColor}, 0.4) 0%,
+            rgba(${averageColor}, 0.2) 50%,
+            rgba(${averageColor}, 0) 100%
           )`,
         }}
-        className={[classes.root, classes[theme.colorScheme]].join(" ")}
       />
       <img
         crossOrigin="anonymous"
         ref={im}
         width={50}
         height={50}
-        src={channelUrl}
+        src={channelLogoImage}
         style={{ display: "none", visibility: "collapse" }}
         alt=""
       />

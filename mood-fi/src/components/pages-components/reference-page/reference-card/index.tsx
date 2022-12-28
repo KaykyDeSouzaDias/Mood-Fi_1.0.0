@@ -1,10 +1,8 @@
 import {
-  createStyles,
   Card,
   Avatar,
   Text,
   Group,
-  Button,
   ActionIcon,
   useMantineTheme,
   Tooltip,
@@ -25,8 +23,8 @@ import {
   IconDeviceDesktop,
   IconPlaylist,
 } from "@tabler/icons";
-import { IChannel, IChannelSocialMedias } from "../../../models";
-import { defineCustomTheme } from "../../../theme";
+import { IChannel, IChannelSocialMedias } from "../../../../models";
+import { defineCustomTheme } from "../../../../theme";
 
 import classes from "./index.module.scss";
 
@@ -76,6 +74,7 @@ export function ReferenceCard({ actualChannel }: ReferenceCardProps) {
 
   return (
     <Card
+      className={[classes.root, classes[theme.colorScheme]].join(" ")}
       withBorder={false}
       p="xl"
       radius="md"
@@ -83,14 +82,11 @@ export function ReferenceCard({ actualChannel }: ReferenceCardProps) {
         color: t.moodFiTheme.onBackgroundText,
         backgroundColor: t.moodFiTheme.onBackground,
       }}
-      className={[classes.root, classes[theme.colorScheme]].join(" ")}
     >
       <Card.Section
+        className={classes.cardHeader}
         sx={{
           backgroundImage: `url(${actualChannel.image.channelBanner})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          height: 140,
         }}
       />
       <Avatar

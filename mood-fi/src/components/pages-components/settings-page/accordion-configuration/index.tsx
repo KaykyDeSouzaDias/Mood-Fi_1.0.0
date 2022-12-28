@@ -8,9 +8,9 @@ import {
   useMantineTheme,
 } from "@mantine/core";
 import { IconMoonStars, IconSun } from "@tabler/icons";
-import { ISettingOptions } from "../../../models";
-import { MaterialIcon } from "../..";
-import { defineCustomTheme } from "../../../theme";
+import { MaterialIcon } from "../../..";
+import { ISettingOptions } from "../../../../models";
+import { defineCustomTheme } from "../../../../theme";
 
 import classes from "./index.module.scss";
 
