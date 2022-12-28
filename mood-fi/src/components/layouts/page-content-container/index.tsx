@@ -2,6 +2,8 @@ import { ScrollArea, useMantineTheme } from "@mantine/core";
 import { ReactNode, useState } from "react";
 import { LivestreamGradient, PageTitle } from "../..";
 
+import classes from "./index.module.scss";
+
 type MainMenuPageProps = {
   pageTitle: string;
   pageDescription: string;
@@ -21,13 +23,10 @@ export function PageContentContainerLayout(props: MainMenuPageProps) {
     <>
       <LivestreamGradient />
       <ScrollArea
+        className={[classes.root, classes[theme.colorScheme]].join(" ")}
         onScrollPositionChange={(value) => setOnScroll(value.y)}
         type="scroll"
         offsetScrollbars
-        style={{
-          position: "sticky",
-          zIndex: 2,
-        }}
       >
         <PageTitle
           pageName={props.pageTitle}
