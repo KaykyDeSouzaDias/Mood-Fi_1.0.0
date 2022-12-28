@@ -1,0 +1,70 @@
+.root {
+  .personalLogoContainer {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+  }
+
+  .selectedLivestreamContainer {
+    position: relative;
+
+    .channelLogoContainer {
+      width: 100%;
+      height: 100%;
+
+      display: flex;
+      justify-content: center;
+
+      margin-bottom: 30px;
+
+      .channelLogoSubContainer {
+        width: 50px;
+        height: 50px;
+
+        overflow: hidden;
+
+        border-radius: 50px;
+      }
+    }
+
+    .selectedLivestreamImage {
+      object-fit: cover;
+    }
+    .gradient {
+      width: 100%;
+      height: 100%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      position: absolute;
+      z-index: 1;
+
+      bottom: 0;
+
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.3) 50%,
+        rgb(0, 0, 0) 100%
+      );
+    }
+    .selectedLivestreamTitle {
+      font-family: "Inter";
+      font-weight: 800;
+      font-size: 30px;
+
+      position: absolute;
+      z-index: 2;
+
+      bottom: 10px;
+      left: 10px;
+
+      text-transform: capitalize;
+
+      color: white;
+    }
+  }
+}

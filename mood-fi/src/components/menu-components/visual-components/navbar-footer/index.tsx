@@ -1,21 +1,23 @@
-import { Box, Group, Stack, Text, useMantineTheme } from "@mantine/core";
+import { Box, Stack, Text, useMantineTheme } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 import { useEffect, useState } from "react";
-import { channelsDatabase } from "../../../database";
-import { useLivestream } from "../../../hooks";
+import { channelsDatabase } from "../../../../database";
+import { useLivestream } from "../../../../hooks";
+
 import classes from "./index.module.scss";
 
 export function NavBarFooter() {
   const theme = useMantineTheme();
+
   const minWidthResolution = useMediaQuery("(max-width: 1000px)");
   const minHeightResolution = useMediaQuery("(max-height: 750px)");
 
   const { selectedLivestream } = useLivestream();
 
-  const [channelUrl, setChannelUrl] = useState("");
+  const [channelLogoUrl, setChannelLogoUrl] = useState("");
 
   useEffect(() => {
-    setChannelUrl(
+    setChannelLogoUrl(
       channelsDatabase
         .filter(
           (channel) =>
@@ -27,7 +29,7 @@ export function NavBarFooter() {
 
   return (
     <Stack className={[classes.root, classes[theme.colorScheme]].join(" ")}>
-      <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
+      <div className={classes.personalLogoContainer}>
         <img
           src={
             minWidthResolution || minHeightResolution
@@ -41,31 +43,13 @@ export function NavBarFooter() {
       </div>
       <Stack className={classes.selectedLivestreamContainer}>
         {minWidthResolution || minHeightResolution ? (
-          <div
-            style={{
-              width: "100%",
-              height: "100%",
-              display: "flex",
-              justifyContent: "center",
-
-              marginBottom: "30px",
-            }}
-          >
-            <div
-              style={{
-                width: "50px",
-                height: "50px",
-
-                overflow: "hidden",
-
-                borderRadius: "50px",
-              }}
-            >
+          <div className={classes.channelLogoContainer}>
+            <div className={classes.channelLogoSubContainer}>
               <img
                 className={classes.selectedLivestreamImage}
-                width="50px"
-                height="50px"
-                src={channelUrl}
+                width={50}
+                height={50}
+                src={channelLogoUrl}
                 alt=""
               />
             </div>
@@ -74,7 +58,7 @@ export function NavBarFooter() {
           <>
             <img
               className={classes.selectedLivestreamImage}
-              height="250px"
+              height={250}
               src={selectedLivestream.snippet.thumbnails.medium.url}
               alt=""
             />

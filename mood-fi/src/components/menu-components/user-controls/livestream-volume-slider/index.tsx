@@ -1,7 +1,7 @@
 import { Group, Slider, useMantineTheme } from "@mantine/core";
-import { MaterialIcon } from "../..";
-import { useLivestream } from "../../../hooks";
-import { defineCustomTheme } from "../../../theme";
+import { MaterialIcon } from "../../..";
+import { useLivestream } from "../../../../hooks";
+import { defineCustomTheme } from "../../../../theme";
 
 import classes from "./index.module.scss";
 

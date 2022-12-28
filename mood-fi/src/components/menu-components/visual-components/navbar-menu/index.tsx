@@ -2,8 +2,8 @@ import { Group, Navbar, NavLink, useMantineTheme } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { MaterialIcon, NavBarFooter } from "../..";
-import { defineCustomTheme } from "../../../theme";
+import { MaterialIcon, NavBarFooter } from "../../..";
+import { defineCustomTheme } from "../../../../theme";
 
 import classes from "./index.module.scss";
 
@@ -32,11 +32,10 @@ const data = [
 export function NavBarMenu() {
   const theme = useMantineTheme();
   const t = defineCustomTheme(theme);
+
   const minResolution = useMediaQuery("(max-width: 1000px)");
 
   const [activeMenuLink, setActiveMenuLink] = useState("Watch Live");
-
-  const [active, setActive] = useState(0);
 
   const links = data.map((item, index) => {
     return (
@@ -55,11 +54,8 @@ export function NavBarMenu() {
         }}
       >
         <Group
+          className={classes.linkLabel}
           style={{
-            width: "100%",
-            height: "100%",
-            display: "flex",
-            alignItems: "center",
             justifyContent: minResolution ? "center" : "left",
           }}
           position={minResolution ? "center" : "left"}
@@ -68,29 +64,14 @@ export function NavBarMenu() {
           {minResolution ? <></> : <span>{item.label}</span>}
         </Group>
       </Link>
-      // <NavLink
-      //   component="a"
-      //   href={item.link}
-      //   target="_blank"
-      //   key={item.label}
-      //   active={index === active}
-      //   label={minResolution ? null : item.label}
-      //   icon={
-      //     <MaterialIcon iconName={item.icon} size={20} filled={item.isFilled} />
-      //   }
-      //   onClick={() => setActive(index)}
-      //   color="yellow"
-      //   variant="filled"
-      //   // styles={{}}
-      // />
     );
   });
 
   return (
     <Navbar
+      className={[classes.root, classes[theme.colorScheme]].join(" ")}
       withBorder={false}
       width={{ base: minResolution ? 100 : 300 }}
-      className={[classes.root, classes[theme.colorScheme]].join(" ")}
       style={{ backgroundColor: t.moodFiTheme.background02 }}
     >
       <Group
@@ -110,7 +91,16 @@ export function NavBarMenu() {
           height={minResolution ? 60 : 70}
           alt=""
         />
-        {minResolution ? <></> : <p className={classes.version}>v2.0.0</p>}
+        {minResolution ? (
+          <></>
+        ) : (
+          <p
+            className={classes.version}
+            style={{ color: t.moodFiTheme.onBackgroundText }}
+          >
+            v2.0.0
+          </p>
+        )}
       </Group>
       <Navbar.Section grow p="xs" mt="md">
         {links}

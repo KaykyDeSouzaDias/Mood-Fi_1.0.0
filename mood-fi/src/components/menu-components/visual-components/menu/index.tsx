@@ -1,10 +1,10 @@
 import { ReactNode } from "react";
 import { useMantineTheme, AppShell } from "@mantine/core";
+import { useMediaQuery } from "@mantine/hooks";
+import { defineCustomTheme } from "../../../../theme";
+import { HeaderMenu, NavBarMenu } from "../../..";
 
 import classes from "./index.module.scss";
-import { useMediaQuery } from "@mantine/hooks";
-import { HeaderMenu, NavBarMenu } from "../..";
-import { defineCustomTheme } from "../../../theme";
 
 interface MenuProps {
   children: ReactNode;
@@ -13,7 +13,6 @@ interface MenuProps {
 export function Menu({ children }: MenuProps) {
   const theme = useMantineTheme();
   const t = defineCustomTheme(theme);
-  const minResolution = useMediaQuery("(max-width: 1000px)");
 
   return (
     <AppShell
