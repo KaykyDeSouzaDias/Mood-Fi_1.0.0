@@ -15,7 +15,7 @@ interface LivestreamsCardsProps {
 }
 
 export const LivestreamsCards = ({ livestream }: LivestreamsCardsProps) => {
-  const { changeLivestreamVideo, changeSelectedLivestream } = useLivestream();
+  const { changeSelectedLivestream } = useLivestream();
 
   return (
     <Card
@@ -25,7 +25,6 @@ export const LivestreamsCards = ({ livestream }: LivestreamsCardsProps) => {
       radius="md"
       component="a"
       onClick={() => {
-        changeLivestreamVideo(livestream.id.videoId);
         changeSelectedLivestream(livestream);
       }}
       target="_blank"

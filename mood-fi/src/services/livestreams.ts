@@ -43,8 +43,8 @@ export async function getLivestreams(): Promise<ILivestreamsItems[]> {
       );
     } catch {
       console.log("api error");
-      if (CHANNEL_IDS.lastIndexOf(channel) === CHANNEL_IDS.indexOf(channel)) {
-        return [];
+      if (CHANNEL_IDS.indexOf(channel) === CHANNEL_IDS.lastIndexOf(channel)) {
+        livestreams = [];
       }
     } finally {
       emit(

@@ -44,9 +44,6 @@ export type LivestreamContextData = {
   livestreamVolume: number;
   changeLivestreamVolume(value: number): void;
 
-  livestreamVideoId: string;
-  changeLivestreamVideo(value: string): void;
-
   selectedLivestream: ILivestreamsItems;
   changeSelectedLivestream(value: ILivestreamsItems): void;
 
@@ -63,7 +60,6 @@ interface props {
 export const LivestreamProvider = ({ children }: props) => {
   const [playLivestream, setPlayLivestream] = useState(true);
   const [livestreamVolume, setLivestreamVolume] = useState(0.2);
-  const [livestreamVideoId, setLivestreamVideoId] = useState("jfKfPfyJRdk");
   const [selectedLivestream, setSelectedLivestream] =
     useState<ILivestreamsItems>(defaultSelectedLivestream);
   const [selectedLivestreamColor, setSelectedLivestreamColor] =
@@ -74,9 +70,6 @@ export const LivestreamProvider = ({ children }: props) => {
   }
   function changeLivestreamVolume(value: number) {
     setLivestreamVolume(value);
-  }
-  function changeLivestreamVideo(value: string) {
-    setLivestreamVideoId(value);
   }
   function changeSelectedLivestream(value: ILivestreamsItems) {
     setSelectedLivestream(value);
@@ -92,8 +85,6 @@ export const LivestreamProvider = ({ children }: props) => {
         togglePlayLivestream,
         livestreamVolume,
         changeLivestreamVolume,
-        livestreamVideoId,
-        changeLivestreamVideo,
         selectedLivestream,
         changeSelectedLivestream,
         selectedLivestreamColor,
