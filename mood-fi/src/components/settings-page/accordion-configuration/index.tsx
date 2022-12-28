@@ -1,7 +1,5 @@
 import {
-  Accordion,
   ActionIcon,
-  Avatar,
   Badge,
   Box,
   Group,
@@ -9,13 +7,12 @@ import {
   useMantineColorScheme,
   useMantineTheme,
 } from "@mantine/core";
-
-import classes from "./index.module.scss";
-import { IconMoonStars, IconPhoto, IconPrinter, IconSun } from "@tabler/icons";
+import { IconMoonStars, IconSun } from "@tabler/icons";
 import { ISettingOptions } from "../../../models";
 import { MaterialIcon } from "../..";
-import { useState } from "react";
 import { defineCustomTheme } from "../../../theme";
+
+import classes from "./index.module.scss";
 
 export interface AccordionConfigurationProps {
   currentSetting: ISettingOptions;
@@ -75,31 +72,13 @@ export function AccordionConfiguration({
     }
   };
 
-  const getAccordionRightSide = () => {
-    return (
-      <Group noWrap className={classes.accordionStatusChevron}>
-        <Badge
-          className={classes.accordionStatusBadge}
-          radius="sm"
-          p={5}
-          variant="filled"
-        >
-          {currentSetting.status}
-        </Badge>
-        <MaterialIcon iconName={"expand_more"} size={20} />
-      </Group>
-    );
-  };
-
   return (
     <Box
       className={[classes.root, classes[theme.colorScheme]].join(" ")}
       sx={(theme) => ({
         backgroundColor: t.moodFiTheme.onBackground,
-        textAlign: "center",
         padding: theme.spacing.xl,
         borderRadius: theme.radius.md,
-        cursor: "pointer",
       })}
     >
       <div className={classes.iconTitleSettingContainer}>
