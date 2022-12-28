@@ -5,12 +5,6 @@ import { defineCustomTheme } from "../../../theme";
 
 import classes from "./index.module.scss";
 
-const marks = [
-  { value: 20, label: "20%" },
-  { value: 50, label: "50%" },
-  { value: 80, label: "80%" },
-];
-
 export const LivestreamVolumeSlider = () => {
   const theme = useMantineTheme();
   const t = defineCustomTheme(theme);
