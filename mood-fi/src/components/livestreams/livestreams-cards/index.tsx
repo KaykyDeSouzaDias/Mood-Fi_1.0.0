@@ -1,27 +1,23 @@
-import { Button, Card, Center, Group, Paper, Title } from "@mantine/core";
+import { Card, useMantineTheme } from "@mantine/core";
 import { useLivestream } from "../../../hooks";
 import { ILivestreamsItems } from "../../../models";
-import classes from "./index.module.scss";
 
-const oi = {
-  image:
-    "https://images.unsplash.com/photo-1508193638397-1c4234db14d8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80",
-  title: "Best forests to visit in North America",
-  category: "nature",
-};
+import classes from "./index.module.scss";
 
 interface LivestreamsCardsProps {
   livestream: ILivestreamsItems;
 }
 
 export const LivestreamsCards = ({ livestream }: LivestreamsCardsProps) => {
+  const theme = useMantineTheme();
+
   const { changeSelectedLivestream } = useLivestream();
 
   return (
     <Card
+      className={[classes.root, classes[theme.colorScheme]].join(" ")}
       p="lg"
       shadow="lg"
-      className={classes.card}
       radius="md"
       component="a"
       onClick={() => {

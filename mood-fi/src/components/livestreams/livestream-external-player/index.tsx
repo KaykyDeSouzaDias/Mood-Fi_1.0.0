@@ -8,7 +8,6 @@ export const LivestreamExternalPlayer = () => {
   return (
     <ReactPlayer
       style={{ display: "none", visibility: "collapse" }}
-      className="react-player"
       volume={livestreamVolume}
       url={`https://www.youtube.com/embed/${selectedLivestream.id.videoId}`}
       playing={playLivestream}
