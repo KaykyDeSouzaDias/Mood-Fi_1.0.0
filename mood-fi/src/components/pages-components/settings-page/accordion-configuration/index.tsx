@@ -3,11 +3,14 @@ import {
   Badge,
   Box,
   Group,
+  NativeSelect,
   Select,
   useMantineColorScheme,
   useMantineTheme,
 } from "@mantine/core";
 import { IconMoonStars, IconSun } from "@tabler/icons";
+import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { MaterialIcon } from "../../..";
 import { ISettingOptions } from "../../../../models";
 import { defineCustomTheme } from "../../../../theme";
@@ -22,23 +25,30 @@ export function AccordionConfiguration({
   currentSetting,
 }: AccordionConfigurationProps) {
   const theme = useMantineTheme();
-  const t = defineCustomTheme(theme);
+  const th = defineCustomTheme(theme);
+  const { t, i18n } = useTranslation();
 
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
+  const [currentLanguage, setCurrentLanguage] = useState<string>();
 
   const getAccordionContent = () => {
     switch (currentSetting.type) {
       case "select":
         return (
-          <Select
-            defaultValue={"English"}
-            defaultChecked={true}
+          <NativeSelect
+            defaultValue={currentSetting.defaultValue}
+            value={currentLanguage}
             data={[
-              { value: "react", label: "React" },
-              { value: "ng", label: "Angular" },
-              { value: "svelte", label: "Svelte" },
-              { value: "vue", label: "Vue" },
+              { value: "en", label: t("settingsEnglishTranslationOption")! },
+              {
+                value: "ptBr",
+                label: t("settingsPortugueseTranslationOption")!,
+              },
             ]}
+            onChange={(value) => {
+              i18n.changeLanguage(value.currentTarget.value);
+              setCurrentLanguage(value.currentTarget.value);
+            }}
           />
         );
       case "switch":
@@ -76,7 +86,7 @@ export function AccordionConfiguration({
     <Box
       className={[classes.root, classes[theme.colorScheme]].join(" ")}
       sx={(theme) => ({
-        backgroundColor: t.moodFiTheme.onBackground,
+        backgroundColor: th.moodFiTheme.onBackground,
         padding: theme.spacing.xl,
         borderRadius: theme.radius.md,
       })}
@@ -84,13 +94,13 @@ export function AccordionConfiguration({
       <div className={classes.iconTitleSettingContainer}>
         <div
           className={classes.settingIcon}
-          style={{ backgroundColor: t.moodFiTheme.primary }}
+          style={{ backgroundColor: th.moodFiTheme.primary }}
         >
           <MaterialIcon iconName={currentSetting.icon} size={35} />
         </div>
         <div
           className={classes.settingTitleAndSubTitle}
-          style={{ color: t.moodFiTheme.onBackgroundText }}
+          style={{ color: th.moodFiTheme.onBackgroundText }}
         >
           <p>
             {currentSetting.name} <br /> {currentSetting.description}
