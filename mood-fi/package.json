@@ -16,8 +16,11 @@
     "@tabler/icons": "^1.116.0",
     "@tauri-apps/api": "^1.1.0",
     "fast-average-color": "^9.2.0",
+    "i18next": "^22.4.6",
+    "i18next-browser-languagedetector": "^7.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-i18next": "^12.1.1",
     "react-player": "^2.11.0",
     "react-router-dom": "^6.4.3"
   },
