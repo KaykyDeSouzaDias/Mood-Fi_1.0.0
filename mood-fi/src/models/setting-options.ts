@@ -3,6 +3,5 @@ export interface ISettingOptions {
   description: string;
   type: string;
   icon: string;
-  status: string;
-  value: string | boolean;
+  defaultValue: string;
 }
