@@ -6,11 +6,13 @@ import {
   PageContentContainerLayout,
 } from "../../src/components";
 import { livestreamDatabase } from "../../src/database";
+import { useTranslation } from "react-i18next";
 
 import classes from "./index.module.scss";
 
 export const DiscoverPage = () => {
   const theme = useMantineTheme();
+  const { t } = useTranslation();
 
   const CardsMediumGridResolution = useMediaQuery("(max-width: 2000px)");
   const CardsSmallGridResolution = useMediaQuery("(max-width: 1200px)");
@@ -23,8 +25,8 @@ export const DiscoverPage = () => {
   return (
     <Stack className={[classes.root, classes[theme.colorScheme]].join(" ")}>
       <PageContentContainerLayout
-        pageTitle="DISCOVER"
-        pageDescription="Choose the best Livestream that makes you get in the mood."
+        pageTitle={t("discoverPageTitle")}
+        pageDescription={t("discoverDescription")}
         bigScroll={100}
         smallScroll={80}
       >

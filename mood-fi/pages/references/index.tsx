@@ -6,9 +6,11 @@ import { channelsDatabase } from "../../src/database";
 import { PageContentContainerLayout } from "../../src/components/layouts/page-content-container";
 
 import classes from "./index.module.scss";
+import { useTranslation } from "react-i18next";
 
 export function ReferenceLivePage() {
   const theme = useMantineTheme();
+  const { t } = useTranslation();
 
   const CardsMediumGridResolution = useMediaQuery("(max-width: 2000px)");
   const CardsSmallGridResolution = useMediaQuery("(max-width: 1200px)");
@@ -16,8 +18,8 @@ export function ReferenceLivePage() {
   return (
     <Stack className={[classes.root, classes[theme.colorScheme]].join(" ")}>
       <PageContentContainerLayout
-        pageTitle="REFERENCES"
-        pageDescription="Choose the best Livestream that makes you get in the mood."
+        pageTitle={t("referencesPageTitle")}
+        pageDescription={t("referencesDescription")}
         bigScroll={80}
         smallScroll={60}
       >
