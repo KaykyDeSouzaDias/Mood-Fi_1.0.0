@@ -1,41 +1,48 @@
 import { Group, Navbar, NavLink, useMantineTheme } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { MaterialIcon, NavBarFooter } from "../../..";
 import { defineCustomTheme } from "../../../../theme";
 
 import classes from "./index.module.scss";
 
-const data = [
-  {
-    link: "/",
-    icon: "online_prediction",
-    isFilled: false,
-    label: "Watch Live",
-  },
-  {
-    link: "/discover",
-    icon: "manage_search",
-    isFilled: false,
-    label: "Discover",
-  },
-  {
-    link: "/references",
-    icon: "temp_preferences_custom",
-    isFilled: false,
-    label: "References",
-  },
-  { link: "/settings", icon: "settings", isFilled: true, label: "Settings" },
-];
-
 export function NavBarMenu() {
   const theme = useMantineTheme();
-  const t = defineCustomTheme(theme);
+  const th = defineCustomTheme(theme);
+  const { t } = useTranslation();
 
   const minResolution = useMediaQuery("(max-width: 1000px)");
 
   const [activeMenuLink, setActiveMenuLink] = useState("Watch Live");
+
+  const data = [
+    {
+      link: "/",
+      icon: "online_prediction",
+      isFilled: false,
+      label: t("watchLiveButton"),
+    },
+    {
+      link: "/discover",
+      icon: "manage_search",
+      isFilled: false,
+      label: t("discoverButton"),
+    },
+    {
+      link: "/references",
+      icon: "temp_preferences_custom",
+      isFilled: false,
+      label: t("referencesButton"),
+    },
+    {
+      link: "/settings",
+      icon: "settings",
+      isFilled: true,
+      label: t("settingsButton"),
+    },
+  ];
 
   const links = data.map((item, index) => {
     return (
@@ -72,7 +79,7 @@ export function NavBarMenu() {
       className={[classes.root, classes[theme.colorScheme]].join(" ")}
       withBorder={false}
       width={{ base: minResolution ? 100 : 300 }}
-      style={{ backgroundColor: t.moodFiTheme.background02 }}
+      style={{ backgroundColor: th.moodFiTheme.background02 }}
     >
       <Group
         className={classes.navBarHeader}
@@ -96,7 +103,7 @@ export function NavBarMenu() {
         ) : (
           <p
             className={classes.version}
-            style={{ color: t.moodFiTheme.onBackgroundText }}
+            style={{ color: th.moodFiTheme.onBackgroundText }}
           >
             v2.0.0
           </p>
