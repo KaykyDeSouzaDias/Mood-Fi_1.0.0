@@ -3,12 +3,11 @@ import { CSSProperties, Key } from "react";
 import { CSSObject, MantineTheme, MantineThemeOverride } from "@mantine/core";
 
 type MoodFiColors =
-  | "deepYellow"
-  | "shallowOrange"
-  | "brightYellow"
+  | "primaryYellow"
+  | "secondaryPurple"
+  | "tertiaryGreen"
   | "error"
-  | "neutral"
-  | "neutralVariant";
+  | "neutral";
 
 type MaterialYouPattern =
   | "primary"
@@ -38,48 +37,34 @@ type MaterialYouPattern =
   | "inverseOnSurface";
 
 type MoodFiThemePattern =
-  | "background"
-  | "onBackground"
-  | "onBackgroundText"
-  | "background02"
-  | "onBackground02"
-  | "container"
+  | "menuBackground"
+  | "onBackgroundMenu"
+  | "onBackgroundMenuText"
+  | "pageBackground"
+  | "onBackgroundPage"
+  | "onBackgroundPageText"
   | "primary"
-  | "pageTitles"
   | "sliderFilled"
-  | "sliderTrack"
-  | "appHeader"
-  | "inversePrimary"
-  | "schemeToggle"
-  | "transparentButtonHover"
-  | "transparentButtonClickOrActive"
-  | "textInputWebkitShadow"
-  | "tableHead"
-  | "tableStripe"
-  | "tableHover"
-  | "sandOutlineButtonText"
-  | "sandOutlineButtonBGHover"
-  | "vessel"
-  | "certificate"
-  | "report"
-  | "extension"
-  | "item"
-  | "action"
-  | "boxLabelReportBG"
-  | "boxLabelReportFG"
-  | "boxLabelVesselBG"
-  | "boxLabelVesselFG"
-  | "onError";
+  | "sliderTrack";
+// | "appHeader";
 
 type ColorShades =
   | "p0"
+  | "p5"
   | "p10"
+  | "p15"
   | "p20"
+  | "p25"
   | "p30"
+  | "p35"
   | "p40"
+  | "p45"
   | "p50"
+  | "p55"
   | "p60"
+  | "p65"
   | "p70"
+  | "p75"
   | "p80"
   | "p90"
   | "p95"
@@ -103,113 +88,138 @@ declare module "@mantine/core" {
 }
 
 const AllColors: Record<MoodFiColors, ColorPalette> = {
-  deepYellow: {
-    p0: "#000",
-    p10: "#231b00",
-    p20: "#3b2f00",
-    p30: "#564500",
-    p40: "#725c00",
-    p50: "#8f7500",
-    p60: "#ad8e00",
-    p70: "#cca800",
-    p80: "#ffd201",
-    p90: "#ffe07d",
-    p95: "#fff0c8",
-    p99: "#fffbff",
-    p100: "#fff",
+  primaryYellow: {
+    p0: "#000000",
+    p5: "#1a1400",
+    p10: "#332900",
+    p15: "#4d3d00",
+    p20: "#665200",
+    p25: "#806600",
+    p30: "#997a00",
+    p35: "#b38f00",
+    p40: "#cca300",
+    p45: "#e6b800",
+    p50: "#ffd201",
+    p55: "#ffd633",
+    p60: "#ffdb4d",
+    p65: "#ffe066",
+    p70: "#ffe680",
+    p75: "#ffeb99",
+    p80: "#fff0b3",
+    p90: "#fff5cc",
+    p95: "#fffae5",
+    p99: "#fffdf5",
+    p100: "#ffffff",
   },
-  shallowOrange: {
-    p0: "#000",
-    p10: "#2b1700",
-    p20: "#472a00",
-    p30: "#663e00",
-    p40: "#865300",
-    p50: "#a86900",
-    p60: "#cb8000",
-    p70: "#f09700",
-    p80: "#ffb963",
-    p90: "#ffddb9",
-    p95: "#ffeedf",
-    p99: "#fffbff",
-    p100: "#fff",
+  secondaryPurple: {
+    p0: "#000000",
+    p5: "#0a001a",
+    p10: "#140033",
+    p15: "#1f004d",
+    p20: "#290066",
+    p25: "#330080",
+    p30: "#3d0099",
+    p35: "#4700b3",
+    p40: "#5200cc",
+    p45: "#5c00e6",
+    p50: "#7301fe",
+    p55: "#8533ff",
+    p60: "#944dff",
+    p65: "#a366ff",
+    p70: "#b380ff",
+    p75: "#c299ff",
+    p80: "#d2b3ff",
+    p90: "#e1ccff",
+    p95: "#f0e5ff",
+    p99: "#f9f5ff",
+    p100: "#ffffff",
   },
-  brightYellow: {
-    p0: "#000",
-    p10: "#201c00",
-    p20: "#373100",
-    p30: "#504700",
-    p40: "#6a5f00",
-    p50: "#867800",
-    p60: "#a29200",
-    p70: "#c0ac00",
-    p80: "#ddc818",
-    p90: "#fbe43b",
-    p95: "#fff2a9",
-    p99: "#fffbff",
-    p100: "#fff",
+  tertiaryGreen: {
+    p0: "#000000",
+    p5: "#0d1a00",
+    p10: "#1a3300",
+    p15: "#284d00",
+    p20: "#356600",
+    p25: "#428000",
+    p30: "#4f9900",
+    p35: "#5cb300",
+    p40: "#69cc00",
+    p45: "#77e600",
+    p50: "#8bfe01",
+    p55: "#9cff33",
+    p60: "#a9ff4d",
+    p65: "#b5ff66",
+    p70: "#c1ff80",
+    p75: "#ceff99",
+    p80: "#daffb3",
+    p90: "#e6ffcc",
+    p95: "#f2ffe5",
+    p99: "#fafff5",
+    p100: "#ffffff",
   },
   error: {
-    p0: "#000",
-    p10: "#410002",
-    p20: "#690005",
-    p30: "#93000a",
+    p0: "#000000",
+    p5: "#160303",
+    p10: "#2d0606",
+    p15: "#430909",
+    p20: "#5a0c0c",
+    p25: "#700f0f",
+    p30: "#871212",
+    p35: "#9d1515",
     p40: "#ba1a1a",
-    p50: "#de3730",
-    p60: "#ff5449",
-    p70: "#ff897d",
-    p80: "#ffb4ab",
-    p90: "#ffdad6",
-    p95: "#ffedea",
-    p99: "#fffbff",
-    p100: "#fff",
+    p45: "#ca1c1c",
+    p50: "#e01f1f",
+    p55: "#e74b4b",
+    p60: "#ea6262",
+    p65: "#ed7878",
+    p70: "#f08f8f",
+    p75: "#f3a5a5",
+    p80: "#f6bcbc",
+    p90: "#f9d2d2",
+    p95: "#fce8e8",
+    p99: "#fef6f6",
+    p100: "#ffffff",
   },
   neutral: {
-    p0: "#000",
-    p10: "#1e1b16",
-    p20: "#33302a",
-    p30: "#4a4640",
-    p40: "#625e57",
-    p50: "#7b776f",
-    p60: "#959088",
-    p70: "#b0aba2",
-    p80: "#cbc6bd",
-    p90: "#e8e2d9",
-    p95: "#f6f0e7",
-    p99: "#fffbff",
-    p100: "#fff",
-  },
-  neutralVariant: {
-    p0: "#000",
-    p10: "#1f1b10",
-    p20: "#343024",
-    p30: "#4b4639",
-    p40: "#645e50",
-    p50: "#7d7767",
-    p60: "#979080",
-    p70: "#b2ab9a",
-    p80: "#cec6b4",
-    p90: "#ebe2cf",
-    p95: "#f9f0dd",
-    p99: "#fffbff",
-    p100: "#fff",
+    p0: "#000000",
+    p5: "#090b10",
+    p10: "#121621",
+    p15: "#1b2131",
+    p20: "#242e42",
+    p25: "#2d3752",
+    p30: "#364263",
+    p35: "#3f4d73",
+    p40: "#485884",
+    p45: "#516394",
+    p50: "#5b6ea4",
+    p55: "#7b8bb7",
+    p60: "#8c9ac0",
+    p65: "#9ca8c9",
+    p70: "#adb7d2",
+    p75: "#bdc5db",
+    p80: "#ced4e4",
+    p90: "#dee2ed",
+    p95: "#eff1f6",
+    p99: "#f8f9fb",
+    p100: "#ffffff",
   },
 };
 
 const MatLightThemeProps = {
-  primary: AllColors.deepYellow.p40,
-  onPrimary: AllColors.deepYellow.p100,
-  primaryContainer: AllColors.deepYellow.p90,
-  onPrimaryContainer: AllColors.deepYellow.p10,
+  primary: AllColors.primaryYellow.p40,
+  onPrimary: AllColors.primaryYellow.p100,
+  primaryContainer: AllColors.primaryYellow.p90,
+  onPrimaryContainer: AllColors.primaryYellow.p10,
 
-  secondary: AllColors.shallowOrange.p40,
-  onSecondary: AllColors.shallowOrange.p100,
-  secondaryContainer: AllColors.shallowOrange.p90,
-  onSecondaryContainer: AllColors.shallowOrange.p10,
+  secondary: AllColors.secondaryPurple.p40,
+  onSecondary: AllColors.secondaryPurple.p100,
+  secondaryContainer: AllColors.secondaryPurple.p90,
+  onSecondaryContainer: AllColors.secondaryPurple.p10,
 
-  tertiary: AllColors.brightYellow.p40,
-  onTertiary: AllColors.brightYellow.p100,
-  tertiaryContainer: AllColors.brightYellow.p90,
-  onTertiaryContainer: AllColors.brightYellow.p10,
+  tertiary: AllColors.tertiaryGreen.p40,
+  onTertiary: AllColors.tertiaryGreen.p100,
+  tertiaryContainer: AllColors.tertiaryGreen.p90,
+  onTertiaryContainer: AllColors.tertiaryGreen.p10,
 
   error: AllColors.error.p40,
   onError: AllColors.error.p100,
@@ -221,29 +231,29 @@ const MatLightThemeProps = {
   surface: AllColors.neutral.p99,
   onSurface: AllColors.neutral.p10,
 
-  surfaceVariant: AllColors.neutralVariant.p90,
-  onSurfaceVariant: AllColors.neutralVariant.p30,
-  outline: AllColors.neutralVariant.p50,
+  surfaceVariant: AllColors.neutral.p90,
+  onSurfaceVariant: AllColors.neutral.p30,
+  outline: AllColors.neutral.p50,
 
   inverseSurface: AllColors.neutral.p10,
   inverseOnSurface: AllColors.neutral.p80,
 };
 
 const MatDarkThemeProps = {
-  primary: AllColors.deepYellow.p80,
-  onPrimary: AllColors.deepYellow.p20,
-  primaryContainer: AllColors.deepYellow.p30,
-  onPrimaryContainer: AllColors.deepYellow.p90,
+  primary: AllColors.primaryYellow.p80,
+  onPrimary: AllColors.primaryYellow.p20,
+  primaryContainer: AllColors.primaryYellow.p30,
+  onPrimaryContainer: AllColors.primaryYellow.p90,
 
-  secondary: AllColors.shallowOrange.p80,
-  onSecondary: AllColors.shallowOrange.p20,
-  secondaryContainer: AllColors.shallowOrange.p30,
-  onSecondaryContainer: AllColors.shallowOrange.p90,
+  secondary: AllColors.secondaryPurple.p80,
+  onSecondary: AllColors.secondaryPurple.p20,
+  secondaryContainer: AllColors.secondaryPurple.p30,
+  onSecondaryContainer: AllColors.secondaryPurple.p90,
 
-  tertiary: AllColors.brightYellow.p80,
-  onTertiary: AllColors.brightYellow.p100,
-  tertiaryContainer: AllColors.brightYellow.p30,
-  onTertiaryContainer: AllColors.brightYellow.p90,
+  tertiary: AllColors.tertiaryGreen.p80,
+  onTertiary: AllColors.tertiaryGreen.p100,
+  tertiaryContainer: AllColors.tertiaryGreen.p30,
+  onTertiaryContainer: AllColors.tertiaryGreen.p90,
 
   error: AllColors.error.p80,
   onError: AllColors.error.p20,
@@ -255,104 +265,46 @@ const MatDarkThemeProps = {
   surface: AllColors.neutral.p10,
   onSurface: AllColors.neutral.p80,
 
-  surfaceVariant: AllColors.neutralVariant.p30,
-  onSurfaceVariant: AllColors.neutralVariant.p80,
-  outline: AllColors.neutralVariant.p60,
+  surfaceVariant: AllColors.neutral.p30,
+  onSurfaceVariant: AllColors.neutral.p80,
+  outline: AllColors.neutral.p60,
 
   inverseSurface: AllColors.neutral.p99,
   inverseOnSurface: AllColors.neutral.p10,
 };
 
 const MoodFiLightThemeProps: Record<MoodFiThemePattern, string> = {
-  primary: AllColors.deepYellow.p90,
+  primary: AllColors.primaryYellow.p90,
 
-  sliderFilled: AllColors.neutralVariant.p30,
+  sliderFilled: AllColors.neutral.p30,
   sliderTrack: AllColors.neutral.p90,
 
-  appHeader: "rgba(246, 240, 231, 0.6)",
+  // appHeader: "rgba(246, 240, 231, 0.6)",
 
-  pageTitles: AllColors.shallowOrange.p60,
+  menuBackground: AllColors.neutral.p90,
+  onBackgroundMenu: AllColors.neutral.p99,
+  onBackgroundMenuText: AllColors.neutral.p10,
 
-  background: AllColors.neutralVariant.p90,
-  onBackground: AllColors.neutral.p95,
-  onBackgroundText: AllColors.neutralVariant.p30,
-  background02: AllColors.neutral.p95,
-  onBackground02: AllColors.neutral.p10,
-
-  container: AllColors.neutral.p100,
-  inversePrimary: AllColors.deepYellow.p100,
-  onError: AllColors.error.p50,
-
-  schemeToggle: AllColors.shallowOrange.p30,
-
-  transparentButtonHover: AllColors.deepYellow.p90,
-  transparentButtonClickOrActive: AllColors.deepYellow.p40,
-  textInputWebkitShadow: AllColors.deepYellow.p100,
-
-  tableHead: AllColors.deepYellow.p40,
-  tableStripe: AllColors.neutral.p95,
-  tableHover: AllColors.neutral.p90,
-
-  sandOutlineButtonText: AllColors.brightYellow.p10,
-  sandOutlineButtonBGHover: AllColors.brightYellow.p90,
-
-  boxLabelVesselBG: AllColors.deepYellow.p90,
-  boxLabelVesselFG: AllColors.deepYellow.p40,
-  boxLabelReportBG: AllColors.brightYellow.p80,
-  boxLabelReportFG: AllColors.brightYellow.p10,
-
-  vessel: AllColors.deepYellow.p40,
-  certificate: AllColors.shallowOrange.p20,
-  report: AllColors.brightYellow.p20,
-  extension: AllColors.error.p20,
-  item: AllColors.neutral.p40,
-  action: AllColors.shallowOrange.p30,
+  pageBackground: AllColors.neutral.p100,
+  onBackgroundPage: AllColors.neutral.p95,
+  onBackgroundPageText: AllColors.neutral.p10,
 };
 
 const MoodFiDarkThemeProps: Record<MoodFiThemePattern, string> = {
-  primary: AllColors.deepYellow.p80,
+  primary: AllColors.primaryYellow.p80,
 
   sliderFilled: AllColors.neutral.p90,
-  sliderTrack: AllColors.neutralVariant.p30,
+  sliderTrack: AllColors.neutral.p30,
 
-  pageTitles: AllColors.neutral.p90,
+  // appHeader: "rgba(30, 27, 22, 0.6)",
 
-  appHeader: "rgba(30, 27, 22, 0.6)",
+  menuBackground: AllColors.neutral.p10,
+  onBackgroundMenu: AllColors.neutral.p20,
+  onBackgroundMenuText: AllColors.neutral.p90,
 
-  background: AllColors.neutral.p20,
-  onBackground: AllColors.neutral.p10,
-  onBackgroundText: AllColors.neutral.p90,
-  background02: AllColors.neutral.p10,
-  onBackground02: AllColors.neutralVariant.p30,
-
-  container: AllColors.neutralVariant.p10,
-  inversePrimary: AllColors.deepYellow.p40,
-  onError: AllColors.error.p60,
-
-  schemeToggle: AllColors.brightYellow.p30,
-
-  transparentButtonHover: AllColors.deepYellow.p30,
-  transparentButtonClickOrActive: AllColors.deepYellow.p40,
-  textInputWebkitShadow: AllColors.deepYellow.p30,
-
-  tableHead: AllColors.shallowOrange.p30,
-  tableStripe: AllColors.neutral.p10,
-  tableHover: AllColors.neutral.p20,
-
-  sandOutlineButtonText: AllColors.brightYellow.p90,
-  sandOutlineButtonBGHover: AllColors.brightYellow.p10,
-
-  boxLabelVesselBG: AllColors.deepYellow.p30,
-  boxLabelVesselFG: AllColors.deepYellow.p90,
-  boxLabelReportBG: AllColors.brightYellow.p10,
-  boxLabelReportFG: AllColors.brightYellow.p70,
-
-  vessel: AllColors.deepYellow.p60,
-  certificate: AllColors.shallowOrange.p20,
-  report: AllColors.brightYellow.p20,
-  extension: AllColors.error.p80,
-  item: AllColors.neutral.p60,
-  action: AllColors.shallowOrange.p60,
+  pageBackground: AllColors.neutral.p15,
+  onBackgroundPage: AllColors.neutral.p95,
+  onBackgroundPageText: AllColors.neutral.p10,
 };
 
 const defaultTheme: MantineThemeOverride = {
@@ -360,16 +312,16 @@ const defaultTheme: MantineThemeOverride = {
   primaryColor: "blue",
   colors: {
     blue: [
-      AllColors.shallowOrange.p95,
-      AllColors.shallowOrange.p90,
-      AllColors.shallowOrange.p80,
-      AllColors.shallowOrange.p70,
-      AllColors.shallowOrange.p60,
-      AllColors.shallowOrange.p40, // main on light
-      AllColors.shallowOrange.p50,
-      AllColors.shallowOrange.p20,
-      AllColors.shallowOrange.p30, // main on dark
-      AllColors.shallowOrange.p10,
+      AllColors.secondaryPurple.p95,
+      AllColors.secondaryPurple.p90,
+      AllColors.secondaryPurple.p80,
+      AllColors.secondaryPurple.p70,
+      AllColors.secondaryPurple.p60,
+      AllColors.secondaryPurple.p40, // main on light
+      AllColors.secondaryPurple.p50,
+      AllColors.secondaryPurple.p20,
+      AllColors.secondaryPurple.p30, // main on dark
+      AllColors.secondaryPurple.p10,
     ],
     red: [
       AllColors.error.p95, // 0
