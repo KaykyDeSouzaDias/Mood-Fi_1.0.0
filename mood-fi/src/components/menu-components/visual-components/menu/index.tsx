@@ -21,7 +21,7 @@ export function Menu({ children }: MenuProps) {
       padding={0}
       styles={{
         main: {
-          backgroundColor: t.moodFiTheme.background,
+          backgroundColor: t.moodFiTheme.pageBackground,
         },
       }}
     >

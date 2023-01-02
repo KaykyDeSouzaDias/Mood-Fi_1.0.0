@@ -33,22 +33,22 @@ export const LivestreamVolumeSlider = () => {
         styles={(theme) => ({
           track: {
             "::before": {
-              backgroundColor: t.moodFiTheme.sliderTrack,
+              backgroundColor: t.moodFiTheme.onBackgroundMenu,
             },
           },
 
           thumb: {
             transition: "opacity 150ms ease",
-            backgroundColor: t.moodFiTheme.sliderFilled,
-            borderColor: t.moodFiTheme.sliderFilled,
+            backgroundColor: t.moodFiTheme.onBackgroundMenuText,
+            borderColor: t.moodFiTheme.onBackgroundMenuText,
           },
 
           bar: {
-            backgroundColor: t.moodFiTheme.sliderFilled,
+            backgroundColor: t.moodFiTheme.onBackgroundMenuText,
           },
 
           dragging: {
-            backgroundColor: t.moodFiTheme.sliderFilled,
+            backgroundColor: t.moodFiTheme.onBackgroundMenuText,
             opacity: 1,
           },
         })}

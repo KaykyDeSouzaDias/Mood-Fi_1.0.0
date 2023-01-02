@@ -31,11 +31,11 @@
     border-radius: 4px;
 
     color: $neutral-p90;
-    background-color: $neutralVariant-p30;
+    background-color: $neutral-p20;
 
     @at-root .light#{&} {
-      color: $neutralVariant-p90;
-      background-color: $neutral-p10;
+      color: $neutral-p10;
+      background-color: $neutral-p99;
     }
   }
   .menuLinks {
@@ -56,15 +56,14 @@
     color: $neutral-p90;
 
     @at-root .light#{&} {
-      color: $neutralVariant-p30;
+      color: $neutral-p10;
     }
 
     &:hover {
-      background-color: $neutralVariant-p30;
+      background-color: $neutral-p20;
 
       @at-root .light#{&} {
-        color: $neutralVariant-p90;
-        background-color: $neutral-p10;
+        background-color: $neutral-p99;
       }
     }
   }

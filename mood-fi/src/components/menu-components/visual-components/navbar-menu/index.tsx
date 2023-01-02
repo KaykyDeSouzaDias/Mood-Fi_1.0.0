@@ -79,7 +79,7 @@ export function NavBarMenu() {
       className={[classes.root, classes[theme.colorScheme]].join(" ")}
       withBorder={false}
       width={{ base: minResolution ? 100 : 300 }}
-      style={{ backgroundColor: th.moodFiTheme.background02 }}
+      style={{ backgroundColor: th.moodFiTheme.menuBackground }}
     >
       <Group
         className={classes.navBarHeader}
@@ -103,7 +103,7 @@ export function NavBarMenu() {
         ) : (
           <p
             className={classes.version}
-            style={{ color: th.moodFiTheme.onBackgroundText }}
+            style={{ color: th.moodFiTheme.onBackgroundMenuText }}
           >
             v2.0.0
           </p>
