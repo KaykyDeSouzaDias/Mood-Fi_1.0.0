@@ -86,7 +86,7 @@ export function AccordionConfiguration({
     <Box
       className={[classes.root, classes[theme.colorScheme]].join(" ")}
       sx={(theme) => ({
-        backgroundColor: th.moodFiTheme.onBackground,
+        backgroundColor: th.moodFiTheme.onBackgroundPage,
         padding: theme.spacing.xl,
         borderRadius: theme.radius.md,
       })}
@@ -96,11 +96,15 @@ export function AccordionConfiguration({
           className={classes.settingIcon}
           style={{ backgroundColor: th.moodFiTheme.primary }}
         >
-          <MaterialIcon iconName={currentSetting.icon} size={35} />
+          <MaterialIcon
+            iconName={currentSetting.icon}
+            color={th.moodFiTheme.onPrimaryText}
+            size={35}
+          />
         </div>
         <div
           className={classes.settingTitleAndSubTitle}
-          style={{ color: th.moodFiTheme.onBackgroundText }}
+          style={{ color: th.moodFiTheme.onBackgroundPageText }}
         >
           <p>
             {currentSetting.name} <br /> {currentSetting.description}

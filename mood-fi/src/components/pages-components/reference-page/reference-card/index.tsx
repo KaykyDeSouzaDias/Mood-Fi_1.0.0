@@ -79,8 +79,8 @@ export function ReferenceCard({ actualChannel }: ReferenceCardProps) {
       p="xl"
       radius="md"
       style={{
-        color: t.moodFiTheme.onBackgroundText,
-        backgroundColor: t.moodFiTheme.onBackground,
+        color: t.moodFiTheme.onBackgroundPageText,
+        backgroundColor: t.moodFiTheme.onBackgroundPage,
       }}
     >
       <Card.Section
@@ -104,6 +104,7 @@ export function ReferenceCard({ actualChannel }: ReferenceCardProps) {
           return (
             <Tooltip label={media.mediaName}>
               <ActionIcon
+                color={theme.colorScheme === "dark" ? "grape" : "green"}
                 size="lg"
                 component="a"
                 href={media.mediaLink}

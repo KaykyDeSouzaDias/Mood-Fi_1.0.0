@@ -44,9 +44,9 @@ type MoodFiThemePattern =
   | "onBackgroundPage"
   | "onBackgroundPageText"
   | "primary"
+  | "onPrimaryText"
   | "sliderFilled"
   | "sliderTrack";
-// | "appHeader";
 
 type ColorShades =
   | "p0"
@@ -274,7 +274,8 @@ const MatDarkThemeProps = {
 };
 
 const MoodFiLightThemeProps: Record<MoodFiThemePattern, string> = {
-  primary: AllColors.primaryYellow.p90,
+  primary: AllColors.primaryYellow.p95,
+  onPrimaryText: AllColors.primaryYellow.p50,
 
   sliderFilled: AllColors.neutral.p30,
   sliderTrack: AllColors.neutral.p90,
@@ -286,12 +287,13 @@ const MoodFiLightThemeProps: Record<MoodFiThemePattern, string> = {
   onBackgroundMenuText: AllColors.neutral.p10,
 
   pageBackground: AllColors.neutral.p100,
-  onBackgroundPage: AllColors.neutral.p95,
-  onBackgroundPageText: AllColors.neutral.p10,
+  onBackgroundPage: AllColors.neutral.p90,
+  onBackgroundPageText: AllColors.secondaryPurple.p60,
 };
 
 const MoodFiDarkThemeProps: Record<MoodFiThemePattern, string> = {
-  primary: AllColors.primaryYellow.p80,
+  primary: AllColors.primaryYellow.p50,
+  onPrimaryText: AllColors.primaryYellow.p95,
 
   sliderFilled: AllColors.neutral.p90,
   sliderTrack: AllColors.neutral.p30,
@@ -303,8 +305,8 @@ const MoodFiDarkThemeProps: Record<MoodFiThemePattern, string> = {
   onBackgroundMenuText: AllColors.neutral.p90,
 
   pageBackground: AllColors.neutral.p15,
-  onBackgroundPage: AllColors.neutral.p95,
-  onBackgroundPageText: AllColors.neutral.p10,
+  onBackgroundPage: AllColors.neutral.p10,
+  onBackgroundPageText: AllColors.tertiaryGreen.p90,
 };
 
 const defaultTheme: MantineThemeOverride = {

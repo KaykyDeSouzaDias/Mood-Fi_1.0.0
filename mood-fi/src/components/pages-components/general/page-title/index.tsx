@@ -25,7 +25,7 @@ export function PageTitle({
     <div
       className={[classes.root, classes[theme.colorScheme]].join(" ")}
       style={{
-        color: t.moodFiTheme.pageTitles,
+        color: t.moodFiTheme.onBackgroundPageText,
       }}
     >
       <Title
