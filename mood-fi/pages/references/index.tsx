@@ -20,7 +20,7 @@ export function ReferenceLivePage() {
       <PageContentContainerLayout
         pageTitle={t("referencesPageTitle")}
         pageDescription={t("referencesDescription")}
-        bigScroll={80}
+        bigScroll={70}
         smallScroll={60}
       >
         <Grid
