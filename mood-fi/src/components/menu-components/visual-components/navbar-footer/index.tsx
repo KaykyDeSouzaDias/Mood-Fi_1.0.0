@@ -10,7 +10,7 @@ export function NavBarFooter() {
   const theme = useMantineTheme();
 
   const minWidthResolution = useMediaQuery("(max-width: 1000px)");
-  const minHeightResolution = useMediaQuery("(max-height: 750px)");
+  const minHeightResolution = useMediaQuery("(max-height: 680px)");
 
   const { selectedLivestream } = useLivestream();
 

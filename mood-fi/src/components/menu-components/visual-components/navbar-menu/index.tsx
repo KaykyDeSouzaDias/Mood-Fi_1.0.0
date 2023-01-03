@@ -13,7 +13,8 @@ export function NavBarMenu() {
   const th = defineCustomTheme(theme);
   const { t } = useTranslation();
 
-  const minResolution = useMediaQuery("(max-width: 1000px)");
+  const minWidthResolution = useMediaQuery("(max-width: 1000px)");
+  const minHeightResolution = useMediaQuery("(max-height: 680px)");
 
   const [activeMenuLink, setActiveMenuLink] = useState("Watch Live");
 
@@ -56,19 +57,28 @@ export function NavBarMenu() {
             : classes.menuLinks
         }
         style={{
-          justifyContent: minResolution ? "center" : "left",
-          paddingLeft: minResolution ? "0px" : "20px",
+          justifyContent:
+            minWidthResolution || minHeightResolution ? "center" : "left",
+          paddingLeft:
+            minWidthResolution || minHeightResolution ? "0px" : "20px",
         }}
       >
         <Group
           className={classes.linkLabel}
           style={{
-            justifyContent: minResolution ? "center" : "left",
+            justifyContent:
+              minWidthResolution || minHeightResolution ? "center" : "left",
           }}
-          position={minResolution ? "center" : "left"}
+          position={
+            minWidthResolution || minHeightResolution ? "center" : "left"
+          }
         >
           <MaterialIcon iconName={item.icon} size={20} filled={item.isFilled} />
-          {minResolution ? <></> : <span>{item.label}</span>}
+          {minWidthResolution || minHeightResolution ? (
+            <></>
+          ) : (
+            <span>{item.label}</span>
+          )}
         </Group>
       </Link>
     );
@@ -78,27 +88,30 @@ export function NavBarMenu() {
     <Navbar
       className={[classes.root, classes[theme.colorScheme]].join(" ")}
       withBorder={false}
-      width={{ base: minResolution ? 100 : 300 }}
+      width={{ base: minWidthResolution || minHeightResolution ? 100 : 200 }}
       style={{ backgroundColor: th.moodFiTheme.menuBackground }}
     >
       <Group
         className={classes.navBarHeader}
         style={{
-          justifyContent: minResolution ? "center" : "space-between",
+          justifyContent:
+            minWidthResolution || minHeightResolution
+              ? "center"
+              : "space-between",
         }}
         position={"apart"}
       >
         <img
           src={
-            minResolution
+            minWidthResolution || minHeightResolution
               ? "../../../../public/Mood-Fi mini logo.svg"
               : "../../../../public/Mood-Fi logo.svg"
           }
-          width={minResolution ? 70 : 80}
-          height={minResolution ? 60 : 70}
+          width={minWidthResolution || minHeightResolution ? 60 : 70}
+          height={minWidthResolution || minHeightResolution ? 50 : 60}
           alt=""
         />
-        {minResolution ? (
+        {minWidthResolution || minHeightResolution ? (
           <></>
         ) : (
           <p
