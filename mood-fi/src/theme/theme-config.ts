@@ -41,6 +41,7 @@ type MoodFiThemePattern =
   | "onBackgroundMenu"
   | "onBackgroundMenuText"
   | "pageBackground"
+  | "pageBackgroundText"
   | "onBackgroundPage"
   | "onBackgroundPageText"
   | "primary"
@@ -274,8 +275,8 @@ const MatDarkThemeProps = {
 };
 
 const MoodFiLightThemeProps: Record<MoodFiThemePattern, string> = {
-  primary: AllColors.primaryYellow.p95,
-  onPrimaryText: AllColors.primaryYellow.p50,
+  primary: AllColors.primaryYellow.p65,
+  onPrimaryText: AllColors.primaryYellow.p10,
 
   sliderFilled: AllColors.neutral.p30,
   sliderTrack: AllColors.neutral.p90,
@@ -287,13 +288,14 @@ const MoodFiLightThemeProps: Record<MoodFiThemePattern, string> = {
   onBackgroundMenuText: AllColors.neutral.p10,
 
   pageBackground: AllColors.neutral.p100,
+  pageBackgroundText: AllColors.secondaryPurple.p55,
   onBackgroundPage: AllColors.neutral.p90,
-  onBackgroundPageText: AllColors.secondaryPurple.p60,
+  onBackgroundPageText: AllColors.secondaryPurple.p25,
 };
 
 const MoodFiDarkThemeProps: Record<MoodFiThemePattern, string> = {
   primary: AllColors.primaryYellow.p50,
-  onPrimaryText: AllColors.primaryYellow.p95,
+  onPrimaryText: AllColors.primaryYellow.p10,
 
   sliderFilled: AllColors.neutral.p90,
   sliderTrack: AllColors.neutral.p30,
@@ -305,6 +307,7 @@ const MoodFiDarkThemeProps: Record<MoodFiThemePattern, string> = {
   onBackgroundMenuText: AllColors.neutral.p90,
 
   pageBackground: AllColors.neutral.p15,
+  pageBackgroundText: AllColors.tertiaryGreen.p90,
   onBackgroundPage: AllColors.neutral.p10,
   onBackgroundPageText: AllColors.tertiaryGreen.p90,
 };

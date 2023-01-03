@@ -21,13 +21,14 @@ export function PageContentContainerLayout(props: MainMenuPageProps) {
 
   return (
     <>
-      <LivestreamGradient />
       <ScrollArea
         className={[classes.root, classes[theme.colorScheme]].join(" ")}
         onScrollPositionChange={(value) => setOnScroll(value.y)}
         type="scroll"
         offsetScrollbars
       >
+        <LivestreamGradient />
+
         <PageTitle
           pageName={props.pageTitle}
           pageDescription={props.pageDescription}

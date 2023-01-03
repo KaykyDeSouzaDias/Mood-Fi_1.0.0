@@ -9,5 +9,8 @@
 
   .cardsGrid {
     margin: 30px;
+
+    position: sticky;
+    z-index: 2;
   }
 }

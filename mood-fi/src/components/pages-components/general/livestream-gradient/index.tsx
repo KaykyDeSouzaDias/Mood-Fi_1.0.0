@@ -47,8 +47,7 @@ export function LivestreamGradient() {
       <Box
         className={[classes.root, classes[theme.colorScheme]].join(" ")}
         style={{
-          background: `linear-gradient(
-            180deg,
+          background: `radial-gradient(
             rgba(${averageColor}, 0.4) 0%,
             rgba(${averageColor}, 0.2) 50%,
             rgba(${averageColor}, 0) 100%
