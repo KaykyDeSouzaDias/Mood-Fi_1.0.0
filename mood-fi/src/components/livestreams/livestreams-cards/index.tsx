@@ -1,5 +1,6 @@
 import { Card, useMantineTheme } from "@mantine/core";
-import { useLivestream } from "../../../hooks";
+import { useLocalStorage } from "@mantine/hooks";
+import { defaultSelectedLivestream, useLivestream } from "../../../hooks";
 import { ILivestreamsItems } from "../../../models";
 
 import classes from "./index.module.scss";
@@ -12,6 +13,11 @@ export const LivestreamsCards = ({ livestream }: LivestreamsCardsProps) => {
   const theme = useMantineTheme();
 
   const { changeSelectedLivestream } = useLivestream();
+  const [chosenLivestreamStorage, setChosenLivestreamStorage] =
+    useLocalStorage<ILivestreamsItems>({
+      key: "ChosenLivestream",
+      defaultValue: defaultSelectedLivestream,
+    });
 
   return (
     <Card
@@ -22,6 +28,7 @@ export const LivestreamsCards = ({ livestream }: LivestreamsCardsProps) => {
       component="a"
       onClick={() => {
         changeSelectedLivestream(livestream);
+        setChosenLivestreamStorage(livestream);
       }}
       target="_blank"
     >

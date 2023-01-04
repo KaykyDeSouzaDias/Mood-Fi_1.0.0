@@ -1,7 +1,14 @@
-import { createContext, ReactNode, useContext, useState } from "react";
+import { useLocalStorage } from "@mantine/hooks";
+import {
+  createContext,
+  ReactNode,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 import { ILivestreamsItems } from "../models";
 
-const defaultSelectedLivestream = {
+export const defaultSelectedLivestream = {
   kind: "youtube#searchResult",
   etag: "_C0QPUJrKMdMEJv8rz8WdLHzzh4",
   id: {
@@ -58,12 +65,24 @@ interface props {
 }
 
 export const LivestreamProvider = ({ children }: props) => {
+  const [chosenLivestreamStorage, setChosenLivestreamStorage] =
+    useLocalStorage<ILivestreamsItems>({
+      key: "ChosenLivestream",
+      defaultValue: defaultSelectedLivestream,
+    });
+
   const [playLivestream, setPlayLivestream] = useState(true);
   const [livestreamVolume, setLivestreamVolume] = useState(0.2);
   const [selectedLivestream, setSelectedLivestream] =
     useState<ILivestreamsItems>(defaultSelectedLivestream);
   const [selectedLivestreamColor, setSelectedLivestreamColor] =
     useState("24,24,24");
+
+  useEffect(() => {
+    const livestreamStorage = window.localStorage.getItem("ChosenLivestream");
+
+    setSelectedLivestream(JSON.parse(livestreamStorage!));
+  }, []);
 
   function togglePlayLivestream(value: boolean) {
     setPlayLivestream(value);
