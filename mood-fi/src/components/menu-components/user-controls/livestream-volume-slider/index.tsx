@@ -1,4 +1,5 @@
 import { Group, Slider, useMantineTheme } from "@mantine/core";
+import { useLocalStorage } from "@mantine/hooks";
 import { MaterialIcon } from "../../..";
 import { useLivestream } from "../../../../hooks";
 import { defineCustomTheme } from "../../../../theme";
@@ -10,13 +11,25 @@ export const LivestreamVolumeSlider = () => {
   const t = defineCustomTheme(theme);
 
   const { changeLivestreamVolume } = useLivestream();
+  const [livestreamVolumeStorage, setLivestreamVolumeStorage] =
+    useLocalStorage<number>({
+      key: "LivestreamVolume",
+      defaultValue: 20,
+    });
 
   return (
     <Group className={[classes.root, classes[theme.colorScheme]].join(" ")}>
       <MaterialIcon
         sx={{ color: t.moodFiTheme.sliderFilled }}
         className={classes.iconSoundControl}
-        iconName={"volume_up"}
+        iconName={
+          livestreamVolumeStorage * 100 > 25
+            ? "volume_up"
+            : livestreamVolumeStorage * 100 <= 25 &&
+              livestreamVolumeStorage * 100 > 0
+            ? "volume_down"
+            : "volume_off"
+        }
         size={20}
       />
 
@@ -25,11 +38,13 @@ export const LivestreamVolumeSlider = () => {
         thumbSize={10}
         size="xs"
         radius="md"
-        defaultValue={20}
+        value={Math.round(livestreamVolumeStorage * 100)}
         min={0}
         max={100}
-        color={"orange"}
-        onChange={(value) => changeLivestreamVolume(value / 100)}
+        onChange={(value) => {
+          changeLivestreamVolume(value / 100);
+          setLivestreamVolumeStorage(value / 100);
+        }}
         styles={(theme) => ({
           track: {
             "::before": {
