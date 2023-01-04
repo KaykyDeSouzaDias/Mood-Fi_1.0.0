@@ -10,7 +10,7 @@ export const LivestreamVolumeSlider = () => {
   const theme = useMantineTheme();
   const t = defineCustomTheme(theme);
 
-  const { changeLivestreamVolume } = useLivestream();
+  const { livestreamVolume, changeLivestreamVolume } = useLivestream();
   const [livestreamVolumeStorage, setLivestreamVolumeStorage] =
     useLocalStorage<number>({
       key: "LivestreamVolume",
@@ -23,10 +23,9 @@ export const LivestreamVolumeSlider = () => {
         sx={{ color: t.moodFiTheme.sliderFilled }}
         className={classes.iconSoundControl}
         iconName={
-          livestreamVolumeStorage * 100 > 25
+          livestreamVolume * 100 > 25
             ? "volume_up"
-            : livestreamVolumeStorage * 100 <= 25 &&
-              livestreamVolumeStorage * 100 > 0
+            : livestreamVolume * 100 <= 25 && livestreamVolume * 100 > 0
             ? "volume_down"
             : "volume_off"
         }
@@ -38,7 +37,7 @@ export const LivestreamVolumeSlider = () => {
         thumbSize={10}
         size="xs"
         radius="md"
-        value={Math.round(livestreamVolumeStorage * 100)}
+        value={Math.round(livestreamVolume * 100)}
         min={0}
         max={100}
         onChange={(value) => {

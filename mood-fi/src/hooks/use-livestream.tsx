@@ -80,8 +80,10 @@ export const LivestreamProvider = ({ children }: props) => {
 
   useEffect(() => {
     const livestreamStorage = window.localStorage.getItem("ChosenLivestream");
+    const volumeStorage = window.localStorage.getItem("LivestreamVolume");
 
     setSelectedLivestream(JSON.parse(livestreamStorage!));
+    setLivestreamVolume(JSON.parse(volumeStorage!));
   }, []);
 
   function togglePlayLivestream(value: boolean) {
