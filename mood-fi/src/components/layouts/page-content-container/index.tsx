@@ -27,8 +27,6 @@ export function PageContentContainerLayout(props: MainMenuPageProps) {
         type="scroll"
         offsetScrollbars
       >
-        <LivestreamGradient />
-
         <PageTitle
           pageName={props.pageTitle}
           pageDescription={props.pageDescription}

@@ -104,8 +104,12 @@ export function NavBarMenu() {
         <img
           src={
             minWidthResolution || minHeightResolution
-              ? "../../../../public/Mood-Fi mini logo.svg"
-              : "../../../../public/Mood-Fi logo.svg"
+              ? theme.colorScheme === "dark"
+                ? "../../../../public/Mood-Fi mini logo.svg"
+                : "../../../../../public/Mood-Fi mini logo light mode.svg"
+              : theme.colorScheme === "dark"
+              ? "../../../../public/Mood-Fi logo.svg"
+              : "../../../../../public/Mood-Fi logo light mode.svg"
           }
           width={minWidthResolution || minHeightResolution ? 60 : 70}
           height={minWidthResolution || minHeightResolution ? 50 : 60}
