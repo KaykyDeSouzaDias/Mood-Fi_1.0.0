@@ -29,14 +29,15 @@ export function AccordionConfiguration({
   const { t, i18n } = useTranslation();
 
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
-  const [currentLanguage, setCurrentLanguage] = useState<string>();
+  const [currentLanguage, setCurrentLanguage] = useState<string>(
+    window.localStorage.getItem("i18nextLng")!
+  );
 
   const getAccordionContent = () => {
     switch (currentSetting.type) {
       case "select":
         return (
           <NativeSelect
-            defaultValue={currentSetting.defaultValue}
             value={currentLanguage}
             data={[
               { value: "en", label: t("settingsEnglishTranslationOption")! },

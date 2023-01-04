@@ -3,5 +3,4 @@ export interface ISettingOptions {
   description: string;
   type: string;
   icon: string;
-  defaultValue: string;
 }

@@ -10,14 +10,12 @@ export const settingOptionsDatabase = () => {
       description: t("translationSettingDescription"),
       type: "select",
       icon: "translate",
-      defaultValue: t("settingsEnglishTranslationOption"),
     },
     {
       name: t("themeSettingTitle"),
       description: t("themeSettingDescription"),
       type: "switch",
       icon: "contrast",
-      defaultValue: "",
     },
   ] as ISettingOptions[];
 };
