@@ -16,7 +16,7 @@ export function NavBarMenu() {
   const minWidthResolution = useMediaQuery("(max-width: 1000px)");
   const minHeightResolution = useMediaQuery("(max-height: 680px)");
 
-  const [activeMenuLink, setActiveMenuLink] = useState("Watch Live");
+  const [activeMenuLink, setActiveMenuLink] = useState(t("watchLiveButton"));
 
   const data = [
     {
