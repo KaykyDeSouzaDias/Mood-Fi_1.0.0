@@ -41,7 +41,7 @@ export const translation = i18n
             lang.english.settingsPage.themeSettingDescription,
         },
       },
-      ptBr: {
+      "pt-BR": {
         translation: {
           watchLiveButton: lang.portuguese.menu.watchLiveButton,
           discoverButton: lang.portuguese.menu.discoverButton,

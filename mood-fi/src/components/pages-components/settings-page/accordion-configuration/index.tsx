@@ -42,7 +42,7 @@ export function AccordionConfiguration({
             data={[
               { value: "en", label: t("settingsEnglishTranslationOption")! },
               {
-                value: "ptBr",
+                value: "pt-BR",
                 label: t("settingsPortugueseTranslationOption")!,
               },
             ]}
