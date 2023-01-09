@@ -5,8 +5,13 @@ import {
   ColorSchemeProvider,
   MantineProvider,
   MantineThemeOverride,
+  Notification,
 } from "@mantine/core";
-import { LivestreamExternalPlayer, MainMenuLayout } from "./components";
+import {
+  LivestreamExternalPlayer,
+  MainMenuLayout,
+  MaterialIcon,
+} from "./components";
 import { useLocalStorage } from "@mantine/hooks";
 import { darkTheme, lightTheme } from "./theme";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
@@ -31,18 +36,22 @@ function App() {
       defaultValue: "dark",
       getInitialValueInEffect: true,
     });
-  const [colorScheme, setColorScheme] =
-    useState<ColorScheme>(colorSchemeStorage);
-
   const [livestreamsItems, setLivestreamsItems] = useLocalStorage<
     ILivestreamsItems[]
   >({
     key: "Livestreams",
     defaultValue: livestreamDatabase,
   });
+  const [todayDate, setTodayDate] = useLocalStorage<string>({
+    key: "TodayDate",
+    defaultValue: "No date",
+  });
 
+  const [colorScheme, setColorScheme] =
+    useState<ColorScheme>(colorSchemeStorage);
   const currentTheme = colorScheme == "light" ? lightTheme : darkTheme;
   const [theme, setTheme] = useState<MantineThemeOverride>(currentTheme);
+  const [canShowNotification, setCanShowNotification] = useState(false);
 
   useEffect(() => {
     load();
@@ -50,15 +59,25 @@ function App() {
 
   async function load() {
     const livestreams = await getLivestreams();
+    const date = new Date().toDateString();
 
     if (livestreams.length) {
       setLivestreamsItems(livestreams);
+    } else {
+      if (date !== todayDate.slice(1, -1)) {
+        setTodayDate(date);
+        setCanShowNotification(true);
+      } else {
+        setCanShowNotification(false);
+      }
     }
 
     emit("loadFinished");
 
     setTimeout(() => invoke("close_splashscreen"), 1000);
   }
+
+  console.log(todayDate);
 
   function toggleColorScheme(value?: ColorScheme) {
     const nextColorScheme =
@@ -85,6 +104,28 @@ function App() {
                   <Route path="/references" element={<ReferenceLivePage />} />
                   <Route path="/settings" element={<SettingsLivePage />} />
                 </Routes>
+                {canShowNotification ? (
+                  <Notification
+                    style={{
+                      width: 500,
+                      position: "absolute",
+                      zIndex: 5,
+                      bottom: 10,
+                      right: 10,
+                    }}
+                    icon={<MaterialIcon iconName="error" color="white" />}
+                    color="red"
+                    title="Erro no recebimento de lives do youtube"
+                    onClose={() => setCanShowNotification(false)}
+                  >
+                    [Cota diária excedida] Pode ser que suas lives estejam
+                    desatualizadas. Fique tranquilo, pois a atualização será
+                    feita automaticamente no próximo dia. Aproveite e se
+                    divirta!
+                  </Notification>
+                ) : (
+                  <></>
+                )}
               </MainMenuLayout>
             </Router>
             <LivestreamExternalPlayer />

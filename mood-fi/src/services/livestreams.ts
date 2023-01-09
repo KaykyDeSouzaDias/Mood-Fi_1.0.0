@@ -42,7 +42,7 @@ export async function getLivestreams(): Promise<ILivestreamsItems[]> {
         )
       );
     } catch {
-      console.log("api error");
+      console.log("API_ERROR: As lives não foram carregadas completamente!");
       if (CHANNEL_IDS.indexOf(channel) === CHANNEL_IDS.lastIndexOf(channel)) {
         livestreams = [];
       }
