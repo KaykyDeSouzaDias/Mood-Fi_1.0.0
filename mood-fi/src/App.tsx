@@ -52,32 +52,36 @@ function App() {
   const currentTheme = colorScheme == "light" ? lightTheme : darkTheme;
   const [theme, setTheme] = useState<MantineThemeOverride>(currentTheme);
   const [canShowNotification, setCanShowNotification] = useState(false);
+  const [hasApiError, setHasApiError] = useState(false);
 
   useEffect(() => {
     load();
   }, []);
 
+  useEffect(() => {
+    const date = new Date().toLocaleDateString();
+
+    if (hasApiError) {
+      if (date != todayDate) {
+        setTodayDate(date);
+        setCanShowNotification(true);
+      }
+    }
+  }, [hasApiError]);
+
   async function load() {
     const livestreams = await getLivestreams();
-    const date = new Date().toDateString();
 
     if (livestreams.length) {
       setLivestreamsItems(livestreams);
     } else {
-      if (date !== todayDate.slice(1, -1)) {
-        setTodayDate(date);
-        setCanShowNotification(true);
-      } else {
-        setCanShowNotification(false);
-      }
+      setHasApiError(true);
     }
 
     emit("loadFinished");
 
     setTimeout(() => invoke("close_splashscreen"), 1000);
   }
-
-  console.log(todayDate);
 
   function toggleColorScheme(value?: ColorScheme) {
     const nextColorScheme =
