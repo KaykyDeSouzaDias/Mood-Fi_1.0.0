@@ -281,8 +281,6 @@ const MoodFiLightThemeProps: Record<MoodFiThemePattern, string> = {
   sliderFilled: AllColors.neutral.p30,
   sliderTrack: AllColors.neutral.p90,
 
-  // appHeader: "rgba(246, 240, 231, 0.6)",
-
   menuBackground: AllColors.neutral.p90,
   onBackgroundMenu: AllColors.neutral.p99,
   onBackgroundMenuText: AllColors.neutral.p10,
@@ -299,8 +297,6 @@ const MoodFiDarkThemeProps: Record<MoodFiThemePattern, string> = {
 
   sliderFilled: AllColors.neutral.p90,
   sliderTrack: AllColors.neutral.p30,
-
-  // appHeader: "rgba(30, 27, 22, 0.6)",
 
   menuBackground: AllColors.neutral.p10,
   onBackgroundMenu: AllColors.neutral.p20,
@@ -350,7 +346,6 @@ export const lightTheme: MantineThemeOverride = {
     theme: MatLightThemeProps,
     moodFiTheme: MoodFiLightThemeProps,
   },
-  // ...defaultTheme,
 };
 
 export const darkTheme: MantineThemeOverride = {
@@ -360,7 +355,6 @@ export const darkTheme: MantineThemeOverride = {
     theme: MatDarkThemeProps,
     moodFiTheme: MoodFiDarkThemeProps,
   },
-  // ...defaultTheme,
 };
 
 type TypographyTypes = "display" | "headline" | "title" | "label" | "body";
