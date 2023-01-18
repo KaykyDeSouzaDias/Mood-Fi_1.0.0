@@ -34,7 +34,6 @@ function App() {
     useLocalStorage<ColorScheme>({
       key: "mantine-color-scheme",
       defaultValue: "dark",
-      getInitialValueInEffect: true,
     });
   const [livestreamsItems, setLivestreamsItems] = useLocalStorage<
     ILivestreamsItems[]
@@ -49,14 +48,20 @@ function App() {
 
   const [colorScheme, setColorScheme] =
     useState<ColorScheme>(colorSchemeStorage);
-  const currentTheme = colorScheme == "light" ? lightTheme : darkTheme;
-  const [theme, setTheme] = useState<MantineThemeOverride>(currentTheme);
+  const [theme, setTheme] = useState<MantineThemeOverride>(
+    colorScheme == "light" ? lightTheme : darkTheme
+  );
   const [canShowNotification, setCanShowNotification] = useState(false);
   const [hasApiError, setHasApiError] = useState(false);
 
   useEffect(() => {
     load();
   }, []);
+
+  useEffect(() => {
+    setColorScheme(colorSchemeStorage);
+    setTheme(colorSchemeStorage == "light" ? lightTheme : darkTheme);
+  }, [colorSchemeStorage]);
 
   useEffect(() => {
     const date = new Date().toLocaleDateString();
