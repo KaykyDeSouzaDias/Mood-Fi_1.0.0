@@ -32,7 +32,7 @@ export function PageTitle({
         className={classes.title}
         style={{
           fontSize:
-            onScroll >= 40 ? `${smallScrollSize}px` : `${bigScrollSize}px`,
+            onScroll >= 20 ? `${smallScrollSize}px` : `${bigScrollSize}px`,
         }}
       >
         {pageName}

@@ -17,8 +17,8 @@ export function SettingsLivePage() {
       <PageContentContainerLayout
         pageTitle={t("settingsPageTitle")}
         pageDescription={t("settingsDescription")}
-        bigScroll={70}
-        smallScroll={60}
+        bigScroll={55}
+        smallScroll={45}
       >
         <SimpleGrid className={classes.cardsGrid} cols={1}>
           {settingOptionsDatabase().map((config) => {

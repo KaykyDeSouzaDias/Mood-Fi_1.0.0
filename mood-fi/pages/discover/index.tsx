@@ -27,8 +27,8 @@ export const DiscoverPage = () => {
       <PageContentContainerLayout
         pageTitle={t("discoverPageTitle")}
         pageDescription={t("discoverDescription")}
-        bigScroll={70}
-        smallScroll={60}
+        bigScroll={60}
+        smallScroll={50}
       >
         <Grid
           className={classes.cardsGrid}
