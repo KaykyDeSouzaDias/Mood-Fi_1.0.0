@@ -14,9 +14,7 @@
 
 .content {
   width: 100%;
-
-  position: absolute;
-  bottom: 50px;
+  height: 10%;
 
   font-family: "Inter";
 
@@ -26,12 +24,10 @@
   justify-content: center;
 }
 .progress {
-  margin-bottom: 60px;
-
   font-weight: 600;
   font-size: 15px;
 
-  color: white;
+  color: #e6ffcc;
 }
 .disclaimer {
   font-weight: 500;

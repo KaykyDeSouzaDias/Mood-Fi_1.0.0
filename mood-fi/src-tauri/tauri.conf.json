@@ -66,10 +66,13 @@
         "visible": false
       },
       {
-        "width": 1200,
-        "height": 800,
-        "minWidth": 800,
-        "minHeight": 600,
+        "width": 400,
+        "height": 500,
+        "minWidth": 400,
+        "minHeight": 500,
+        "resizable": false,
+        "decorations": false,
+        "center": true,
         "url": "../src/components/loading/splash-screen/index.html",
         "title": "Mood-Fi - 2.0.0",
         "label": "splashscreen"
