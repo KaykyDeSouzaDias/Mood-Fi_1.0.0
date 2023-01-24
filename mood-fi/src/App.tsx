@@ -1,4 +1,4 @@
-import { emit } from "@tauri-apps/api/event";
+import { emit, listen } from "@tauri-apps/api/event";
 import { useEffect, useState } from "react";
 import {
   ColorScheme,
@@ -82,10 +82,6 @@ function App() {
     } else {
       setHasApiError(true);
     }
-
-    emit("loadFinished");
-
-    setTimeout(() => invoke("close_splashscreen"), 1000);
   }
 
   function toggleColorScheme(value?: ColorScheme) {

@@ -26,8 +26,8 @@
         "icons/icon.ico"
       ],
       "identifier": "com.mood-fi.dev",
-      "shortDescription": "",
-      "longDescription": "",
+      "shortDescription": "shortDesc",
+      "longDescription": "loooooooooooooooongDesc",
       "resources": [],
       "targets": "all",
 

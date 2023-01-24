@@ -5,47 +5,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
     <link rel="stylesheet" href="./index.css" />
   </head>
   <body style="background-color: #121621">
-    <div class="container">
-      <canvas id="canvas" width="200" height="200"></canvas>
+    <div id="userOfflineContainer" class="userOfflineContainer">
+      <img
+        id="userOfflineCanvas"
+        src="./mood-fi_loading_error.svg"
+        width="80"
+        height="250"
+      />
+
+      <div class="content">
+        <button onclick="retryConnection()" class="retryConnectionBtn">
+          <span class="material-symbols-outlined"> cached </span>
+        </button>
+      </div>
+    </div>
+
+    <div id="userOnlineContainer" class="userOnlineContainer">
+      <canvas id="userOnlineCanvas" width="200" height="200"></canvas>
 
       <div class="content">
         <div class="progress">
           <p>Starting...</p>
         </div>
-        <!-- <div class="disclaimer">
-          <p>
-            Please wait while we check <br />
-            if there’s an update coming.
-          </p>
-        </div> -->
       </div>
     </div>
 
     <script src="https://unpkg.com/@rive-app/canvas@1.0.79"></script>
     <script type="module">
       import { emit, listen } from "@tauri-apps/api/event";
+      import { invoke } from "@tauri-apps/api/tauri";
+      import { relaunch } from "@tauri-apps/api/process";
 
       const animation = new rive.Rive({
         src: "./mood-fi_loading.riv",
-        canvas: document.getElementById("canvas"),
+        canvas: document.getElementById("userOnlineCanvas"),
         autoplay: true,
         stateMachines: "State Machine 1",
         fit: rive.Fit.cover,
       });
 
-      // listen("getLivestreamsProgress", (value) => {
-      //   document.getElementById("loadingProgress").innerText =
-      //     value.payload + "%";
-      // });
+      if (window.navigator.onLine === false) {
+        document.getElementById("userOnlineContainer").style.display = "none";
+        document.getElementById("userOnlineContainer").style.visibility =
+          "colapse";
+        document.getElementById("userOfflineContainer").style.display = "flex";
+        document.getElementById("userOfflineContainer").style.visibility =
+          "visible";
+      } else {
+        setTimeout(() => invoke("close_splashscreen"), 1000);
+      }
 
-      // listen("loadFinished", () => {
-      //   const inputs = animation.stateMachineInputs("State Machine 1");
-      //   const hasLoadedScreen = inputs.find((i) => i.name === "isLoaded");
-      //   hasLoadedScreen.value = true;
-      // });
+      async function retryConnection() {
+        await relaunch();
+      }
     </script>
   </body>
 </html>
