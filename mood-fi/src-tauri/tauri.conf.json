@@ -73,7 +73,7 @@
         "resizable": false,
         "decorations": false,
         "center": true,
-        "url": "../src/components/loading/splash-screen/index.html",
+        "url": "splash-screen/index.html",
         "title": "Mood-Fi - 2.0.0",
         "label": "splashscreen"
       }
