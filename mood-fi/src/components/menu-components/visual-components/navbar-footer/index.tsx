@@ -32,15 +32,11 @@ export function NavBarFooter() {
       <div className={classes.personalLogoContainer}>
         <img
           src={
-            minWidthResolution || minHeightResolution
-              ? theme.colorScheme === "dark"
-                ? "../../../../public/Mood-Fi mini logo.svg"
-                : "../../../../../public/Mood-Fi mini logo light mode.svg"
-              : theme.colorScheme === "dark"
-              ? "../../../../public/Mood-Fi logo.svg"
-              : "../../../../../public/Mood-Fi logo light mode.svg"
+            theme.colorScheme === "dark"
+              ? "KaykyDias_miniLogo.png"
+              : "KaykyDias_miniLogo_lightMode.png"
           }
-          width={minWidthResolution || minHeightResolution ? 50 : 80}
+          width={minWidthResolution || minHeightResolution ? 40 : 80}
           height={minWidthResolution || minHeightResolution ? 40 : 70}
           alt=""
         />

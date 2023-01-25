@@ -105,13 +105,13 @@ export function NavBarMenu() {
           src={
             minWidthResolution || minHeightResolution
               ? theme.colorScheme === "dark"
-                ? "../../../../public/Mood-Fi mini logo.svg"
-                : "../../../../../public/Mood-Fi mini logo light mode.svg"
+                ? "Mood-Fi_miniLogo.png"
+                : "Mood-Fi_miniLogo_lightMode.png"
               : theme.colorScheme === "dark"
-              ? "../../../../public/Mood-Fi logo.svg"
-              : "../../../../../public/Mood-Fi logo light mode.svg"
+              ? "Mood-Fi_logo.png"
+              : "Mood-Fi_logo_lightMode.png"
           }
-          width={minWidthResolution || minHeightResolution ? 60 : 70}
+          width={minWidthResolution || minHeightResolution ? 50 : 70}
           height={minWidthResolution || minHeightResolution ? 50 : 60}
           alt=""
         />
