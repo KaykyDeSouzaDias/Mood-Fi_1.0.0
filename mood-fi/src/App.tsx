@@ -109,6 +109,7 @@ function App() {
                   <Route path="/references" element={<ReferenceLivePage />} />
                   <Route path="/settings" element={<SettingsLivePage />} />
                 </Routes>
+                <LivestreamExternalPlayer />
                 {canShowNotification ? (
                   <Notification
                     style={{
@@ -133,7 +134,6 @@ function App() {
                 )}
               </MainMenuLayout>
             </Router>
-            <LivestreamExternalPlayer />
           </LivestreamProvider>
         </MantineProvider>
       </ColorSchemeProvider>

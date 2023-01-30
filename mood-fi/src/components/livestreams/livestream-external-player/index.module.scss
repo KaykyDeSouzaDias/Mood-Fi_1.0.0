@@ -1,0 +1,18 @@
+@import "/src/theme/scss/fonts.scss";
+@import "/src/theme/scss/colors.scss";
+
+.root {
+  position: fixed;
+  z-index: 10;
+  bottom: 0;
+  right: 0;
+  padding: 20px;
+
+  .visiblePlayer {
+    display: block;
+  }
+  .invisiblePlayer {
+    display: none;
+    visibility: collapse;
+  }
+}

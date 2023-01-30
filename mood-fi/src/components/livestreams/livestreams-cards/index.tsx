@@ -12,7 +12,12 @@ interface LivestreamsCardsProps {
 export const LivestreamsCards = ({ livestream }: LivestreamsCardsProps) => {
   const theme = useMantineTheme();
 
-  const { changeSelectedLivestream } = useLivestream();
+  const {
+    changeSelectedLivestream,
+    toggleCanShowExternalPlayer,
+    toggleHasPlayedLivestream,
+    togglePlayLivestream,
+  } = useLivestream();
   const [chosenLivestreamStorage, setChosenLivestreamStorage] =
     useLocalStorage<ILivestreamsItems>({
       key: "ChosenLivestream",
@@ -27,6 +32,9 @@ export const LivestreamsCards = ({ livestream }: LivestreamsCardsProps) => {
       radius="md"
       component="a"
       onClick={() => {
+        togglePlayLivestream(false);
+        toggleHasPlayedLivestream(false);
+        toggleCanShowExternalPlayer(true);
         changeSelectedLivestream(livestream);
         setChosenLivestreamStorage(livestream);
       }}
