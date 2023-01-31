@@ -1,9 +1,6 @@
 import { ILivestreams, ILivestreamsItems } from "../models/livestreams";
-import { emit } from "@tauri-apps/api/event";
 
 import { LIVESTREAM_API_KEY } from "../../env";
-
-// const API_KEY_LOCAL02 = "AIzaSyDVnpTthAtf2wVJGI8Uz8MXt3BFQOq5EgQ";
 
 const CHANNEL_IDS = [
   "UC2fVSthyWxWSjsiEAHPzriQ",
@@ -43,16 +40,8 @@ export async function getLivestreams(): Promise<ILivestreamsItems[]> {
       );
     } catch {
       console.log("API_ERROR: As lives não foram carregadas completamente!");
-      if (CHANNEL_IDS.indexOf(channel) === CHANNEL_IDS.lastIndexOf(channel)) {
-        livestreams = [];
-      }
-    } finally {
-      emit(
-        "getLivestreamsProgress",
-        Math.floor(
-          ((CHANNEL_IDS.indexOf(channel) + 1) / CHANNEL_IDS.length) * 100
-        )
-      );
+      livestreams = [];
+      break;
     }
   }
 
