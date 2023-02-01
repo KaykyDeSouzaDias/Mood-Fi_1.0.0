@@ -54,9 +54,6 @@ export type LivestreamContextData = {
   canShowExternalPlayer: boolean;
   toggleCanShowExternalPlayer(value: boolean): void;
 
-  hasPlayedLivestream: boolean;
-  toggleHasPlayedLivestream(value: boolean): void;
-
   selectedLivestream: ILivestreamsItems;
   changeSelectedLivestream(value: ILivestreamsItems): void;
 
@@ -80,7 +77,6 @@ export const LivestreamProvider = ({ children }: props) => {
   const [playLivestream, setPlayLivestream] = useState(false);
   const [livestreamVolume, setLivestreamVolume] = useState(0.2);
   const [canShowExternalPlayer, setCanShowExternalPlayer] = useState(false);
-  const [hasPlayedLivestream, setHasPlayedLivestream] = useState(false);
   const [selectedLivestream, setSelectedLivestream] =
     useState<ILivestreamsItems>(defaultSelectedLivestream);
   const [selectedLivestreamColor, setSelectedLivestreamColor] =
@@ -105,9 +101,6 @@ export const LivestreamProvider = ({ children }: props) => {
   function toggleCanShowExternalPlayer(value: boolean) {
     setCanShowExternalPlayer(value);
   }
-  function toggleHasPlayedLivestream(value: boolean) {
-    setHasPlayedLivestream(value);
-  }
   function changeSelectedLivestream(value: ILivestreamsItems) {
     setSelectedLivestream(value);
   }
@@ -124,8 +117,6 @@ export const LivestreamProvider = ({ children }: props) => {
         changeLivestreamVolume,
         canShowExternalPlayer,
         toggleCanShowExternalPlayer,
-        hasPlayedLivestream,
-        toggleHasPlayedLivestream,
         selectedLivestream,
         changeSelectedLivestream,
         selectedLivestreamColor,

@@ -20,7 +20,6 @@ export const LivestreamExternalPlayer = () => {
     selectedLivestream,
     canShowExternalPlayer,
     toggleCanShowExternalPlayer,
-    toggleHasPlayedLivestream,
     togglePlayLivestream,
   } = useLivestream();
 
@@ -69,7 +68,7 @@ export const LivestreamExternalPlayer = () => {
           playing={document.hidden ? _playLivestream : playLivestream}
           onPlay={() => {
             setTimeout(() => {
-              toggleHasPlayedLivestream(true);
+              togglePlayLivestream(true);
               toggleCanShowExternalPlayer(false);
             }, 100);
           }}

@@ -15,7 +15,6 @@ export const LivestreamsCards = ({ livestream }: LivestreamsCardsProps) => {
   const {
     changeSelectedLivestream,
     toggleCanShowExternalPlayer,
-    toggleHasPlayedLivestream,
     togglePlayLivestream,
   } = useLivestream();
   const [chosenLivestreamStorage, setChosenLivestreamStorage] =
@@ -33,7 +32,6 @@ export const LivestreamsCards = ({ livestream }: LivestreamsCardsProps) => {
       component="a"
       onClick={() => {
         togglePlayLivestream(false);
-        toggleHasPlayedLivestream(false);
         toggleCanShowExternalPlayer(true);
         changeSelectedLivestream(livestream);
         setChosenLivestreamStorage(livestream);
